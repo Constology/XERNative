@@ -9,6 +9,7 @@
 #include "model/Actvcodes.h"
 #include "model/Actvtypes.h"
 #include "model/Calendars.h"
+#include "model/Currtypes.h"
 
 class Reader{
 public:
@@ -19,6 +20,7 @@ private:
 		Actvcodes actvcodes;
 		Actvtypes actvtypes;
 		Calendars calendars;
+		Currtypes currtypes;
 
 		static void split(std::string *strings, const std::string &str);
 
