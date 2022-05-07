@@ -1,5 +1,5 @@
 //
-// Created by sorat on 07/05/2022.
+// Created by Taraxtix on 07/05/2022.
 //
 
 #ifndef EXRPARSER_CURRTYPE_H
@@ -22,12 +22,9 @@ public:
 		std::string neg_curr_fmt_type;
 		std::string pos_curr_fmt_type;
 
-		Currtype(const std::string *header, const std::string *params);
-
-		std::string get_tsv();
-
-private:
 		std::string tsv;
+
+		Currtype(const std::string *header, const std::string *params);
 };
 
 

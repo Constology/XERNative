@@ -38,5 +38,3 @@ Account::Account(const std::string header[], const std::string params[]){
 						.append(acct_short_name).append("\n");
 	}
 }
-
-std::string Account::get_tsv(){ return tsv; }

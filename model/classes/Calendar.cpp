@@ -58,5 +58,3 @@ Calendar::Calendar(const std::string header[], const std::string params[]){
 						.append(proj_id).append("\n");
 	}
 }
-
-std::string Calendar::get_tsv(){ return tsv; }

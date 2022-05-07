@@ -15,6 +15,8 @@ public:
 
 		Account findById(int id);
 
+		std::string get_tsv();
+
 private:
 	std::vector<Account> accounts;
 };

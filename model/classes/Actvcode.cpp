@@ -42,5 +42,3 @@ Actvcode::Actvcode(const std::string header[], const std::string params[]){
 						.append(short_name).append("\n");
 	}
 }
-
-std::string Actvcode::get_tsv(){ return tsv; }

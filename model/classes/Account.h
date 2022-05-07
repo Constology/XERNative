@@ -16,12 +16,9 @@ public:
 		std::string acct_descr;
 		std::string acct_short_name;
 
-		Account(const std::string *header, const std::string *params);
-
-		std::string get_tsv();
-
-private:
 		std::string tsv;
+
+		Account(const std::string *header, const std::string *params);
 };
 
 

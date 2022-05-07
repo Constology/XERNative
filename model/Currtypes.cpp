@@ -1,5 +1,5 @@
 //
-// Created by sorat on 07/05/2022.
+// Created by Taraxtix on 07/05/2022.
 //
 
 #include "Currtypes.h"
@@ -14,4 +14,15 @@ Currtype Currtypes::findById(int id){
 	}
 	printf("Account not found");
 	exit(EXIT_FAILURE);
+}
+
+std::string Currtypes::get_tsv(){
+	std::string tsv;
+	tsv.append("%T\tCURRTYPE\n");
+	tsv.append("%F\tcurr_id\tdecimal_digit_cnt\tbase_exch_rate\tcurr_short_name\tcurr_symbol"
+						 "\tcurr_type\tdecimal_symbol\tdigit_group_symbol\tgroup_digit_cnt\tneg_curr_fmt_type"
+						 "\tpos_curr_fmt_type");
+	for(auto & currtype : currtypes){
+		tsv.append(currtype.tsv);
+	}
 }

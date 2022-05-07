@@ -46,5 +46,3 @@ Currtype::Currtype(const std::string header[], const std::string params[]){
 						.append(pos_curr_fmt_type).append("\n");
 	}
 }
-
-std::string Currtype::get_tsv(){ return tsv; }

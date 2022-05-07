@@ -66,7 +66,7 @@ int Reader::parse(const std::string& filename) {
 void Reader::add(const std::string& table, const std::string *header, const std::string *record){
 	assert(not(table.empty() || header == nullptr || record == nullptr));
 
-		   if(table == "ACCOUNT") { accounts.add( Account(header,   record)); }
+	if(table == "ACCOUNT") { accounts.add( Account(header,   record)); }
 	else if(table == "ACTVCODE"){ actvcodes.add(Actvcode(header, record)); }
 	else if(table == "ACTVTYPE"){ actvtypes.add(Actvtype(header, record)); }
 	else if(table == "CALENDAR"){ calendars.add(Calendar(header, record)); }

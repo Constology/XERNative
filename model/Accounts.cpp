@@ -15,3 +15,13 @@ Account Accounts::findById(int id){
 	printf("Account not found");
 	exit(EXIT_FAILURE);
 }
+
+std::string Accounts::get_tsv(){
+	std::string tsv;
+	tsv.append("%T\tACCOUNT\n");
+	tsv.append("%F\tacct_id\tacct_seq_num\tparent_acct_id\tacct_name\tacct_descr\tacct_short_name\n");
+	for(auto & account : accounts){
+		tsv.append(account.tsv);
+	}
+	return tsv;
+}

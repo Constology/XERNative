@@ -1,5 +1,5 @@
 //
-// Created by sorat on 07/05/2022.
+// Created by Taraxtix on 07/05/2022.
 //
 
 #ifndef EXRPARSER_CURRTYPES_H
@@ -14,6 +14,8 @@ public:
 		void add(const Currtype& account);
 
 		Currtype findById(int id);
+
+		std::string get_tsv();
 
 private:
 		std::vector<Currtype> currtypes;

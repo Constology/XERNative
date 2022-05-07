@@ -44,5 +44,3 @@ Actvtype::Actvtype(const std::string header[], const std::string params[]){
 						.append(super_flag).append("\n");
 	}
 }
-
-std::string Actvtype::get_tsv(){ return tsv; }

@@ -15,6 +15,8 @@ public:
 
 		Actvcode findById(int id);
 
+		std::string get_tsv();
+
 private:
 		std::vector<Actvcode> actvcodes;
 };

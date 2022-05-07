@@ -1,5 +1,5 @@
 //
-// Created by sorat on 07/05/2022.
+// Created by Taraxtix on 07/05/2022.
 //
 
 #ifndef EXRPARSER_ACTVTYPES_H
@@ -14,6 +14,8 @@ public:
 		void add(const Actvtype& account);
 
 		Actvtype findById(int id);
+
+		std::string get_tsv();
 
 private:
 		std::vector<Actvtype> actvtypes;
