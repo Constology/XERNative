@@ -1,7 +1,7 @@
 #include <cassert>
 #include "Reader.h"
 
-#define MAX_HEADER_LEN 255 //TODO: Count the real maximum (255 is not the real value)
+#define MAX_HEADER_LEN 70 //TODO: Count the real maximum (255 is not the real value)
 
 void Reader::split(std::string *strings, const std::string &str)
 {
@@ -70,4 +70,7 @@ void Reader::add(const std::string& table, const std::string *header, const std:
 	else if(table == "ACTVCODE"){ actvcodes.add(Actvcode(header, record)); }
 	else if(table == "ACTVTYPE"){ actvtypes.add(Actvtype(header, record)); }
 	else if(table == "CALENDAR"){ calendars.add(Calendar(header, record)); }
+	else if(table == "PROJWBS") {
+		wbss.add(WBS(header, record));
+	}
 }

@@ -3,8 +3,8 @@ project(exrParser)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_library(models model/Accounts.cpp model/Actvcodes.cpp model/Actvtypes.cpp model/Calendars.cpp)
-add_library(classes model/classes/Account.cpp model/classes/Actvcode.cpp model/classes/Actvtype.cpp model/classes/Calendar.cpp)
+add_library(models model/Accounts.cpp model/Actvcodes.cpp model/Actvtypes.cpp model/Calendars.cpp model/WBSs.cpp)
+add_library(classes model/classes/Account.cpp model/classes/Actvcode.cpp model/classes/Actvtype.cpp model/classes/Calendar.cpp model/classes/wbs.cpp)
 add_library(exrParser Reader.cpp)
 
 add_executable(main main.cpp)

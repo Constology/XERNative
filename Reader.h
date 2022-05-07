@@ -9,16 +9,20 @@
 #include "model/Actvcodes.h"
 #include "model/Actvtypes.h"
 #include "model/Calendars.h"
+#include "model/WBSs.h"
+#include "model/classes/wbs.h"
 
 class Reader{
 public:
 		int parse(const std::string& filename);
+		WBSs wbss;
 
 private:
 		Accounts accounts;
 		Actvcodes actvcodes;
 		Actvtypes actvtypes;
 		Calendars calendars;
+		
 
 		static void split(std::string *strings, const std::string &str);
 
