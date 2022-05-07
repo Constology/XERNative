@@ -8,6 +8,7 @@
 #include "model/Accounts.h"
 #include "model/Actvcodes.h"
 #include "model/Actvtypes.h"
+#include "model/Calendars.h"
 
 class Reader{
 public:
@@ -17,6 +18,7 @@ private:
 		Accounts accounts;
 		Actvcodes actvcodes;
 		Actvtypes actvtypes;
+		Calendars calendars;
 
 		static void split(std::string *strings, const std::string &str);
 
