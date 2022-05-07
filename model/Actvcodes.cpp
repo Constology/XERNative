@@ -4,7 +4,7 @@
 
 #include "Actvcodes.h"
 
-void Actvcodes::add(const Actvcode& account){ actvcodes.emplace_back(account); }
+void Actvcodes::add(const Actvcode& actvcode){ actvcodes.emplace_back(actvcode); }
 
 Actvcode Actvcodes::findById(int id){
 	for(auto & actvcode : actvcodes){

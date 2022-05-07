@@ -7,6 +7,7 @@
 
 #include "model/Accounts.h"
 #include "model/Actvcodes.h"
+#include "model/Actvtypes.h"
 
 class Reader{
 public:
@@ -15,6 +16,7 @@ public:
 private:
 		Accounts accounts;
 		Actvcodes actvcodes;
+		Actvtypes actvtypes;
 
 		static void split(std::string *strings, const std::string &str);
 

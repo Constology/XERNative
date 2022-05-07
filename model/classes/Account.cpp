@@ -26,9 +26,9 @@ Account::Account(const std::string header[], const std::string params[]){
 			parent_acct_id = stoi(params[i]);
 			parent_acct_id_str = params[i];
 		}
-		else if(header[i] == "actv_code_name"){ acct_name = params[i]; }
+		else if(header[i] == "acct_name"){ acct_name = params[i]; }
 		else if(header[i] == "acct_descr"){ acct_descr = params[i]; }
-		else if(header[i] == "short_name"){ acct_short_name = params[i]; }
+		else if(header[i] == "acct_short_name"){ acct_short_name = params[i]; }
 
 		tsv.append(acct_id_str).append("\t")
 						.append(acct_seq_num_str).append("\t")
