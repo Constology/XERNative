@@ -15,3 +15,7 @@ Actvtype Actvtypes::findById(int id){
 	printf("Account not found");
 	exit(EXIT_FAILURE);
 }
+
+std::vector<Actvtype> Actvtypes::getAll(){
+	return actvtypes;
+}

@@ -3,18 +3,55 @@
 
 using namespace std;
 
-CurrType::CurrType(vector<string> params){
-    curr_id = stoi(params.at(1));
-    decimal_digit_cnt = stoi(params.at(2));
-    curr_symbol = params.at(3);
-    decimal_symbol = params.at(4);
-    digit_group_symbol = params.at(5);
-    pos_curr_fmt_type = params.at(6);
-    neg_curr_fmt_type = params.at(7);
-    curr_type = params.at(8);
-    curr_short_name = params.at(9);
-    group_digit_cnt = stoi(params.at(10));
-    base_exch_rate = stod(params.at(11));    
+CurrType::CurrType(const std::string header[], const std::string params[]){
+    for (int i = 0; i < header->length(); i++){
+        if(header[i].empty()) break;
+        if (header[i] == "curr_id"){
+            if(!params[i].empty()){
+                curr_id = stoi(params[i]);
+            }
+        } else if (header[i] == "decimal_digit_cnt"){
+            if(!params[i].empty()){
+                decimal_digit_cnt = stoi(params[i]);
+            }
+        } else if (header[i] == "curr_symbol"){
+            if (!params[i].empty()){
+                curr_symbol = params[i];
+            }
+        } else if (header[i] == "decimal_symbol"){
+            if(!params[i].empty()){
+                decimal_symbol = params[i];
+            }
+        } else if (header[i] == "digit_group_symbol"){
+            if(!params[i].empty()){
+                digit_group_symbol = params[i];
+            }
+        } else if (header[i] == "pos_curr_fmt_type"){
+            if(!params[i].empty()){
+                pos_curr_fmt_type = params[i];
+            }
+        } else if (header[i] == "neg_curr_fmt_type"){
+            if(!params[i].empty()){
+                neg_curr_fmt_type = params[i];
+            }
+        } else if (header[i] == "curr_type"){
+            if(!params[i].empty()){
+                curr_type = params[i];
+            }
+        } else if (header[i] == "curr_short_name"){
+            if(!params[i].empty()){
+                curr_short_name = params[i];
+            }
+        } else if (header[i] == "group_digit_cnt"){
+            if(!params[i].empty()){
+                group_digit_cnt = stoi(params[i]);
+            }
+        } else if (header[i] == "base_exch_rate"){
+            if(!params[i].empty()){
+                base_exch_rate = stod(params[i]);
+            }
+        }  
+    } 
 }
 
 void CurrType::printCurrency(){
@@ -22,7 +59,7 @@ void CurrType::printCurrency(){
         << curr_symbol << "\t" <<curr_short_name << endl;
 }
 
-std::string CurrType::get_tsv(){
+std::string CurrType::get_tsv() {
     tsv = "";
     tsv.append(std::to_string(curr_id)).append("\t")
         .append(std::to_string(decimal_digit_cnt)).append("\t")

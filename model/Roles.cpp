@@ -24,3 +24,7 @@ Role Roles::getParent(Role &role){
     Role parent = getParent(role.role_id);
     return parent;
 }
+
+std::vector<Role> Roles::getAll(){
+    return roles;
+}

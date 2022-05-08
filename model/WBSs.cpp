@@ -45,3 +45,7 @@ std::vector<WBS> WBSs::getByProject(int id){
     }
     return toReturn;
 }
+
+std::vector<WBS> WBSs::getAll(){
+    return wbss;
+}

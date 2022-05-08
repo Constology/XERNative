@@ -14,6 +14,8 @@ public:
 		void add(const Actvcode& account);
 
 		Actvcode findById(int id);
+		std::vector<Actvcode> getAll();
+
 
 private:
 		std::vector<Actvcode> actvcodes;

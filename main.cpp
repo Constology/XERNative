@@ -14,12 +14,17 @@ int main(){
     }
 
     cout << "*********** TEST WBS **********************" << endl;
-    for (WBS wbs : reader.wbss.getByProject(368))
+    for (WBS wbs : reader.wbss.getAll())
     {
         cout << wbs.get_tsv() << endl;
     }
     cout << "**************** CALENDAR *************************" << endl;
-    for(Calendar cal: reader.calendars.calendars){
+    for(Calendar cal: reader.calendars.getAll()){
         cout << cal.get_tsv()<<endl;
+    }
+
+    cout << "***************** CURRENCIES **********************" << endl;
+    for(CurrType curr: reader.currencies.getAll()){
+        cout << "Currencies "<<curr.get_tsv() << endl;
     }
 }

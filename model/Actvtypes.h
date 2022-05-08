@@ -14,6 +14,8 @@ public:
 		void add(const Actvtype& account);
 
 		Actvtype findById(int id);
+		std::vector<Actvtype> getAll();
+
 
 private:
 		std::vector<Actvtype> actvtypes;

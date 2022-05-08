@@ -13,6 +13,7 @@ public:
         std::vector<WBS> getByProject(int projectId);
         std::vector<WBS> getChilds(int id);
         WBS getParent(int id);
+        std::vector<WBS> getAll();
 
     private:
         std::vector<WBS> wbss;

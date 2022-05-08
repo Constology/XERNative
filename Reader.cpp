@@ -82,4 +82,7 @@ void Reader::add(const std::string& table, const std::string *header, const std:
 	else if(table =="ROLE"){
 		
 	}
+	else if(table == "CURRTYPE"){
+		currencies.add(CurrType(header, record));
+	}
 }

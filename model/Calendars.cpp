@@ -15,3 +15,7 @@ Calendar Calendars::findById(int id){
 	printf("Account not found");
 	exit(EXIT_FAILURE);
 }
+
+std::vector<Calendar> Calendars::getAll(){
+	return calendars;
+}

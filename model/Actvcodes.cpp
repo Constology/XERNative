@@ -15,3 +15,7 @@ Actvcode Actvcodes::findById(int id){
 	printf("Account not found");
 	exit(EXIT_FAILURE);
 }
+
+std::vector<Actvcode> Actvcodes::getAll(){
+	return actvcodes;
+}

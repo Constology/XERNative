@@ -10,6 +10,8 @@ class UDFValues{
         void add(const UDFValue &udf);
         UDFValue findById(int id);
         std::vector<UDFValue> getByProject(int projId);
+        std::vector<UDFValue> getAll();
+
 
     private:
         std::vector<UDFValue> udfs;

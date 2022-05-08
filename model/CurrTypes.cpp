@@ -14,3 +14,7 @@ CurrType CurrTypes::findById(int id){
         }
     }
 }
+
+std::vector<CurrType> CurrTypes::getAll(){
+    return currencies;
+}

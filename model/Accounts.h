@@ -14,6 +14,8 @@ public:
 		void add(const Account& account);
 
 		Account findById(int id);
+		std::vector<Account> getAll();
+
 
 private:
 	std::vector<Account> accounts;

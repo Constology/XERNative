@@ -11,6 +11,8 @@ class UDFTypes
 public:
     UDFType findById(int id);
     void add(const UDFType &udfType);
+    std::vector<UDFType> getAll();
+
 
 private:
     std::vector<UDFType> udftypes;

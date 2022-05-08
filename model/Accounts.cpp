@@ -15,3 +15,7 @@ Account Accounts::findById(int id){
 	printf("Account not found");
 	exit(EXIT_FAILURE);
 }
+
+std::vector<Account> Accounts::getAll(){
+	return accounts;
+}

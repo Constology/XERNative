@@ -13,3 +13,8 @@ UDFType UDFTypes::findById(int id){
     printf("Could not find UDFType");
     exit(EXIT_FAILURE);
 }
+
+
+std::vector<UDFType> UDFTypes::getAll(){
+    return udftypes;
+}

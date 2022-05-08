@@ -10,7 +10,7 @@
 
 class CurrType {
     public:
-        CurrType(std::vector<std::string> params);
+        CurrType(const std::string header[], const std::string params[]);
         double base_exch_rate;
         int curr_id;
         std::string curr_short_name;
@@ -23,6 +23,7 @@ class CurrType {
         std::string neg_curr_fmt_type;
         std::string pos_curr_fmt_type;
         void printCurrency();
+        
         std::string get_tsv();
 
     private:

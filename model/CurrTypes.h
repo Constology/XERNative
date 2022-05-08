@@ -9,9 +9,12 @@ class CurrTypes{
     public:
         void add(const CurrType &currency);
         CurrType findById(int id);
+        std::vector<CurrType> getAll();
+
 
     private:
         std::vector<CurrType> currencies;
+
 };
 
 #endif

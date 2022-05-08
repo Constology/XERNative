@@ -24,3 +24,7 @@ std::vector<UDFValue> UDFValues::getByProject(int projId){
     }
     return toReturn;
 }
+
+std::vector<UDFValue> UDFValues::getAll(){
+    return udfs;
+}
