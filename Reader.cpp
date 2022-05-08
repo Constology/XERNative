@@ -73,4 +73,7 @@ void Reader::add(const std::string& table, const std::string *header, const std:
 	else if(table == "PROJWBS") {
 		wbss.add(WBS(header, record));
 	}
+	else if(table == "UDFVALUE") {
+		udfs.add(UDF(header, record));
+	}
 }
