@@ -30,13 +30,15 @@ Account::Account(const std::string header[], const std::string params[]){
 		else if(header[i] == "acct_descr"){ acct_descr = params[i]; }
 		else if(header[i] == "acct_short_name"){ acct_short_name = params[i]; }
 
-		tsv.append(acct_id_str).append("\t")
-						.append(acct_seq_num_str).append("\t")
-						.append(parent_acct_id_str).append("\t")
-						.append(acct_name).append("\t")
-						.append(acct_descr).append("\t")
-						.append(acct_short_name).append("\n");
+		
 	}
+
+	tsv.append(acct_id_str).append("\t")
+		.append(acct_seq_num_str).append("\t")
+		.append(parent_acct_id_str).append("\t")
+		.append(acct_name).append("\t")
+		.append(acct_descr).append("\t")
+		.append(acct_short_name).append("\n");
 }
 
 std::string Account::get_tsv(){ return tsv; }

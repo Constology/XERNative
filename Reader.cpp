@@ -70,4 +70,7 @@ void Reader::add(const std::string& table, const std::string *header, const std:
 	else if(table == "ACTVCODE"){ actvcodes.add(Actvcode(header, record)); }
 	else if(table == "ACTVTYPE"){ actvtypes.add(Actvtype(header, record)); }
 	else if(table == "CALENDAR"){ calendars.add(Calendar(header, record)); }
+	else if(table == "PROJWBS") {
+		wbss.add(WBS(header, record));
+	}
 }
