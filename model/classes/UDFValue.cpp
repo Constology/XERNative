@@ -1,6 +1,6 @@
-#include "udf.h"
+#include "UDFValue.h"
 
-UDF::UDF(const std::string header[], const std::string params[]){
+UDFValue::UDFValue(const std::string header[], const std::string params[]){
     for (int i = 0; i < header->length(); i++){
         if(header[i] == "udf_code_id"){
             if(!params[i].empty()){
@@ -30,7 +30,7 @@ UDF::UDF(const std::string header[], const std::string params[]){
     }
 }
 
-std::string UDF::get_tsv(){
+std::string UDFValue::get_tsv(){
     tsv = "";
     tsv.append(std::to_string(udf_code_id)).append("\t")
         .append(std::to_string(fk_id)).append("\t")
@@ -38,6 +38,6 @@ std::string UDF::get_tsv(){
         .append(udf_date).append("\t")
         .append(std::to_string(udf_number)).append("\t")
         .append(udf_text).append("\t")
-        .append(std::to_string(udf_code_id)).append("\t");
+        .append(std::to_string(udf_code_id)).append("\n");
     return tsv;
 }

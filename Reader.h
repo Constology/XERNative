@@ -11,14 +11,17 @@
 #include "model/Calendars.h"
 #include "model/WBSs.h"
 #include "model/classes/wbs.h"
-#include "model/UDFs.h"
-#include "model/classes/udf.h"
+#include "model/UDFValues.h"
+#include "model/classes/UDFValue.h"
+#include "model/UDFTypes.h"
+#include "model/classes/UDFType.h"
 
 class Reader{
 public:
 		int parse(const std::string& filename);
 		WBSs wbss;
-		UDFs udfs;
+		UDFValues udfs;
+		UDFTypes udftypes;
 
 	private:
 		Accounts accounts;

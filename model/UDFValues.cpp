@@ -1,10 +1,10 @@
-#include "UDFs.h"
+#include "UDFValues.h"
 
-void UDFs::add(const UDF& udf){
+void UDFValues::add(const UDFValue& udf){
     udfs.emplace_back(udf);
 }
 
-UDF UDFs::findById(int id){
+UDFValue UDFValues::findById(int id){
     for(auto & udf: udfs){
         if(udf.udf_code_id == id){
             return udf;
@@ -14,8 +14,8 @@ UDF UDFs::findById(int id){
     exit(EXIT_FAILURE);
 }
 
-std::vector<UDF> UDFs::getByProject(int projId){
-    std::vector<UDF> toReturn;
+std::vector<UDFValue> UDFValues::getByProject(int projId){
+    std::vector<UDFValue> toReturn;
     for (auto &udf : udfs)
     {
         if(udf.proj_id == projId){

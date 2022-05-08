@@ -10,8 +10,14 @@ int main(){
     
     reader.parse("/home/hassan/programming/xerParser/sample.xer");
 
-    for (UDF udf :reader.udfs.getByProject(368) )
+    for (UDFValue udf :reader.udfs.getByProject(368) )
     {
-        cout<<udf.udf_text<< " FK " <<udf.fk_id<<std::endl;
+        cout<<udf.get_tsv() <<std::endl;
+    }
+
+    cout << "*********** TEST WBS **********************" << endl;
+    for (WBS wbs : reader.wbss.getByProject(368))
+    {
+        cout << wbs.get_tsv() << endl;
     }
 }
