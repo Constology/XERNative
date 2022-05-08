@@ -33,12 +33,11 @@ Actvcode::Actvcode(const std::string header[], const std::string params[]){
 		}
 		else if(header[i] == "actv_code_name"){ actv_code_name = params[i]; }
 		else if(header[i] == "short_name"){ short_name = params[i]; }
-
-		tsv.append(actv_code_id_str).append("\t")
-						.append(actv_code_type_id_str).append("\t")
-						.append(parent_actv_code_id_str).append("\t")
-						.append(seq_num_str).append("\t")
-						.append(actv_code_name).append("\t")
-						.append(short_name).append("\n");
 	}
+	tsv.append(actv_code_id_str).append("\t")
+					.append(actv_code_type_id_str).append("\t")
+					.append(parent_actv_code_id_str).append("\t")
+					.append(seq_num_str).append("\t")
+					.append(actv_code_name).append("\t")
+					.append(short_name).append("\n");
 }

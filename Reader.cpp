@@ -71,5 +71,5 @@ void Reader::add(const std::string& table, const std::string *header, const std:
 	else if(table == "ACTVTYPE"){ actvtypes.add(Actvtype(header, record)); }
 	else if(table == "CALENDAR"){ calendars.add(Calendar(header, record)); }
 	else if(table == "CURRTYPE"){ currtypes.add(Currtype(header, record)); }
-	else if(table == "PROJWBS") { wbss.add(WBS(header, record)); }
+	else if(table == "PROJWBS") { wbss.add(Wbs(header, record)); }
 }

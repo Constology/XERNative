@@ -43,18 +43,17 @@ Calendar::Calendar(const std::string header[], const std::string params[]){
 		else if(header[i] == "default_flag"){ default_flag = params[i]; }
 		else if(header[i] == "last_chng_date"){ last_chng_date = params[i]; }
 		else if(header[i] == "proj_id"){ proj_id = params[i]; }
-
-		tsv.append(clndr_id_str).append("\t")
-						.append(day_hr_cnt_str).append("\t")
-						.append(week_hr_cnt_str).append("\t")
-						.append(month_hr_cnt_str).append("\t")
-						.append(year_hr_cnt_str).append("\t")
-						.append(base_clndr_id).append("\t")
-						.append(clndr_data).append("\t")
-						.append(clndr_name).append("\t")
-						.append(clndr_type).append("\t")
-						.append(default_flag).append("\t")
-						.append(last_chng_date).append("\t")
-						.append(proj_id).append("\n");
 	}
+	tsv.append(clndr_id_str).append("\t")
+					.append(day_hr_cnt_str).append("\t")
+					.append(week_hr_cnt_str).append("\t")
+					.append(month_hr_cnt_str).append("\t")
+					.append(year_hr_cnt_str).append("\t")
+					.append(base_clndr_id).append("\t")
+					.append(clndr_data).append("\t")
+					.append(clndr_name).append("\t")
+					.append(clndr_type).append("\t")
+					.append(default_flag).append("\t")
+					.append(last_chng_date).append("\t")
+					.append(proj_id).append("\n");
 }

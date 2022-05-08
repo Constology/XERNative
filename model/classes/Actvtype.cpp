@@ -34,13 +34,12 @@ Actvtype::Actvtype(const std::string header[], const std::string params[]){
 		else if(header[i] == "actv_code_name"){ actv_code_type = params[i]; }
 		else if(header[i] == "actv_code_type_scope"){ actv_code_type_scope = params[i]; }
 		else if(header[i] == "short_name"){ super_flag = params[i]; }
-
-		tsv.append(actv_code_type_id_str).append("\t")
-						.append(proj_id_str).append("\t")
-						.append(seq_num_str).append("\t")
-						.append(actv_short_len_str).append("\t")
-						.append(actv_code_type).append("\t")
-						.append(actv_code_type_scope).append("\t")
-						.append(super_flag).append("\n");
 	}
+	tsv.append(actv_code_type_id_str).append("\t")
+					.append(proj_id_str).append("\t")
+					.append(seq_num_str).append("\t")
+					.append(actv_short_len_str).append("\t")
+					.append(actv_code_type).append("\t")
+					.append(actv_code_type_scope).append("\t")
+					.append(super_flag).append("\n");
 }

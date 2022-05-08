@@ -10,8 +10,8 @@
 #include "model/Actvtypes.h"
 #include "model/Calendars.h"
 #include "model/Currtypes.h"
-#include "model/WBSs.h"
-#include "model/classes/wbs.h"
+#include "model/Wbss.h"
+#include "model/classes/Wbs.h"
 
 class Reader{
 public:
@@ -22,7 +22,7 @@ public:
 		Actvtypes actvtypes;
 		Calendars calendars;
 		Currtypes currtypes;
-		WBSs wbss;
+		Wbss wbss;
 
 private:
 

@@ -1,43 +1,43 @@
-#include "WBSs.h"
+#include "Wbss.h"
 
-void WBSs::add(const WBS& wbs){
+void Wbss::add(const Wbs& wbs){
     wbss.emplace_back(wbs);
 }
 
-WBS WBSs::findById(int id){
+Wbs Wbss::findById(int id){
     for(auto & wb: wbss){
         if(wb.wbs_id == id){
             return wb;
         }
     }
-    printf("WBS not found");
+    printf("Wbs not found");
     exit(EXIT_FAILURE);
 }
 
-WBS WBSs::getParent(int id){
-    WBS cur_wbs = findById(id);
+Wbs Wbss::getParent(int id){
+    Wbs cur_wbs = findById(id);
     int parent_id = cur_wbs.parent_wbs_id;
     return findById(parent_id);
 }
 
-std::vector<WBS> WBSs::getChilds(int id){
-    std::vector<WBS> toReturn;
+std::vector<Wbs> Wbss::getChildren(int id){
+    std::vector<Wbs> toReturn;
     for (auto &wb : wbss)
     {
         if(wb.parent_wbs_id == id){
             toReturn.push_back(wb);
         }
     }
-    if (toReturn.size() == 0){
-        printf("No Childs found");
+    if (toReturn.empty()){
+        printf("No Children found");
 
     }
     return toReturn;
 }
 
-std::vector<WBS> WBSs::getByProject(int id){
-    std::vector<WBS> toReturn;
-    for (auto wbs : wbss)
+std::vector<Wbs> Wbss::getByProject(int id){
+    std::vector<Wbs> toReturn;
+    for (auto & wbs : wbss)
     {
         if(wbs.proj_id == id){
             toReturn.push_back(wbs);

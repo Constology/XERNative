@@ -33,16 +33,15 @@ Currtype::Currtype(const std::string header[], const std::string params[]){
 		else if(header[i] == "group_digit_cnt"){ group_digit_cnt = params[i]; }
 		else if(header[i] == "neg_curr_fmt_type"){ neg_curr_fmt_type = params[i]; }
 		else if(header[i] == "pos_curr_fmt_type"){ pos_curr_fmt_type = params[i]; }
-
-		tsv.append(curr_id_str).append("\t")
-						.append(decimal_digit_cnt_str).append("\t")
-						.append(base_exch_rate_str).append("\t")
-						.append(curr_short_name).append("\t")
-						.append(curr_symbol).append("\t")
-						.append(decimal_symbol).append("\t")
-						.append(digit_group_symbol).append("\t")
-						.append(group_digit_cnt).append("\t")
-						.append(neg_curr_fmt_type).append("\t")
-						.append(pos_curr_fmt_type).append("\n");
 	}
+	tsv.append(curr_id_str).append("\t")
+		.append(decimal_digit_cnt_str).append("\t")
+		.append(base_exch_rate_str).append("\t")
+		.append(curr_short_name).append("\t")
+		.append(curr_symbol).append("\t")
+		.append(decimal_symbol).append("\t")
+		.append(digit_group_symbol).append("\t")
+		.append(group_digit_cnt).append("\t")
+		.append(neg_curr_fmt_type).append("\t")
+		.append(pos_curr_fmt_type).append("\n");
 }

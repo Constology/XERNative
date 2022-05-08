@@ -1,21 +1,21 @@
-#include "UDFs.h"
+#include "Udfs.h"
 
-void UDFs::add(const UDF& udf){
+void Udfs::add(const Udf& udf){
     udfs.emplace_back(udf);
 }
 
-UDF UDFs::findById(int id){
+Udf Udfs::findById(int id){
     for(auto & udf: udfs){
         if(udf.udf_code_id == id){
             return udf;
         }
     }
-    printf("UDF not found");
+    printf("Udf not found");
     exit(EXIT_FAILURE);
 }
 
-std::vector<UDF> UDFs::getByProject(int projId){
-    std::vector<UDF> toReturn;
+std::vector<Udf> Udfs::getByProject(int projId){
+    std::vector<Udf> toReturn;
     for (auto &udf : udfs)
     {
         if(udf.proj_id == projId){
