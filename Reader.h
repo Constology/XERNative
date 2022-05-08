@@ -19,6 +19,8 @@
 #include "model/classes/Role.h"
 #include "model/CurrTypes.h"
 #include "model/classes/CurrType.h"
+#include "model/classes/RCatType.h"
+#include "model/RCatTypes.h"
 
 class Reader{
 public:
@@ -32,6 +34,7 @@ public:
 		Calendars calendars;
 		Roles roles;
 		CurrTypes currencies;
+		RCatTypes rCatTypes;
 
 	private:
 		

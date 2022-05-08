@@ -85,4 +85,7 @@ void Reader::add(const std::string& table, const std::string *header, const std:
 	else if(table == "CURRTYPE"){
 		currencies.add(CurrType(header, record));
 	}
+	else if(table == "RCATTYPE"){
+		rCatTypes.add(RCatType(header, record));
+	}
 }
