@@ -1,7 +1,7 @@
 #include <cassert>
 #include "Reader.h"
 
-#define MAX_HEADER_LEN 70 //TODO: Count the real maximum (255 is not the real value)
+#define MAX_HEADER_LEN 255 //TODO: Count the real maximum (255 is not the real value)
 
 void Reader::split(std::string *strings, const std::string &str)
 {
