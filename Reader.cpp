@@ -79,4 +79,7 @@ void Reader::add(const std::string& table, const std::string *header, const std:
 	else if(table =="UDFTYPE"){
 		
 	}
+	else if(table =="ROLE"){
+		
+	}
 }

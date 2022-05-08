@@ -1,8 +1,6 @@
 #include <iostream>
 #include "Reader.h"
 
-
-
 using namespace std;
 
 int main(){
@@ -19,5 +17,9 @@ int main(){
     for (WBS wbs : reader.wbss.getByProject(368))
     {
         cout << wbs.get_tsv() << endl;
+    }
+    cout << "**************** CALENDAR *************************" << endl;
+    for(Calendar cal: reader.calendars.calendars){
+        cout << cal.get_tsv()<<endl;
     }
 }

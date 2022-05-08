@@ -15,6 +15,10 @@
 #include "model/classes/UDFValue.h"
 #include "model/UDFTypes.h"
 #include "model/classes/UDFType.h"
+#include "model/Roles.h"
+#include "model/classes/Role.h"
+#include "model/CurrTypes.h"
+#include "model/classes/CurrType.h"
 
 class Reader{
 public:
@@ -22,12 +26,15 @@ public:
 		WBSs wbss;
 		UDFValues udfs;
 		UDFTypes udftypes;
-
-	private:
 		Accounts accounts;
 		Actvcodes actvcodes;
 		Actvtypes actvtypes;
 		Calendars calendars;
+		Roles roles;
+		CurrTypes currencies;
+
+	private:
+		
 		
 
 		static void split(std::string *strings, const std::string &str);

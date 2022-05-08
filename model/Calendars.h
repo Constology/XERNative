@@ -14,9 +14,10 @@ public:
 		void add(const Calendar& account);
 
 		Calendar findById(int id);
+		std::vector<Calendar> calendars;
 
 private:
-		std::vector<Calendar> calendars;
+		
 };
 
 
