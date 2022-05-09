@@ -17,12 +17,9 @@ public:
 		std::string actv_code_type_scope;
 		std::string super_flag;
 
-		Actvtype(const std::string *header, const std::string *params);
-
-		std::string get_tsv();
-
-private:
 		std::string tsv;
+
+		Actvtype(const std::string *header, const std::string *params);
 };
 
 

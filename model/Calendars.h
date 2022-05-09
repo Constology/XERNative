@@ -1,5 +1,5 @@
 //
-// Created by sorat on 07/05/2022.
+// Created by Taraxtix on 07/05/2022.
 //
 
 #ifndef EXRPARSER_CALENDARS_H
@@ -15,6 +15,8 @@ public:
 
 		Calendar findById(int id);
 		std::vector<Calendar> getAll();
+
+		std::string get_tsv();
 
 private:
 		std::vector<Calendar> calendars;

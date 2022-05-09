@@ -66,15 +66,15 @@ int Reader::parse(const std::string& filename) {
 void Reader::add(const std::string& table, const std::string *header, const std::string *record){
 	assert(not(table.empty() || header == nullptr || record == nullptr));
 
-		   if(table == "ACCOUNT") { accounts.add( Account(header,   record)); }
+	if(table == "ACCOUNT") { accounts.add( Account(header,   record)); }
 	else if(table == "ACTVCODE"){ actvcodes.add(Actvcode(header, record)); }
 	else if(table == "ACTVTYPE"){ actvtypes.add(Actvtype(header, record)); }
 	else if(table == "CALENDAR"){ calendars.add(Calendar(header, record)); }
 	else if(table == "PROJWBS") {
-		wbss.add(WBS(header, record));
+		wbss.add(Wbs(header, record));
 	}
 	else if(table == "UDFVALUE") {
-		udfs.add(UDFValue(header, record));
+		udfs.add(Udf(header, record));
 	}
 	else if(table =="UDFTYPE"){
 		
@@ -83,7 +83,7 @@ void Reader::add(const std::string& table, const std::string *header, const std:
 		
 	}
 	else if(table == "CURRTYPE"){
-		currencies.add(CurrType(header, record));
+		currencies.add(Currtype(header, record));
 	}
 	else if(table == "RCATTYPE"){
 		rCatTypes.add(RCatType(header, record));

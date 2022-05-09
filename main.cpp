@@ -8,13 +8,13 @@ int main(){
     
     reader.parse("/home/hassan/programming/xerParser/sample.xer");
 
-    for (UDFValue udf :reader.udfs.getByProject(368) )
+    for (Udf udf :reader.udfs.getByProject(368) )
     {
         cout<<udf.get_tsv() <<std::endl;
     }
 
     cout << "*********** TEST WBS **********************" << endl;
-    for (WBS wbs : reader.wbss.getAll())
+    for (Wbs wbs : reader.wbss.getAll())
     {
         cout << wbs.get_tsv() << endl;
     }
@@ -24,7 +24,7 @@ int main(){
     }
 
     cout << "***************** CURRENCIES **********************" << endl;
-    for(CurrType curr: reader.currencies.getAll()){
+    for(Currtype curr: reader.currencies.getAll()){
         cout << "Currencies "<<curr.get_tsv() << endl;
     }
 }

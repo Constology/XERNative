@@ -17,6 +17,8 @@ public:
 		std::vector<Actvcode> getAll();
 
 
+		std::string get_tsv();
+
 private:
 		std::vector<Actvcode> actvcodes;
 };

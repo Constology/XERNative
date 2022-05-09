@@ -9,31 +9,31 @@
 #include "model/Actvcodes.h"
 #include "model/Actvtypes.h"
 #include "model/Calendars.h"
-#include "model/WBSs.h"
-#include "model/classes/wbs.h"
-#include "model/UDFValues.h"
-#include "model/classes/UDFValue.h"
+#include "model/Wbss.h"
+#include "model/classes/Wbs.h"
+#include "model/Udfs.h"
+#include "model/classes/Udf.h"
 #include "model/UDFTypes.h"
 #include "model/classes/UDFType.h"
 #include "model/Roles.h"
 #include "model/classes/Role.h"
-#include "model/CurrTypes.h"
-#include "model/classes/CurrType.h"
+#include "model/Currtypes.h"
+#include "model/classes/Currtype.h"
 #include "model/classes/RCatType.h"
 #include "model/RCatTypes.h"
 
 class Reader{
 public:
 		int parse(const std::string& filename);
-		WBSs wbss;
-		UDFValues udfs;
+		Wbss wbss;
+		Udfs udfs;
 		UDFTypes udftypes;
 		Accounts accounts;
 		Actvcodes actvcodes;
 		Actvtypes actvtypes;
 		Calendars calendars;
 		Roles roles;
-		CurrTypes currencies;
+		Currtypes currencies;
 		RCatTypes rCatTypes;
 
 	private:

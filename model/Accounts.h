@@ -17,6 +17,8 @@ public:
 		std::vector<Account> getAll();
 
 
+		std::string get_tsv();
+
 private:
 	std::vector<Account> accounts;
 };

@@ -22,12 +22,12 @@ public:
 		std::string last_chng_date;
 		std::string proj_id;
 
-		Calendar(const std::string *header, const std::string *params);
-
 		std::string get_tsv();
 
-private:
+		Calendar(const std::string *header, const std::string *params);
+	private:
 		std::string tsv;
+
 };
 
 

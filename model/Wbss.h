@@ -1,0 +1,23 @@
+#ifndef XERPARSER_WBSS1_H
+#define XERPARSER_WBSS1_H
+
+#include <vector>
+
+#include "classes/Wbs.h"
+
+class Wbss{
+public:
+    void add(const Wbs& wbs);
+
+    Wbs findById(int id);
+    std::vector<Wbs> getByProject(int projectId);
+    std::vector<Wbs> getChildren(int curid);
+    Wbs getParent(int id);
+    std::vector<Wbs> getAll();
+
+private:
+    std::vector<Wbs> wbss;
+};
+
+
+#endif //XERPARSER_WBSS1_H

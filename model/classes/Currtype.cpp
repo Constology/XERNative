@@ -1,10 +1,11 @@
-#include "CurrType.h"
-#include <iostream>
+//
+// Created by Taraxtix on 07/05/2022.
+//
 
-using namespace std;
+#include "Currtype.h"
 
-CurrType::CurrType(const std::string header[], const std::string params[]){
-    for (int i = 0; i < header->length(); i++){
+Currtype::Currtype(const std::string header[], const std::string params[]){
+	for (int i = 0; i < header->length(); i++){
         if(header[i].empty()) break;
         if (header[i] == "curr_id"){
             if(!params[i].empty()){
@@ -54,12 +55,7 @@ CurrType::CurrType(const std::string header[], const std::string params[]){
     } 
 }
 
-void CurrType::printCurrency(){
-    cout << curr_id << "\t" << decimal_digit_cnt << "\t" 
-        << curr_symbol << "\t" <<curr_short_name << endl;
-}
-
-std::string CurrType::get_tsv() {
+std::string Currtype::get_tsv() {
     tsv = "";
     tsv.append(std::to_string(curr_id)).append("\t")
         .append(std::to_string(decimal_digit_cnt)).append("\t")

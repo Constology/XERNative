@@ -16,12 +16,9 @@ public:
 		std::string actv_code_name;
 		std::string short_name;
 
-		Actvcode(const std::string *header, const std::string *params);
-
-		std::string get_tsv();
-
-private:
 		std::string tsv;
+
+		Actvcode(const std::string *header, const std::string *params);
 };
 
 

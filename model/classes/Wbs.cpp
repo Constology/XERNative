@@ -1,10 +1,9 @@
-#include "wbs.h"
-#include <string>
+#include "Wbs.h"
 
 
 // TODO: Convert string types to dates anticip_start_date & anticip_end_date
-WBS::WBS(const std::string header[], const std::string params[]){
-    std::string tsv = "";
+Wbs::Wbs(const std::string header[], const std::string params[]){
+    tsv = "";
     for (int i = 0; i < header->length(); i++){
         if(header[i].empty()) break;
         if (header[i] == "wbs_id"){
@@ -73,12 +72,10 @@ WBS::WBS(const std::string header[], const std::string params[]){
             if(!params[i].empty()){
                 indep_remain_work_qty = stod(params[i]);
             }
-        } else if (header[i] == anticip_start_date){
-            if(!params[i].empty()){
-                anticip_start_date = params[i];
-            }
+        } else if (header[i] == "anticip_start_date"){
+            anticip_start_date.parse(params[i]);
         } else if (header[i] == "anticip_end_date"){
-            anticip_end_date = params[i];
+            anticip_end_date.parse(params[i]);
         } else if (header[i] == "ev_compute_type") {
             ev_compute_type = params[i];
         } else if (header[i] == "ev_etc_compute_type"){
@@ -94,7 +91,7 @@ WBS::WBS(const std::string header[], const std::string params[]){
     
 }
 
-std::string WBS::get_tsv(){
+std::string Wbs::get_tsv(){
     tsv = "";
     tsv.append(std::to_string(wbs_id)).append("\t")
         .append(std::to_string(proj_id)).append("\t")
@@ -115,8 +112,8 @@ std::string WBS::get_tsv(){
         .append(std::to_string(ann_dscnt_rate_pct)).append("\t")
         .append(std::to_string(dscnt_period_type)).append("\t")
         .append(std::to_string(indep_remain_work_qty)).append("\t")
-        .append(anticip_start_date).append("\t")
-        .append(anticip_end_date).append("\t")
+        .append(anticip_start_date.to_string()).append("\t")
+        .append(anticip_end_date.to_string()).append("\t")
         .append(ev_compute_type).append("\t")
         .append(ev_etc_compute_type).append("\t")
         .append(guid).append("\t")
