@@ -29,14 +29,13 @@ public:
     double ann_dscnt_rate_pct;
     int dscnt_period_type;
     double indep_remain_work_qty;
-    Date anticip_start_date{};
-    Date anticip_end_date{};
     std::string ev_compute_type;
     std::string ev_etc_compute_type;
     std::string guid;
     std::string tmpl_guid;
     std::string plan_open_state;
-
+    Date anticip_start_date;
+    Date anticip_end_date;
 
     Wbs(const std::string *header, const std::string *params);
     std::string get_tsv();

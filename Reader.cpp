@@ -70,6 +70,22 @@ void Reader::add(const std::string& table, const std::string *header, const std:
 	else if(table == "ACTVCODE"){ actvcodes.add(Actvcode(header, record)); }
 	else if(table == "ACTVTYPE"){ actvtypes.add(Actvtype(header, record)); }
 	else if(table == "CALENDAR"){ calendars.add(Calendar(header, record)); }
-	else if(table == "CURRTYPE"){ currtypes.add(Currtype(header, record)); }
-	else if(table == "PROJWBS") { wbss.add(Wbs(header, record)); }
+	else if(table == "PROJWBS") {
+		wbss.add(Wbs(header, record));
+	}
+	else if(table == "UDFVALUE") {
+		udfs.add(Udf(header, record));
+	}
+	else if(table =="UDFTYPE"){
+		
+	}
+	else if(table =="ROLE"){
+		
+	}
+	else if(table == "CURRTYPE"){
+		currencies.add(Currtype(header, record));
+	}
+	else if(table == "RCATTYPE"){
+		rCatTypes.add(RCatType(header, record));
+	}
 }

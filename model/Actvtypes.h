@@ -14,8 +14,11 @@ public:
 		void add(const Actvtype& account);
 
 		Actvtype findById(int id);
+		std::vector<Actvtype> getAll();
+
 
 		std::string get_tsv();
+
 
 private:
 		std::vector<Actvtype> actvtypes;

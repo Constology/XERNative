@@ -16,6 +16,10 @@ Account Accounts::findById(int id){
 	exit(EXIT_FAILURE);
 }
 
+std::vector<Account> Accounts::getAll(){
+	return accounts;
+}
+
 std::string Accounts::get_tsv(){
 	std::string tsv;
 	tsv.append("%T\tACCOUNT\n");

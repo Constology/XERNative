@@ -16,6 +16,10 @@ Actvtype Actvtypes::findById(int id){
 	exit(EXIT_FAILURE);
 }
 
+std::vector<Actvtype> Actvtypes::getAll(){
+	return actvtypes;
+}
+
 std::string Actvtypes::get_tsv(){
 	std::string tsv;
 	tsv.append("%T\tACTVTYPE\n");

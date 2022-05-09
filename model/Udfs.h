@@ -1,5 +1,5 @@
-#ifndef XERPARSER_UDFS_H
-#define XERPARSER_UDFS_H
+#ifndef XERPARSER_UDFS1_H
+#define XERPARSER_UDFS1_H
 
 #include <vector>
 #include<string>
@@ -10,6 +10,7 @@ class Udfs{
         void add(const Udf &udf);
         Udf findById(int id);
         std::vector<Udf> getByProject(int projId);
+        std::vector<Udf> getAll();
 
     private:
         std::vector<Udf> udfs;

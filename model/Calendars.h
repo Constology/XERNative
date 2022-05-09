@@ -14,11 +14,15 @@ public:
 		void add(const Calendar& account);
 
 		Calendar findById(int id);
+		std::vector<Calendar> getAll();
 
 		std::string get_tsv();
 
+
 private:
 		std::vector<Calendar> calendars;
+
+		
 };
 
 

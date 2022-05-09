@@ -16,6 +16,10 @@ Actvcode Actvcodes::findById(int id){
 	exit(EXIT_FAILURE);
 }
 
+std::vector<Actvcode> Actvcodes::getAll(){
+	return actvcodes;
+}
+
 std::string Actvcodes::get_tsv(){
 	std::string tsv;
 	tsv.append("%T\tACTVCODE\n");

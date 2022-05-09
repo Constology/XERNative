@@ -14,6 +14,8 @@ public:
 		void add(const Actvcode& account);
 
 		Actvcode findById(int id);
+		std::vector<Actvcode> getAll();
+
 
 		std::string get_tsv();
 

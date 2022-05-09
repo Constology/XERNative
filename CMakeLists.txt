@@ -10,7 +10,8 @@ add_library(models
         model/Calendars.cpp
         model/Currtypes.cpp
         model/Udfs.cpp
-        model/Wbss.cpp)
+        model/Wbss.cpp
+        model/RCatTypes.cpp)
 
 add_library(classes
         model/classes/Account.cpp
@@ -19,9 +20,11 @@ add_library(classes
         model/classes/Calendar.cpp
         model/classes/Currtype.cpp
         model/classes/Udf.cpp
-        model/classes/Wbs.cpp)
+        model/classes/Wbs.cpp
+        model/classes/RCatType.cpp
+        Date/Date.cpp)
 
-add_library(xerParser Reader.cpp Date/Date.cpp)
+add_library(xerParser Reader.cpp )
 
 add_executable(main main.cpp)
 target_link_libraries(main xerParser models classes)

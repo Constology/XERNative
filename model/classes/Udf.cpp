@@ -4,19 +4,29 @@ Udf::Udf(const std::string header[], const std::string params[]){
 	tsv = "";
 	for (int i = 0; i < header->length(); i++){
 		if(header[i] == "udf_code_id"){
-			udf_code_id = stoi(params[i]);
+			if(!params[i].empty()){
+				udf_code_id = stoi(params[i]);
+			}
 		} else if (header[i] == "fk_id"){
-			fk_id = stoi(params[i]);
+			if(!params[i].empty()){
+				fk_id = stoi(params[i]);
+			}
 		} else if (header[i] == "proj_id"){
-			proj_id = stoi(params[i]);
+			if(!params[i].empty()){
+				proj_id = stoi(params[i]);
+			}
 		} else if (header[i] == "udf_date") {
 			udf_date = params[i];
 		} else if (header[i] == "udf_number"){
-			udf_number = stod(params[i]);
+			if(!params[i].empty()){
+				udf_number = stod(params[i]);
+			}
 		} else if (header[i] == "udf_text"){
 			udf_text = params[i];
 		} else if (header[i] == "udf_code_id"){
-			udf_code_id = stoi(params[i]);
+			if(!params[i].empty()){
+				udf_code_id = stoi(params[i]);
+			}
 		}
 	}
 	tsv.append(std::to_string(udf_code_id)).append("\t")

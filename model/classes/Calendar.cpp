@@ -17,24 +17,35 @@ Calendar::Calendar(const std::string header[], const std::string params[]){
 		if(header[i].empty()) break;
 
 		if(header[i] == "clndr_id"){
-			clndr_id = stoi(params[i]);
-			clndr_id_str = params[i];
+			if(!params[i].empty()){
+				clndr_id = stoi(params[i]);
+				clndr_id_str = params[i];
+			}
 		}
 		else if(header[i] == "day_hr_cnt"){
-			day_hr_cnt = stof(params[i]);
-			day_hr_cnt_str = params[i];
+			if(!params[i].empty()){
+
+				day_hr_cnt = stof(params[i]);
+				day_hr_cnt_str = params[i];
+			}
 		}
 		else if(header[i] == "week_hr_cnt"){
-			week_hr_cnt = stof(params[i]);
-			week_hr_cnt_str = params[i];
+			if(!params[i].empty()){
+				week_hr_cnt = stof(params[i]);
+				week_hr_cnt_str = params[i];
+			}
 		}
 		else if(header[i] == "month_hr_cnt"){
-			month_hr_cnt = stof(params[i]);
-			month_hr_cnt_str = params[i];
+			if(!params[i].empty()){
+				month_hr_cnt = stof(params[i]);
+				month_hr_cnt_str = params[i];
+			}
 		}
 		else if(header[i] == "year_hr_cnt"){
-			year_hr_cnt = stof(params[i]);
-			year_hr_cnt_str = params[i];
+			if(!params[i].empty()){
+				year_hr_cnt = stof(params[i]);
+				year_hr_cnt_str = params[i];
+			}
 		}
 		else if(header[i] == "base_clndr_id"){ base_clndr_id = params[i]; }
 		else if(header[i] == "clndr_data"){ clndr_data = params[i]; }
@@ -56,4 +67,22 @@ Calendar::Calendar(const std::string header[], const std::string params[]){
 					.append(default_flag).append("\t")
 					.append(last_chng_date).append("\t")
 					.append(proj_id).append("\n");
+}
+
+std::string Calendar::get_tsv(){
+	tsv = "";
+	tsv.append(std::to_string(clndr_id)).append("\t")
+					.append(std::to_string(day_hr_cnt)).append("\t")
+					.append(std::to_string(week_hr_cnt)).append("\t")
+					.append(std::to_string(month_hr_cnt)).append("\t")
+					.append(std::to_string(year_hr_cnt)).append("\t")
+					.append(base_clndr_id).append("\t")
+					.append(clndr_data).append("\t")
+					.append(clndr_name).append("\t")
+					.append(clndr_type).append("\t")
+					.append(default_flag).append("\t")
+					.append(last_chng_date).append("\t")
+					.append(proj_id).append("\n");
+	return tsv;
+
 }

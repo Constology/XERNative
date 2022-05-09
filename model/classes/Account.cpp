@@ -15,16 +15,22 @@ Account::Account(const std::string header[], const std::string params[]){
 		if(header[i].empty()) break;
 
 		if(header[i] == "acct_id"){
-			acct_id = stoi(params[i]);
-			acct_id_str = params[i];
+			if(!params[i].empty()){
+				acct_id = stoi(params[i]);
+				acct_id_str = params[i];
+			}
 		}
 		else if(header[i] == "actv_code_type_id"){
-			acct_seq_num = stoi(params[i]);
-			acct_seq_num_str = params[i];
+			if(!params[i].empty()){
+				acct_seq_num = stoi(params[i]);
+				acct_seq_num_str = params[i];
+			}
 		}
 		else if(header[i] == "parent_acct_id"){
-			parent_acct_id = stoi(params[i]);
-			parent_acct_id_str = params[i];
+			if(!params[i].empty()){
+				parent_acct_id = stoi(params[i]);
+				parent_acct_id_str = params[i];
+			}
 		}
 		else if(header[i] == "acct_name"){ acct_name = params[i]; }
 		else if(header[i] == "acct_descr"){ acct_descr = params[i]; }

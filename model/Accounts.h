@@ -14,8 +14,11 @@ public:
 		void add(const Account& account);
 
 		Account findById(int id);
+		std::vector<Account> getAll();
+
 
 		std::string get_tsv();
+
 
 private:
 	std::vector<Account> accounts;

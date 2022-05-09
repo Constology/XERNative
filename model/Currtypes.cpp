@@ -25,4 +25,9 @@ std::string Currtypes::get_tsv(){
 	for(auto & currtype : currtypes){
 		tsv.append(currtype.tsv);
 	}
+	return tsv;
+}
+
+std::vector<Currtype> Currtypes::getAll(){
+    return currtypes;
 }

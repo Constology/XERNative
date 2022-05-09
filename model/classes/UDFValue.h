@@ -1,10 +1,10 @@
-#ifndef XERPARSER_UDF_H
-#define XERPARSER_UDF_H
+#if !defined(XERPARSER_UDFVALUE_H)
+#define XERPARSER_UDFVALUE_H
 #include <string>
 #include <vector>
 
 
-class Udf{
+class UDFValue{
     public:
         int udf_type_id;
         int fk_id;
@@ -14,7 +14,7 @@ class Udf{
         std::string udf_text;
         int udf_code_id;
         
-        Udf(const std::string *header, const std::string *params);
+        UDFValue(const std::string *header, const std::string *params);
         std::string get_tsv();
     private:
         std::string tsv;

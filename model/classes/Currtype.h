@@ -18,9 +18,10 @@ public:
 		std::string curr_type;
 		std::string decimal_symbol;
 		std::string digit_group_symbol;
-		std::string group_digit_cnt;
+		int group_digit_cnt;
 		std::string neg_curr_fmt_type;
 		std::string pos_curr_fmt_type;
+		std::string get_tsv();
 
 		std::string tsv;
 

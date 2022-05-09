@@ -2,7 +2,22 @@
 #include <ctime>
 #include<iostream>
 
+Date::Date(){
+    
+}
+
 Date::Date(std::string strDate){
+    struct tm timeinfo;
+    if (!strptime(strDate.c_str(), "%Y-%m-%d %H:%M", &timeinfo))
+        std::cout << "Error."<<std::endl;
+    day = timeinfo.tm_mday;
+    month = timeinfo.tm_mon + 1;
+    year = timeinfo.tm_year + 1900;
+    hour = timeinfo.tm_hour;
+    min = timeinfo.tm_min;
+}
+
+void Date::parse(std::string strDate){
     struct tm timeinfo;
     if (!strptime(strDate.c_str(), "%Y-%m-%d %H:%M", &timeinfo))
         std::cout << "Error."<<std::endl;
