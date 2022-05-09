@@ -11,6 +11,7 @@ class RoleRates{
         std::vector<RoleRate> getAll();
         RoleRate findById(int id);
         RoleRate findByRole(int id);
+				std::string get_tsv() const;
 
     private:
         std::vector<RoleRate> roleRates;

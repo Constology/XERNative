@@ -20,7 +20,7 @@ std::vector<Account> Accounts::getAll(){
 	return accounts;
 }
 
-std::string Accounts::get_tsv(){
+std::string Accounts::get_tsv() const{
 	std::string tsv;
 	tsv.append("%T\tACCOUNT\n");
 	tsv.append("%F\tacct_id\tacct_seq_num\tparent_acct_id\tacct_name\tacct_descr\tacct_short_name\n");

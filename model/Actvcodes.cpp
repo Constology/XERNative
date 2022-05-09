@@ -20,7 +20,7 @@ std::vector<Actvcode> Actvcodes::getAll(){
 	return actvcodes;
 }
 
-std::string Actvcodes::get_tsv(){
+std::string Actvcodes::get_tsv() const{
 	std::string tsv;
 	tsv.append("%T\tACTVCODE\n");
 	tsv.append("%F\tactv_code_id\tactv_code_type_id\tparent_actv_code_id\tseq_num\tactv_code_name"

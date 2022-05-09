@@ -10,6 +10,7 @@ class RCatValues{
         void add(const RCatValue &rCatValue);
         std::vector<RCatValue> getAll();
         RCatValue findById(int id);
+				std::string get_tsv() const;
 
     private:
         std::vector<RCatValue> rCatValues;

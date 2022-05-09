@@ -36,4 +36,5 @@ std::string RCatValue::get_tsv(){
         .append(rsrc_catg_name).append("\t")
         .append(std::to_string(parent_rsrc_catg_id)).append("\t")
         .append(std::to_string(seq_num)).append("\n");
+		return tsv;
 }

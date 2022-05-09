@@ -13,6 +13,7 @@ class Roles{
         Role getParent(Role &role);
         std::vector<Role> getByProject(int projId);
         std::vector<Role> getAll();
+				std::string get_tsv() const;
 
     private:
         std::vector<Role> roles;
