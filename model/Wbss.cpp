@@ -20,7 +20,6 @@ Wbs Wbss::getParent(int id){
     return findById(parent_id);
 }
 
-
 std::vector<Wbs> Wbss::getChildren(int id){
     std::vector<Wbs> toReturn;
     for (auto &wb : wbss)

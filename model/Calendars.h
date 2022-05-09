@@ -18,6 +18,8 @@ public:
 
 		std::string get_tsv();
 
+		std::string get_tsv();
+
 private:
 		std::vector<Calendar> calendars;
 
