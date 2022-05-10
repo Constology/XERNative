@@ -78,4 +78,6 @@ void Reader::add(const std::string& table, const std::string *header, const std:
 	else if (table == "RCATTYPE"){ rCatTypes.add(RCatType(header, record)); }
 	else if (table == "RCATVAL"){ rCatValues.add(RCatValue(header, record)); }
 	else if (table == "ROLERATE"){ roleRates.add(RoleRate(header, record)); }
+	else if (table == "TASKRSRC"){ taskRsrcs.add(TaskRsrc(header, record)); }
+	else if (table == "OBS"){ obss.add(Obs(header, record)); }
 }

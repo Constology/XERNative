@@ -17,6 +17,8 @@
 #include "model/RCatTypes.h"
 #include "model/RCatValues.h"
 #include "model/RoleRates.h"
+#include "model/TaskRsrcs.h"
+#include "model/Obss.h"
 
 class Reader{
 public:
@@ -33,6 +35,9 @@ public:
 		RCatTypes rCatTypes;
 		RCatValues rCatValues;
 		RoleRates roleRates;
+		TaskRsrcs taskRsrcs;
+		Obss obss;
+
 
 	private:
 		static void split(std::string *strings, const std::string &str);

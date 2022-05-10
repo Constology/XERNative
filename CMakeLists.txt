@@ -13,7 +13,9 @@ add_library(models
         model/Wbss.cpp
         model/RCatTypes.cpp
         model/RCatValues.cpp
-        model/RoleRates.cpp)
+        model/RoleRates.cpp
+        model/TaskRsrcs.cpp
+        model/Obss.cpp)
 
 add_library(classes
         model/classes/Account.cpp
@@ -25,7 +27,9 @@ add_library(classes
         model/classes/Wbs.cpp
         model/classes/RCatType.cpp
         model/classes/RCatValue.cpp
-        model/classes/RoleRate.cpp)
+        model/classes/RoleRate.cpp
+        model/classes/TaskRsrc.cpp
+        model/classes/Obs.cpp)
 
 add_library(xerParser Reader.cpp Writer.cpp Date/Date.cpp)
 
