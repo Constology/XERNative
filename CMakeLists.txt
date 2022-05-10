@@ -11,7 +11,11 @@ add_library(models
         model/Currtypes.cpp
         model/Udfs.cpp
         model/Wbss.cpp
-        model/RCatTypes.cpp)
+        model/RCatTypes.cpp
+        model/RCatValues.cpp
+        model/RoleRates.cpp
+        model/TaskRsrcs.cpp
+        model/Obss.cpp)
 
 add_library(classes
         model/classes/Account.cpp
@@ -22,9 +26,12 @@ add_library(classes
         model/classes/Udf.cpp
         model/classes/Wbs.cpp
         model/classes/RCatType.cpp
-        Date/Date.cpp)
+        model/classes/RCatValue.cpp
+        model/classes/RoleRate.cpp
+        model/classes/TaskRsrc.cpp
+        model/classes/Obs.cpp)
 
-add_library(xerParser Reader.cpp )
+add_library(xerParser Reader.cpp Writer.cpp Date/Date.cpp)
 
 add_executable(main main.cpp)
 target_link_libraries(main xerParser models classes)

@@ -14,6 +14,7 @@ public:
     std::vector<Wbs> getChildren(int curid);
     Wbs getParent(int id);
     std::vector<Wbs> getAll();
+		std::string get_tsv() const;
 
 private:
     std::vector<Wbs> wbss;

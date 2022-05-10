@@ -16,7 +16,7 @@ Currtype Currtypes::findById(int id){
 	exit(EXIT_FAILURE);
 }
 
-std::string Currtypes::get_tsv(){
+std::string Currtypes::get_tsv() const{
 	std::string tsv;
 	tsv.append("%T\tCURRTYPE\n");
 	tsv.append("%F\tcurr_id\tdecimal_digit_cnt\tbase_exch_rate\tcurr_short_name\tcurr_symbol"

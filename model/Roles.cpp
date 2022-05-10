@@ -28,3 +28,14 @@ Role Roles::getParent(Role &role){
 std::vector<Role> Roles::getAll(){
     return roles;
 }
+
+std::string Roles::get_tsv() const{
+	std::string tsv;
+	tsv.append("%T\tROLE\n");
+	tsv.append("%F\trole_id\tparent_role_id\tseq_num\trole_name\trole_short_name\tpobs_id"
+						 "\tdef_cost_qty_link_flag\tcost_qty_type\trole_descr\tlast_checksum\n");
+	for(auto role : roles){
+		tsv.append(role.get_tsv());
+	}
+	return tsv;
+}

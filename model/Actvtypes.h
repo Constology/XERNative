@@ -17,7 +17,7 @@ public:
 		std::vector<Actvtype> getAll();
 
 
-		std::string get_tsv();
+		std::string get_tsv() const;
 
 
 private:

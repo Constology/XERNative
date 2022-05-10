@@ -17,3 +17,14 @@ RCatValue RCatValues::findById(int id){
     printf("Could not find Resource Category");
     exit(EXIT_FAILURE);
 }
+
+std::string RCatValues::get_tsv() const{
+	std::string tsv;
+	tsv.append("%T\tRCATVAL\n");
+	tsv.append("%F\trsrc_catg_id\trsrc_catg_type_id\trsrc_catg_short_name\trsrc_catg_name\t"
+						 "parent_rsrc_catg_id\tseq_num\n");
+	for(auto rCatValue : rCatValues){
+		tsv.append(rCatValue.get_tsv());
+	}
+	return tsv;
+}

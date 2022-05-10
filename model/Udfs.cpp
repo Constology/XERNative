@@ -28,3 +28,13 @@ std::vector<Udf> Udfs::getByProject(int projId){
 std::vector<Udf> Udfs::getAll(){
     return udfs;
 }
+
+std::string Udfs::get_tsv() const{
+	std::string tsv;
+	tsv.append("%T\tUDFVALUE\n");
+	tsv.append("%F\tudf_code_id\tfk_id\tproj_id\tudf_date\tudf_number\tudf_text\tudf_code_id\n");
+	for(auto udf : udfs){
+		tsv.append(udf.get_tsv());
+	}
+	return tsv;
+}

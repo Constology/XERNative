@@ -18,3 +18,14 @@ UDFType UDFTypes::findById(int id){
 std::vector<UDFType> UDFTypes::getAll(){
     return udftypes;
 }
+
+std::string UDFTypes::get_tsv() const{
+	std::string tsv;
+	tsv.append("%T\tUDFTYPE\n");
+	tsv.append("%F\tudf_type_id\ttable_name\tudf_type_name\tudf_type_label\tlogical_data_type\t"
+						 "super_flag\tindicator_expression\tsummary_indicator_expression\n");
+	for(auto udftype : udftypes){
+		tsv.append(udftype.get_tsv());
+	}
+	return tsv;
+}

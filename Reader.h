@@ -10,17 +10,15 @@
 #include "model/Actvtypes.h"
 #include "model/Calendars.h"
 #include "model/Wbss.h"
-#include "model/classes/Wbs.h"
 #include "model/Udfs.h"
-#include "model/classes/Udf.h"
 #include "model/UDFTypes.h"
-#include "model/classes/UDFType.h"
 #include "model/Roles.h"
-#include "model/classes/Role.h"
 #include "model/Currtypes.h"
-#include "model/classes/Currtype.h"
-#include "model/classes/RCatType.h"
 #include "model/RCatTypes.h"
+#include "model/RCatValues.h"
+#include "model/RoleRates.h"
+#include "model/TaskRsrcs.h"
+#include "model/Obss.h"
 
 class Reader{
 public:
@@ -35,11 +33,13 @@ public:
 		Roles roles;
 		Currtypes currencies;
 		RCatTypes rCatTypes;
+		RCatValues rCatValues;
+		RoleRates roleRates;
+		TaskRsrcs taskRsrcs;
+		Obss obss;
+
 
 	private:
-		
-		
-
 		static void split(std::string *strings, const std::string &str);
 
 		void add(const std::string& table, const std::string *header, const std::string *record);

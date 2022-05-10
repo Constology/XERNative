@@ -15,7 +15,7 @@ public:
 
 		Currtype findById(int id);
 		std::vector<Currtype> getAll();
-		std::string get_tsv();
+		std::string get_tsv() const;
 
 	private:
 		std::vector<Currtype> currtypes;
