@@ -19,6 +19,7 @@
 #include "model/RoleRates.h"
 #include "model/TaskRsrcs.h"
 #include "model/Obss.h"
+#include "model/NonWorks.h"
 
 class Reader{
 public:
@@ -37,6 +38,7 @@ public:
 		RoleRates roleRates;
 		TaskRsrcs taskRsrcs;
 		Obss obss;
+		NonWorks nonWorks;
 
 
 	private:
