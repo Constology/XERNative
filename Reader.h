@@ -21,6 +21,7 @@
 #include "model/Obss.h"
 #include "model/NonWorks.h"
 #include "model/Fintmpls.h"
+#include "model/Pcattypes.h"
 
 class Reader{
 public:
@@ -41,6 +42,7 @@ public:
 		Obss obss;
 		NonWorks nonWorks;
 		Fintmpls fintmpls;
+		Pcattypes pcattypes;
 
 	private:
 		static void split(std::string *strings, const std::string &str);

@@ -82,4 +82,5 @@ void Reader::add(const std::string& table, const std::string *header, const std:
 	else if (table == "OBS"){ obss.add(Obs(header, record)); }
 	else if (table == "NONWORK"){ nonWorks.add(NonWork(header, record)); }
 	else if (table == "FINTMPL"){ fintmpls.add(Fintmpl(header, record)); }
+	else if (table == "PCATTYPE"){ pcattypes.add(Pcattype(header, record)); }
 }
