@@ -91,4 +91,5 @@ void Reader::add(const std::string& table, const std::string *header, const std:
 	else if (table == "RSRCRCAT"){ rsrcrcats.add(Rsrcrcat(header, record)); }
 	else if (table == "RSRCCURVDATA"){ rsrccurvdatas.add(Rsrccurvdata(header, record)); }
 	else if (table == "RSRCRATE"){ rsrcrates.add(Rsrcrate(header, record)); }
+	else if (table == "SCHEDOPTION"){ schedoptions.add(Schedoption(header, record)); }
 }
