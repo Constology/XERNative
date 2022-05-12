@@ -17,7 +17,9 @@ add_library(models
         model/TaskRsrcs.cpp
         model/Obss.cpp
         model/NonWorks.cpp
-        model/Fintmpls.cpp model/Pcattypes.cpp model/Pcattypes.h)
+        model/Fintmpls.cpp
+        model/Pcattypes.cpp
+        model/Pcatvals.cpp)
 
 add_library(classes
         model/classes/Account.cpp
@@ -33,7 +35,9 @@ add_library(classes
         model/classes/TaskRsrc.cpp
         model/classes/Obs.cpp
         model/classes/NonWork.cpp
-        model/classes/Fintmpl.cpp model/classes/Pcattype.cpp model/classes/Pcattype.h)
+        model/classes/Fintmpl.cpp
+        model/classes/Pcattype.cpp
+        model/classes/Pcatval.cpp)
 
 add_library(xerParser Reader.cpp Writer.cpp Date/Date.cpp)
 

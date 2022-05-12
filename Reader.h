@@ -22,6 +22,7 @@
 #include "model/NonWorks.h"
 #include "model/Fintmpls.h"
 #include "model/Pcattypes.h"
+#include "model/Pcatvals.h"
 
 class Reader{
 public:
@@ -43,6 +44,7 @@ public:
 		NonWorks nonWorks;
 		Fintmpls fintmpls;
 		Pcattypes pcattypes;
+		Pcatvals pcatvals;
 
 	private:
 		static void split(std::string *strings, const std::string &str);
