@@ -7,20 +7,69 @@
 TaskRsrc::TaskRsrc(const std::string header[], const std::string params[]){
 	tsv = "";
 	for(uint i = 0; i < header->length(); i++){
-		if(header[i] == "taskrsrc_id"){ taskrsrc_id = stoi(params[i]); }
-		else if(header[i] == "task_id"){ task_id = stoi(params[i]); }
-		else if(header[i] == "proj_id"){ proj_id = params[i]; }
+		if(header[i] == "taskrsrc_id"){ 
+			if(!params[i].empty()){
+			taskrsrc_id = std::stoi(params[i]); 
+			}
+		}
+		else if(header[i] == "task_id"){ 
+			if(header[i] == "taskrsrc_id"){
+				task_id = std::stoi(params[i]); 
+				}
+		}
+		else if(header[i] == "proj_id"){
+			if(!params[i].empty()){ 
+			proj_id = std::stoi(params[i]); 
+			}
+		}
 		else if(header[i] == "cost_qty_link_flag"){ cost_qty_link_flag = params[i]; }
-		else if(header[i] == "role_id"){ role_id = params[i]; }
-		else if(header[i] == "acct_id"){ acct_id = params[i]; }
-		else if(header[i] == "rsrc_id"){ rsrc_id = stoi(params[i]); }
-		else if(header[i] == "pobs_id"){ pobs_id = params[i]; }
+		else if(header[i] == "role_id"){ 
+			if(!params[i].empty()){
+			role_id = std::stoi(params[i]); 
+			}
+		}
+		else if(header[i] == "acct_id"){ 
+			if(!params[i].empty()){
+				acct_id = std::stoi(params[i]); 
+			}
+		}
+		else if(header[i] == "rsrc_id"){ 
+			if(!params[i].empty()){
+				rsrc_id = std::stoi(params[i]); 
+			}
+		}
+		else if(header[i] == "pobs_id"){ 
+			if(!params[i].empty()){
+				pobs_id = std::stoi(params[i]); 
+				}
+			}
 		else if(header[i] == "skill_level"){ skill_level = params[i]; }
-		else if(header[i] == "remain_qty"){ remain_qty = stof(params[i]); }
-		else if(header[i] == "target_qty"){ target_qty = stof(params[i]); }
-		else if(header[i] == "remain_qty_per_hour"){ remain_qty_per_hour = stof(params[i]); }
-		else if(header[i] == "target_lag_drtn_hr_cnt"){ target_lag_drtn_hr_cnt = stof(params[i]); }
-		else if(header[i] == "target_qty_per_hour"){ target_qty_per_hour = stof(params[i]); }
+		else if(header[i] == "remain_qty"){ 
+			if(!params[i].empty()){
+				if(!params[i].empty()){
+					remain_qty = stof(params[i]);
+				} 
+			}
+		else if(header[i] == "target_qty"){ 
+			if(!params[i].empty()){
+				target_qty = stof(params[i]); 
+				}
+		}
+		else if(header[i] == "remain_qty_per_hour"){ 
+			if(!params[i].empty()){
+				remain_qty_per_hour = stof(params[i]); 
+				}
+		}
+		else if(header[i] == "target_lag_drtn_hr_cnt"){ 
+			if(!params[i].empty()){
+				target_lag_drtn_hr_cnt = stof(params[i]); 
+				}
+		}
+		else if(header[i] == "target_qty_per_hour"){ 
+			if(!params[i].empty()){
+				target_qty_per_hour = stof(params[i]); 
+			}
+		}
 		else if(header[i] == "act_ot_qty"){ act_ot_qty = params[i]; }
 		else if(header[i] == "act_reg_qty"){ act_reg_qty = params[i]; }
 		else if(header[i] == "relag_drtn_hr_cnt"){ relag_drtn_hr_cnt = params[i]; }
@@ -56,14 +105,15 @@ TaskRsrc::TaskRsrc(const std::string header[], const std::string params[]){
 		else if(header[i] == "has_rsrchours"){ has_rsrchours = params[i]; }
 		else if(header[i] == "taskrsrc_sum_id"){ taskrsrc_sum_id = params[i]; }
 	}
+	}
 	tsv.append(std::to_string(taskrsrc_id)).append("\t")
 	.append(std::to_string(task_id)).append("\t")
-	.append(proj_id).append("\t")
+	.append(std::to_string(proj_id)).append("\t")
 	.append(cost_qty_link_flag).append("\t")
-	.append(role_id).append("\t")
-	.append(acct_id).append("\t")
+	.append(std::to_string(role_id)).append("\t")
+	.append(std::to_string(acct_id)).append("\t")
 	.append(std::to_string(rsrc_id)).append("\t")
-	.append(pobs_id).append("\t")
+	.append(std::to_string(pobs_id)).append("\t")
 	.append(skill_level).append("\t")
 	.append(std::to_string(remain_qty)).append("\t")
 	.append(std::to_string(target_qty)).append("\t")

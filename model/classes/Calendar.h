@@ -23,10 +23,11 @@ public:
 		std::string proj_id;
 
 		std::string get_tsv();
+		std::string tsv;
 
 		Calendar(const std::string *header, const std::string *params);
 	private:
-		std::string tsv;
+		
 
 };
 

@@ -1,16 +1,17 @@
+ERMHDR	8.2	2013-09-18	Project	admin	admin	dbxDatabaseNoName	Project Management	EP
 %T	CURRTYPE
 %F	curr_id	decimal_digit_cnt	curr_symbol	decimal_symbol	digit_group_symbol	pos_curr_fmt_type	neg_curr_fmt_type	curr_type	curr_short_name	group_digit_cnt	base_exch_rate
-%R	1	2	£	.	,	#1.1	(#1.1)	British Pound	U.K.	3	1
+%R	1	2	ï¿½	.	,	#1.1	(#1.1)	British Pound	U.K.	3	1
 %R	10	2	$	.	,	#1.1	(#1.1)	Argentine Peso	ARS	3	6.132389
 %R	11	2	A$	.	,	#1.1	(#1.1)	Australian Dollar	AUST	3	2.407516
 %R	13	2	R$	.	,	#1.1	(#1.1)	Brazilian Real	BRL	3	4.013855
 %R	14	2	$	.	,	#1.1	(#1.1)	Dollar	USD	3	1.992977
 %R	15	2	CA$	.	,	#1.1	(#1.1)	Canadian Dollar	CAD	3	2.203694
 %R	16	2	Y	.	,	#1.1	(#1.1)	Chinese Yuan	CNY	3	15.333963
-%R	17	2	€	.	,	#1.1	(#1.1)	EURO	EUR	3	1.472985
+%R	17	2	ï¿½	.	,	#1.1	(#1.1)	EURO	EUR	3	1.472985
 %R	20	2	HK$	.	,	#1.1	(#1.1)	Hong Kong Dollar	HKD	3	15.584421
 %R	21	2	Rs	.	,	#1.1	(#1.1)	Indian Rupee	INR	3	81.054364
-%R	23	2	¥	.	,	#1.1	(#1.1)	Japanese Yen	JPY	3	239.490037
+%R	23	2	ï¿½	.	,	#1.1	(#1.1)	Japanese Yen	JPY	3	239.490037
 %R	24	2	K	.	,	#1.1	(#1.1)	Korean Won	KRW	3	1842.991299
 %R	25	2	N$	.	,	#1.1	(#1.1)	Mexican Peso	MXN	3	21.511792
 %R	26	2	R	.	,	#1.1	(#1.1)	Russian Rouble	RUB	3	51.43574

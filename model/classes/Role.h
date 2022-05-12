@@ -3,11 +3,13 @@
 
 #include <vector>
 #include<string>
-
+#include "../RoleRates.h"
+class Reader;
 
 class Role
 {
 public:
+    Role(Reader *reader);
     int role_id;
     int parent_role_id;
     int seq_num;
@@ -19,11 +21,15 @@ public:
     std::string role_descr;
     std::string last_checksum;
 
-    Role(const std::string *header, const std::string *params);
+    Role(const std::string *header, const std::string *params, Reader *reader);
     std::string get_tsv();
+    std::vector<RoleRate> getRoleRate();
+    
 
 private:
     std::string tsv;
+    RoleRates roleRates;
+    Reader * reader;
 };
 
 #endif //XERPARSER_ROLE_H

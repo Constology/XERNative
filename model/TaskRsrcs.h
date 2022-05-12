@@ -9,20 +9,19 @@
 
 #include <vector>
 
-class TaskRsrcs{
+class TaskRsrcs
+{
 public:
-		void add(const TaskRsrc& taskRsrc);
+	void add(const TaskRsrc &taskRsrc);
 
-		TaskRsrc findById(int id);
-		std::vector<TaskRsrc> getAll();
+	TaskRsrc findById(int id);
+	std::vector<TaskRsrc> getAll();
+	std::vector<TaskRsrc> getByRsrcId(int id);
 
-
-		std::string get_tsv() const;
-
+	std::string get_tsv() const;
 
 private:
-		std::vector<TaskRsrc> taskRsrcs;
+	std::vector<TaskRsrc> taskRsrcs;
 };
 
-
-#endif //XERPARSER_TASKRSRCS_H
+#endif // XERPARSER_TASKRSRCS_H

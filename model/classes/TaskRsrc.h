@@ -12,12 +12,12 @@ class TaskRsrc{
 public:
 		int taskrsrc_id;
 		int task_id;
-		std::string proj_id;
+		int proj_id;
 		std::string cost_qty_link_flag;
-		std::string role_id;
-		std::string acct_id;
+		int role_id;
+		int acct_id;
 		int rsrc_id;
-		std::string pobs_id;
+		int pobs_id;
 		std::string skill_level;
 		float remain_qty;
 		float target_qty;
