@@ -1,6 +1,7 @@
 #include "Role.h"
+#include "../../Reader.h"
 
-Role::Role(const std::string header[], const std::string params[]){
+Role::Role(const std::string header[], const std::string params[], Reader *readerObj){
     for (int i = 0; i < header->length(); i++){
         if(header[i].empty()) break;
         if (header[i] == "role_id"){
@@ -33,6 +34,7 @@ Role::Role(const std::string header[], const std::string params[]){
             last_checksum = params[i];
         }
     }
+    reader = readerObj;
 }
 
 std::string Role::get_tsv(){
@@ -48,4 +50,11 @@ std::string Role::get_tsv(){
         .append(role_descr).append("\t")
         .append(last_checksum).append("\n");
     return tsv;
+}
+
+std::vector<RoleRate> Role::getRoleRate(){
+    std::vector<RoleRate> rates;
+
+    reader->roleRates.getAll();
+    return rates;
 }

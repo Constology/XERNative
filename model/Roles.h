@@ -5,6 +5,8 @@
 #include<string>
 #include "classes/Role.h"
 
+class Reader;
+
 class Roles{
     public:
         void add(const Role &role);

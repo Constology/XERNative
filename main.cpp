@@ -27,4 +27,13 @@ int main(){
     for(Currtype curr: reader.currencies.getAll()){
         cout << "Currencies "<<curr.get_tsv() << endl;
     }
+
+    cout << "***************** Roles and RoleRates **********************" << endl;
+
+    for (Role role: reader.roles.getAll()){
+        std::vector<RoleRate> rRates = role.getRoleRate();
+        for(RoleRate rr: rRates){
+            cout << to_string(rr.role_rate_id) << endl;
+        }
+    }
 }

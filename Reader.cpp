@@ -73,7 +73,7 @@ void Reader::add(const std::string& table, const std::string *header, const std:
 	else if (table == "PROJWBS"){ wbss.add(Wbs(header, record)); }
 	else if (table == "UDFVALUE"){ udfs.add(Udf(header, record)); }
 	else if (table == "UDFTYPE"){ udftypes.add(UDFType(header, record)); }
-	else if (table == "ROLE"){ roles.add(Role(header, record)); }
+	else if (table == "ROLE"){ roles.add( Role(header, record, this) ); }
 	else if (table == "CURRTYPE"){ currencies.add(Currtype(header, record)); }
 	else if (table == "RCATTYPE"){ rCatTypes.add(RCatType(header, record)); }
 	else if (table == "RCATVAL"){ rCatValues.add(RCatValue(header, record)); }
