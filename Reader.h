@@ -29,6 +29,7 @@
 #include "model/Rsrcs.h"
 #include "model/Rsrcrcats.h"
 #include "model/Rsrccurvdatas.h"
+#include "model/Rsrcrates.h"
 
 class Reader{
 public:
@@ -57,8 +58,7 @@ public:
 		Rsrcs rsrcs;
 		Rsrcrcats rsrcrcats;
 		Rsrccurvdatas rsrccurvdatas;
-
-
+		Rsrcrates rsrcrates;
 
 	private:
 		static void split(std::string *strings, const std::string &str);
