@@ -20,8 +20,17 @@ add_library(models
         model/Obss.cpp
         model/NonWorks.cpp
         model/Fintmpls.cpp
-        
-        )
+        model/Pcattypes.cpp
+        model/Pcatvals.cpp
+        model/Taskpreds.cpp
+        model/Projpcats.cpp
+        model/Projects.cpp
+        model/Rsrcs.cpp
+        model/Rsrcrcats.cpp
+        model/Rsrccurvdatas.cpp
+        model/Rsrcrates.cpp
+        model/Schedoptions.cpp
+        model/Taskactvs.cpp model/Taskprocs.cpp model/Taskprocs.h)
 
 add_library(classes
         model/classes/Account.cpp
@@ -39,7 +48,19 @@ add_library(classes
         model/classes/TaskRsrc.cpp
         model/classes/Obs.cpp
         model/classes/NonWork.cpp
-        model/classes/Fintmpl.cpp)
+        model/classes/Fintmpl.cpp
+        model/classes/Pcattype.cpp
+        model/classes/Pcatval.cpp
+        model/classes/Taskpred.cpp
+        model/classes/Projpcat.cpp
+        model/classes/Project.cpp
+        model/classes/Rsrc.cpp
+        model/classes/Rsrcrcat.cpp
+        model/classes/Rsrccurvdata.cpp
+        model/classes/Rsrcrate.cpp
+        model/classes/Schedoption.cpp
+        model/classes/Taskactv.cpp
+        model/classes/Taskproc.cpp)
 
 add_library(date Date/Date.cpp)
 target_link_libraries(classes  date)

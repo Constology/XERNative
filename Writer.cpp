@@ -26,6 +26,17 @@ void writeXER(const Reader& reader, const std::string& filename){
 	<< reader.taskRsrcs.get_tsv()
 	<< reader.obss.get_tsv()
 	<< reader.nonWorks.get_tsv()
-	<< reader.fintmpls.get_tsv();
-
+	<< reader.fintmpls.get_tsv()
+	<< reader.pcattypes.get_tsv()
+	<< reader.pcatvals.get_tsv()
+	<< reader.taskpreds.get_tsv()
+	<< reader.projpcats.get_tsv()
+	<< reader.projects.get_tsv()
+	<< reader.rsrcs.get_tsv()
+	<< reader.rsrcrcats.get_tsv()
+	<< reader.rsrccurvdatas.get_tsv()
+	<< reader.rsrcrates.get_tsv()
+	<< reader.schedoptions.get_tsv()
+	<< reader.taskactvs.get_tsv()
+	<< reader.taskprocs.get_tsv();
 }

@@ -21,6 +21,18 @@
 #include "model/Obss.h"
 #include "model/NonWorks.h"
 #include "model/Fintmpls.h"
+#include "model/Pcattypes.h"
+#include "model/Pcatvals.h"
+#include "model/Taskpreds.h"
+#include "model/Projpcats.h"
+#include "model/Projects.h"
+#include "model/Rsrcs.h"
+#include "model/Rsrcrcats.h"
+#include "model/Rsrccurvdatas.h"
+#include "model/Rsrcrates.h"
+#include "model/Schedoptions.h"
+#include "model/Taskactvs.h"
+#include "model/Taskprocs.h"
 
 class Reader{
 public:
@@ -41,6 +53,18 @@ public:
 		Obss obss;
 		NonWorks nonWorks;
 		Fintmpls fintmpls;
+		Pcattypes pcattypes;
+		Pcatvals pcatvals;
+		Taskpreds taskpreds;
+		Projpcats projpcats;
+		Projects projects;
+		Rsrcs rsrcs;
+		Rsrcrcats rsrcrcats;
+		Rsrccurvdatas rsrccurvdatas;
+		Rsrcrates rsrcrates;
+		Schedoptions schedoptions;
+		Taskactvs taskactvs;
+		Taskprocs taskprocs;
 
 	private:
 		static void split(std::string *strings, const std::string &str);

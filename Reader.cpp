@@ -82,4 +82,16 @@ void Reader::add(const std::string& table, const std::string *header, const std:
 	else if (table == "OBS"){ obss.add(Obs(header, record)); }
 	else if (table == "NONWORK"){ nonWorks.add(NonWork(header, record)); }
 	else if (table == "FINTMPL"){ fintmpls.add(Fintmpl(header, record)); }
+	else if (table == "PCATTYPE"){ pcattypes.add(Pcattype(header, record)); }
+	else if (table == "PCATVAL"){ pcatvals.add(Pcatval(header, record)); }
+	else if (table == "TASKPRED"){ taskpreds.add(Taskpred(header, record)); }
+	else if (table == "PROJPCAT"){ projpcats.add(Projpcat(header, record)); }
+	else if (table == "PROJECT"){ projects.add(Project(header, record)); }
+	else if (table == "RSRC"){ rsrcs.add(Rsrc(header, record)); }
+	else if (table == "RSRCRCAT"){ rsrcrcats.add(Rsrcrcat(header, record)); }
+	else if (table == "RSRCCURVDATA"){ rsrccurvdatas.add(Rsrccurvdata(header, record)); }
+	else if (table == "RSRCRATE"){ rsrcrates.add(Rsrcrate(header, record)); }
+	else if (table == "SCHEDOPTION"){ schedoptions.add(Schedoption(header, record)); }
+	else if (table == "TASKACTV"){ taskactvs.add(Taskactv(header, record)); }
+	else if (table == "TASKPROC"){ taskprocs.add(Taskproc(header, record)); }
 }
