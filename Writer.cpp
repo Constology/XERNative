@@ -24,6 +24,8 @@ void writeXER(const Reader& reader, const std::string& filename){
 	<< reader.udftypes.get_tsv()
 	<< reader.wbss.get_tsv()
 	<< reader.taskRsrcs.get_tsv()
-	<< reader.obss.get_tsv();
+	<< reader.obss.get_tsv()
+	<< reader.nonWorks.get_tsv()
+	<< reader.fintmpls.get_tsv();
 
 }

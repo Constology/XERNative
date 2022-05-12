@@ -1,20 +1,29 @@
-#ifndef XER_FINTMPLS_H_
-#define XER_FINTMPLS_H_
+//
+// Created by Taraxtix on 11/05/2022.
+//
 
-#include <string>
+#ifndef XERPARSER_FINTMPLS_H
+#define XERPARSER_FINTMPLS_H
+
 #include <vector>
+
 #include "classes/Fintmpl.h"
 
 class Fintmpls{
+public:
+		void add(const Fintmpl& fintmpl);
 
-    public:
-        void add(const Fintmpl fintmpl);
-        Fintmpl findById(int id);
-        std::string get_tsv();
+		Fintmpl findById(int id);
+		std::vector<Fintmpl> getAll();
 
-    private:
-        std::vector<Fintmpl> fintmpls;
+
+		std::string get_tsv() const;
+
+
+private:
+		std::vector<Fintmpl> fintmpls;
+
 };
 
-#endif // !XER_FINTMPLS_H_#define XER_FINTMPLS_H_
 
+#endif //XERPARSER_FINTMPLS_H

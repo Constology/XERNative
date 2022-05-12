@@ -19,6 +19,8 @@
 #include "model/RoleRates.h"
 #include "model/TaskRsrcs.h"
 #include "model/Obss.h"
+#include "model/NonWorks.h"
+#include "model/Fintmpls.h"
 
 class Reader{
 public:
@@ -37,7 +39,8 @@ public:
 		RoleRates roleRates;
 		TaskRsrcs taskRsrcs;
 		Obss obss;
-
+		NonWorks nonWorks;
+		Fintmpls fintmpls;
 
 	private:
 		static void split(std::string *strings, const std::string &str);
