@@ -89,4 +89,5 @@ void Reader::add(const std::string& table, const std::string *header, const std:
 	else if (table == "PROJECT"){ projects.add(Project(header, record)); }
 	else if (table == "RSRC"){ rsrcs.add(Rsrc(header, record)); }
 	else if (table == "RSRCRCAT"){ rsrcrcats.add(Rsrcrcat(header, record)); }
+	else if (table == "RSRCCURVDATA"){ rsrccurvdatas.add(Rsrccurvdata(header, record)); }
 }

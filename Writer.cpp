@@ -33,5 +33,6 @@ void writeXER(const Reader& reader, const std::string& filename){
 	<< reader.projpcats.get_tsv()
 	<< reader.projects.get_tsv()
 	<< reader.rsrcs.get_tsv()
-	<< reader.rsrcrcats.get_tsv();
+	<< reader.rsrcrcats.get_tsv()
+	<< reader.rsrccurvdatas.get_tsv();
 }

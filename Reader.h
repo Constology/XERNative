@@ -28,6 +28,7 @@
 #include "model/Projects.h"
 #include "model/Rsrcs.h"
 #include "model/Rsrcrcats.h"
+#include "model/Rsrccurvdatas.h"
 
 class Reader{
 public:
@@ -55,6 +56,7 @@ public:
 		Projects projects;
 		Rsrcs rsrcs;
 		Rsrcrcats rsrcrcats;
+		Rsrccurvdatas rsrccurvdatas;
 
 
 
