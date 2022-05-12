@@ -18,7 +18,7 @@ Fintmpl Fintmpls::findById(int id){
 }
 
 std::vector<Fintmpl> Fintmpls::getAll(){
-	return fintmpls
+	return fintmpls;
 }
 
 std::string Fintmpls::get_tsv() const{

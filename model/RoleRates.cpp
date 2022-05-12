@@ -14,6 +14,8 @@ RoleRate RoleRates::findById(int id){
             return rr;
         }
     }
+    printf("Could Not Find Role Rate");
+    exit(EXIT_FAILURE);
 }
 
 RoleRate RoleRates::findByRole(int id){
@@ -22,6 +24,8 @@ RoleRate RoleRates::findByRole(int id){
             return rr;
         }
     }
+    printf("Could not find Role Rate");
+    exit(EXIT_FAILURE);
 }
 
 std::string RoleRates::get_tsv() const{

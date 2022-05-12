@@ -7,8 +7,16 @@
 NonWork::NonWork(const std::string *header, const std::string *params){
 	tsv = "";
 	for(uint i = 0; i < header->size(); i++){
-		if (header[i] == "nonwork_type_id"){ nonwork_type_id = std::stoi(params[i]); }
-		else if (header[i] == "seq_num"){ seq_num = std::stoi(params[i]); }
+		if (header[i] == "nonwork_type_id"){ 
+			if(!params[i].empty()){
+				nonwork_type_id = std::stoi(params[i]); 
+				}
+		}
+		else if (header[i] == "seq_num"){ 
+		if(!params[i].empty()){
+			seq_num = std::stoi(params[i]); 
+			}
+		}
 		else if (header[i] == "nonwork_code"){ nonwork_code = params[i]; }
 		else if (header[i] == "nonwork_type"){ nonwork_type = params[i]; }
 	}

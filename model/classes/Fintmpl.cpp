@@ -7,7 +7,11 @@
 Fintmpl::Fintmpl(const std::string *header, const std::string *params){
 	tsv = "";
 	for(uint i = 0; i < header->length(); i++){
-		if(header[i] == "fintmpl_id"){ fintmpl_id = stoi(params[i]); }
+		if(header[i] == "fintmpl_id"){ 
+			if(!params[i].empty()){
+				fintmpl_id = stoi(params[i]); 
+				}
+		}
 		else if(header[i] == "fintmpl_name"){ fintmpl_name = params[i]; }
 		else if(header[i] == "default_flag"){ default_flag = params[i]; }
 	}

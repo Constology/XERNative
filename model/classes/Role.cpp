@@ -47,4 +47,5 @@ std::string Role::get_tsv(){
         .append(cost_qty_type).append("\t")
         .append(role_descr).append("\t")
         .append(last_checksum).append("\n");
+    return tsv;
 }
