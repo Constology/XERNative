@@ -37,5 +37,6 @@ void writeXER(const Reader& reader, const std::string& filename){
 	<< reader.rsrccurvdatas.get_tsv()
 	<< reader.rsrcrates.get_tsv()
 	<< reader.schedoptions.get_tsv()
-	<< reader.taskactvs.get_tsv();
+	<< reader.taskactvs.get_tsv()
+	<< reader.taskprocs.get_tsv();
 }
