@@ -86,4 +86,6 @@ void Reader::add(const std::string& table, const std::string *header, const std:
 	else if (table == "PCATVAL"){ pcatvals.add(Pcatval(header, record)); }
 	else if (table == "TASKPRED"){ taskpreds.add(Taskpred(header, record)); }
 	else if (table == "PROJPCAT"){ projpcats.add(Projpcat(header, record)); }
+	else if (table == "PROJECT"){ projects.add(Project(header, record)); }
+	else if (table == "RSRC"){ rsrcs.add(Rsrc(header, record)); }
 }
