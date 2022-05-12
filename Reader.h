@@ -24,6 +24,7 @@
 #include "model/Pcattypes.h"
 #include "model/Pcatvals.h"
 #include "model/Taskpreds.h"
+#include "model/Projpcats.h"
 
 class Reader{
 public:
@@ -47,6 +48,7 @@ public:
 		Pcattypes pcattypes;
 		Pcatvals pcatvals;
 		Taskpreds taskpreds;
+		Projpcats projpcats;
 
 	private:
 		static void split(std::string *strings, const std::string &str);

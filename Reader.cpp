@@ -85,4 +85,5 @@ void Reader::add(const std::string& table, const std::string *header, const std:
 	else if (table == "PCATTYPE"){ pcattypes.add(Pcattype(header, record)); }
 	else if (table == "PCATVAL"){ pcatvals.add(Pcatval(header, record)); }
 	else if (table == "TASKPRED"){ taskpreds.add(Taskpred(header, record)); }
+	else if (table == "PROJPCAT"){ projpcats.add(Projpcat(header, record)); }
 }
