@@ -27,6 +27,7 @@
 #include "model/Projpcats.h"
 #include "model/Projects.h"
 #include "model/Rsrcs.h"
+#include "model/Rsrcrcats.h"
 
 class Reader{
 public:
@@ -53,6 +54,8 @@ public:
 		Projpcats projpcats;
 		Projects projects;
 		Rsrcs rsrcs;
+		Rsrcrcats rsrcrcats;
+
 
 
 	private:
