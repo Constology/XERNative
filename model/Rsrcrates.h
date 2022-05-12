@@ -9,20 +9,19 @@
 
 #include "classes/Rsrcrate.h"
 
-class Rsrcrates{
+class Rsrcrates
+{
 public:
-		void add(const Rsrcrate& rsrcrate);
+	void add(const Rsrcrate &rsrcrate);
 
-		Rsrcrate findById(int id);
-		std::vector<Rsrcrate> getAll();
+	Rsrcrate findById(int id);
+	std::vector<Rsrcrate> getAll();
 
-
-		std::string get_tsv() const;
-
+	std::string get_tsv() const;
+	std::vector<Rsrcrate> getByRsrcId(int id);
 
 private:
-		std::vector<Rsrcrate> rsrcrates;
+	std::vector<Rsrcrate> rsrcrates;
 };
 
-
-#endif //XERPARSER_RSRCRATES_H
+#endif // XERPARSER_RSRCRATES_H
