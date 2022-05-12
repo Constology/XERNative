@@ -19,7 +19,7 @@ add_library(models
         model/NonWorks.cpp
         model/Fintmpls.cpp
         model/Pcattypes.cpp
-        model/Pcatvals.cpp)
+        model/Pcatvals.cpp model/Taskpreds.cpp model/Taskpreds.h)
 
 add_library(classes
         model/classes/Account.cpp
@@ -37,7 +37,7 @@ add_library(classes
         model/classes/NonWork.cpp
         model/classes/Fintmpl.cpp
         model/classes/Pcattype.cpp
-        model/classes/Pcatval.cpp)
+        model/classes/Pcatval.cpp model/classes/Taskpred.cpp model/classes/Taskpred.h)
 
 add_library(xerParser Reader.cpp Writer.cpp Date/Date.cpp)
 

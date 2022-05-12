@@ -23,6 +23,7 @@
 #include "model/Fintmpls.h"
 #include "model/Pcattypes.h"
 #include "model/Pcatvals.h"
+#include "model/Taskpreds.h"
 
 class Reader{
 public:
@@ -45,6 +46,7 @@ public:
 		Fintmpls fintmpls;
 		Pcattypes pcattypes;
 		Pcatvals pcatvals;
+		Taskpreds taskpreds;
 
 	private:
 		static void split(std::string *strings, const std::string &str);
