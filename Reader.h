@@ -31,6 +31,7 @@
 #include "model/Rsrccurvdatas.h"
 #include "model/Rsrcrates.h"
 #include "model/Schedoptions.h"
+#include "model/Taskactvs.h"
 
 class Reader{
 public:
@@ -61,6 +62,7 @@ public:
 		Rsrccurvdatas rsrccurvdatas;
 		Rsrcrates rsrcrates;
 		Schedoptions schedoptions;
+		Taskactvs taskactvs;
 
 	private:
 		static void split(std::string *strings, const std::string &str);
