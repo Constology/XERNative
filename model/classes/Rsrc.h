@@ -48,6 +48,8 @@ public:
 	std::string tsv;
 
 	Rsrc(const std::string *header, const std::string *params, Reader *readerObj);
+	Rsrc getParent();
+	std::vector<Rsrc> getChildren();
 
 private:
 	Reader *reader;

@@ -6,19 +6,28 @@
 #define XERPARSER_PCATTYPE_H
 
 #include <iostream>
+#include <vector>
 
-class Pcattype{
+class Pcatval;
+
+class Reader;
+
+class Pcattype
+{
 public:
-		int proj_catg_type_id;
-		int seq_num;
-		int proj_catg_short_len;
-		std::string proj_catg_type;
-		std::string export_flag;
+	int proj_catg_type_id;
+	int seq_num;
+	int proj_catg_short_len;
+	std::string proj_catg_type;
+	std::string export_flag;
 
-		std::string tsv;
+	std::string tsv;
 
-		Pcattype(const std::string header[], const std::string params[]);
+	Pcattype(const std::string header[], const std::string params[], Reader *readerObj);
+	std::vector<Pcatval> getProjectCodeValues();
+
+private:
+	Reader *reader;
 };
 
-
-#endif //XERPARSER_PCATTYPE_H
+#endif // XERPARSER_PCATTYPE_H

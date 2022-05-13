@@ -9,20 +9,20 @@
 
 #include "classes/Projpcat.h"
 
-class Projpcats{
+class Projpcats
+{
 public:
-		void add(const Projpcat& projpcat);
+	void add(const Projpcat &projpcat);
 
-		Projpcat findById(int id);
-		std::vector<Projpcat> getAll();
+	Projpcat findById(int id);
+	std::vector<Projpcat> getAll();
 
-
-		std::string get_tsv() const;
-
+	std::string get_tsv() const;
+	std::vector<Projpcat> getByProjectId(int id);
+	std::vector<Projpcat> getById(int id);
 
 private:
-		std::vector<Projpcat> projpcats;
+	std::vector<Projpcat> projpcats;
 };
 
-
-#endif //XERPARSER_PROJPCATS_H
+#endif // XERPARSER_PROJPCATS_H

@@ -7,7 +7,26 @@ int main()
 {
     Reader reader;
 
-    reader.parse("/home/hassan/programming/xerParser/wk2.xer");
+    reader.parse("/home/hassan/programming/xerParser/QC2.xer");
+
+    cout << "*********** Project and WBS **********************" << endl;
+
+    for (Project prj : reader.projects.getAll())
+    {
+        std::vector<Wbs> wbss = prj.getWbs();
+        cout << "prj " << prj.tsv << endl;
+        for (Wbs wbs : wbss)
+        {
+            cout << "WBS " << wbs.get_tsv() << endl;
+        }
+        for (Projpcat pcat : reader.projpcats.getAll())
+        {
+            cout << "Project code assignment" << pcat.tsv << endl;
+            cout << "Values" << pcat.getValue().tsv << endl;
+        }
+    }
+
+    cout << "*********** UDF **********************" << endl;
 
     for (Udf udf : reader.udfs.getByProject(368))
     {
@@ -37,9 +56,17 @@ int main()
     {
         std::vector<Rsrcrate> rRates = reader.rsrcrates.getByRsrcId(rsrc.rsrc_id);
         std::vector<TaskRsrc> trs = reader.taskRsrcs.getByRsrcId(rsrc.rsrc_id);
+
+        cout << "Parent " << rsrc.getParent().tsv << endl;
+        std::vector<Rsrc> childs = rsrc.getChildren();
+        for (Rsrc par : childs)
+        {
+            cout << "Children for rsrc " << to_string(rsrc.rsrc_id) << " is " << par.tsv;
+        }
+
         for (Rsrcrate rr : rRates)
         {
-            cout << to_string(rr.rsrc_id) << endl;
+            cout << rr.tsv << endl;
         }
 
         cout << "RSRC_ID => Task_ID" << endl;

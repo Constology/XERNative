@@ -2,8 +2,10 @@
 #define XERPARSER_UDFType_H
 
 #include <vector>
-#include<string>
+#include <string>
+#include "../Udfs.h"
 
+class Reader;
 
 class UDFType
 {
@@ -17,11 +19,13 @@ public:
     std::string indicator_expression;
     std::string summary_indicator_expression;
 
-    UDFType(const std::string *header, const std::string *params);
+    UDFType(const std::string *header, const std::string *params, Reader *readerObj);
     std::string get_tsv();
+    std::vector<Udf> getUdfValues();
 
 private:
     std::string tsv;
+    Reader *reader;
 };
 
-#endif //XERPARSER_UDFType_H
+#endif // XERPARSER_UDFType_H

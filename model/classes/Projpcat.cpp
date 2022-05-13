@@ -3,8 +3,9 @@
 //
 
 #include "Projpcat.h"
+#include "../../Reader.h"
 
-Projpcat::Projpcat(const std::string *header, const std::string *params)
+Projpcat::Projpcat(const std::string *header, const std::string *params, Reader *readerObj)
 {
 	tsv = "";
 	for (uint i = 0; i < params->length(); i++)
@@ -32,6 +33,8 @@ Projpcat::Projpcat(const std::string *header, const std::string *params)
 			}
 		}
 	}
+
+	reader = readerObj;
 	tsv
 		.append(std::to_string(proj_id))
 		.append("\t")
@@ -39,4 +42,9 @@ Projpcat::Projpcat(const std::string *header, const std::string *params)
 		.append("\t")
 		.append(std::to_string(proj_catg_id))
 		.append("\n");
+}
+
+Pcatval Projpcat::getValue()
+{
+	return reader->pcatvals.findById(proj_catg_id);
 }

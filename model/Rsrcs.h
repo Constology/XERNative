@@ -9,20 +9,19 @@
 
 #include "classes/Rsrc.h"
 
-class Rsrcs{
+class Rsrcs
+{
 public:
-		void add(const Rsrc& rsrc);
+	void add(const Rsrc &rsrc);
 
-		Rsrc findById(int id);
-		std::vector<Rsrc> getAll();
+	Rsrc findById(int id);
+	std::vector<Rsrc> getAll();
+	std::vector<Rsrc> getChildren(int id);
 
-
-		std::string get_tsv() const;
-
+	std::string get_tsv() const;
 
 private:
-		std::vector<Rsrc> rsrcs;
+	std::vector<Rsrc> rsrcs;
 };
 
-
-#endif //XERPARSER_RSRCS_H
+#endif // XERPARSER_RSRCS_H

@@ -5,18 +5,26 @@
 #ifndef XERPARSER_PROJPCAT_H
 #define XERPARSER_PROJPCAT_H
 
-#include <iostream>
+#include <vector>
+#include "../Pcattypes.h"
+#include "../Pcatvals.h"
 
-class Projpcat{
+class Reader;
+
+class Projpcat
+{
 public:
-		int proj_id;
-		int proj_catg_type_id;
-		int proj_catg_id;
+	int proj_id;
+	int proj_catg_type_id;
+	int proj_catg_id;
 
-		std::string tsv;
+	std::string tsv;
+	// std::vector<Pcattype> getTypes();
+	Pcatval getValue();
+	Projpcat(const std::string *header, const std::string *params, Reader *readerObj);
 
-		Projpcat(const std::string *header, const std::string *params);
+private:
+	Reader *reader;
 };
 
-
-#endif //XERPARSER_PROJPCAT_H
+#endif // XERPARSER_PROJPCAT_H

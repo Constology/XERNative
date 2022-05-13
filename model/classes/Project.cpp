@@ -3,8 +3,9 @@
 //
 
 #include "Project.h"
+#include "../../Reader.h"
 
-Project::Project(const std::string *header, const std::string *params)
+Project::Project(const std::string *header, const std::string *params, Reader *readerObj)
 {
 	tsv = "";
 	for (uint i = 0; i < params->length(); i++)
@@ -323,5 +324,16 @@ Project::Project(const std::string *header, const std::string *params)
 			sumtask_loaded = params[i];
 		}
 	}
+	reader = readerObj;
 	tsv.append(std::to_string(proj_id)).append("\t").append(std::to_string(acct_id)).append("\t").append(std::to_string(orig_proj_id)).append("\t").append(std::to_string(source_proj_id)).append("\t").append(std::to_string(base_type_id)).append("\t").append(std::to_string(clndr_id)).append("\t").append(std::to_string(sum_base_proj_id)).append("\t").append(std::to_string(last_fin_dates_id)).append("\t").append(std::to_string(fintmpl_id)).append("\t").append(std::to_string(location_id)).append("\t").append(std::to_string(new_fin_dates_id)).append("\t").append(fy_start_month_num).append("\t").append(rsrc_self_add_flag).append("\t").append(allow_complete_flag).append("\t").append(rsrc_multi_assign_flag).append("\t").append(checkout_flag).append("\t").append(project_flag).append("\t").append(step_complete_flag).append("\t").append(cost_qty_recalc_flag).append("\t").append(batch_sum_flag).append("\t").append(name_sep_char).append("\t").append(def_complete_pct_type).append("\t").append(proj_short_name).append("\t").append(task_code_base).append("\t").append(task_code_step).append("\t").append(priority_num).append("\t").append(wbs_max_sum_level).append("\t").append(strgy_priority_num).append("\t").append(last_checksum).append("\t").append(critical_drtn_hr_cnt).append("\t").append(def_cost_per_qty).append("\t").append(last_recalc_date).append("\t").append(plan_start_date).append("\t").append(plan_end_date).append("\t").append(scd_end_date).append("\t").append(add_date).append("\t").append(last_tasksum_date).append("\t").append(fcst_start_date).append("\t").append(def_duration_type).append("\t").append(task_code_prefix).append("\t").append(guid).append("\t").append(def_qty_type).append("\t").append(add_by_name).append("\t").append(web_local_root_path).append("\t").append(proj_url).append("\t").append(def_rate_type).append("\t").append(add_act_remain_flag).append("\t").append(act_this_per_link_flag).append("\t").append(def_task_type).append("\t").append(act_pct_link_flag).append("\t").append(critical_path_type).append("\t").append(task_code_prefix_flag).append("\t").append(def_rollup_dates_flag).append("\t").append(use_project_baseline_flag).append("\t").append(rem_target_link_flag).append("\t").append(reset_planned_flag).append("\t").append(allow_neg_act_flag).append("\t").append(sum_assign_level).append("\t").append(last_baseline_update_date).append("\t").append(cr_external_key).append("\t").append(apply_actuals_date).append("\t").append(loaded_scope_level).append("\t").append(export_flag).append("\t").append(baselines_to_export).append("\t").append(baseline_names_to_export).append("\t").append(next_data_date).append("\t").append(close_period_flag).append("\t").append(sum_refresh_date).append("\t").append(trsrcsum_loaded).append("\t").append(sumtask_loaded).append("\n");
+}
+
+std::vector<Wbs> Project::getWbs()
+{
+	return reader->wbss.getByProjectId(proj_id);
+}
+
+std::vector<Projpcat> Project::getProjectCodes()
+{
+	return reader->projpcats.getByProjectId(proj_id);
 }

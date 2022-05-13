@@ -3,6 +3,25 @@
 
 #define MAX_HEADER_LEN 255 // TODO: Count the real maximum (255 is not the real value)
 
+const std::string WHITESPACE = " \n\r\t\f\v";
+
+std::string ltrim(const std::string &s)
+{
+	size_t start = s.find_first_not_of(WHITESPACE);
+	return (start == std::string::npos) ? "" : s.substr(start);
+}
+
+std::string rtrim(const std::string &s)
+{
+	size_t end = s.find_last_not_of(WHITESPACE);
+	return (end == std::string::npos) ? "" : s.substr(0, end + 1);
+}
+
+std::string trim(const std::string &s)
+{
+	return rtrim(ltrim(s));
+}
+
 void Reader::split(std::string *strings, const std::string &str)
 {
 	int currIndex = 0, i = 0;
@@ -41,6 +60,7 @@ int Reader::parse(const std::string &filename)
 			if (parts[0] == "%T")
 			{
 				current_table = parts[1];
+				current_table = trim(current_table);
 			}
 			// check if line starts with %F then it's a header
 			else if (parts[0] == "%F")
@@ -104,7 +124,7 @@ void Reader::add(const std::string &table, const std::string *header, const std:
 	}
 	else if (table == "UDFTYPE")
 	{
-		udftypes.add(UDFType(header, record));
+		udftypes.add(UDFType(header, record, this));
 	}
 	else if (table == "ROLE")
 	{
@@ -144,11 +164,11 @@ void Reader::add(const std::string &table, const std::string *header, const std:
 	}
 	else if (table == "PCATTYPE")
 	{
-		pcattypes.add(Pcattype(header, record));
+		pcattypes.add(Pcattype(header, record, this));
 	}
 	else if (table == "PCATVAL")
 	{
-		pcatvals.add(Pcatval(header, record));
+		pcatvals.add(Pcatval(header, record, this));
 	}
 	else if (table == "TASKPRED")
 	{
@@ -156,11 +176,11 @@ void Reader::add(const std::string &table, const std::string *header, const std:
 	}
 	else if (table == "PROJPCAT")
 	{
-		projpcats.add(Projpcat(header, record));
+		projpcats.add(Projpcat(header, record, this));
 	}
 	else if (table == "PROJECT")
 	{
-		projects.add(Project(header, record));
+		projects.add(Project(header, record, this));
 	}
 	else if (table == "RSRC")
 	{

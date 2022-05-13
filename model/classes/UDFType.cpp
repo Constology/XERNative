@@ -1,39 +1,61 @@
 #include "UDFType.h"
+#include "../../Reader.h"
 
-UDFType::UDFType(const std::string header[], const std::string params[]){
-    for (int i = 0; i < header->length(); i++){
-        if(header[i].empty()) break;
-        if (header[i] == "udf_type_id"){
-            if(!params[i].empty()){
+UDFType::UDFType(const std::string header[], const std::string params[], Reader *readerObj)
+{
+    for (int i = 0; i < header->length(); i++)
+    {
+        if (header[i].empty())
+            break;
+        if (header[i] == "udf_type_id")
+        {
+            if (!params[i].empty())
+            {
                 udf_type_id = stoi(params[i]);
             }
-        } else if (header[i] == "table_name"){
+        }
+        else if (header[i] == "table_name")
+        {
             table_name = params[i];
-        } else if (header[i] == "udf_type_name"){
+        }
+        else if (header[i] == "udf_type_name")
+        {
             udf_type_name = params[i];
-        } else if (header[i] == "udf_type_label"){
+        }
+        else if (header[i] == "udf_type_label")
+        {
             udf_type_label = params[i];
-        } else if (header[i] == "logical_data_type"){
+        }
+        else if (header[i] == "logical_data_type")
+        {
             logical_data_type = params[i];
-        } else if (header[i] == "super_flag"){
+        }
+        else if (header[i] == "super_flag")
+        {
             super_flag = params[i];
-        } else if (header[i] == "indicator_expression"){
+        }
+        else if (header[i] == "indicator_expression")
+        {
             indicator_expression = params[i];
-        } else if (header[i] == "summary_indicator_expression"){
+        }
+        else if (header[i] == "summary_indicator_expression")
+        {
             summary_indicator_expression = params[i];
         }
     }
+    reader = readerObj;
 }
 
-std::string UDFType::get_tsv(){
+std::string UDFType::get_tsv()
+{
     tsv = "";
-    tsv.append(std::to_string(udf_type_id)).append("\t")
-        .append(table_name).append("\t")
-        .append(udf_type_name).append("\t")
-        .append(udf_type_label).append("\t")
-        .append(logical_data_type).append("\t")
-        .append(super_flag).append("\t")
-        .append(indicator_expression).append("\t")
-        .append(summary_indicator_expression).append("\n");
+    tsv.append(std::to_string(udf_type_id)).append("\t").append(table_name).append("\t").append(udf_type_name).append("\t").append(udf_type_label).append("\t").append(logical_data_type).append("\t").append(super_flag).append("\t").append(indicator_expression).append("\t").append(summary_indicator_expression).append("\n");
     return tsv;
+}
+
+std::vector<Udf> UDFType::getUdfValues()
+{
+    std::vector<Udf> toReturn;
+    toReturn = reader->udfs.getByTypeId(udf_type_id);
+    return toReturn;
 }

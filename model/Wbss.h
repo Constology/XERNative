@@ -5,20 +5,20 @@
 
 #include "classes/Wbs.h"
 
-class Wbss{
+class Wbss
+{
 public:
-    void add(const Wbs& wbs);
+    void add(const Wbs &wbs);
 
     Wbs findById(int id);
-    std::vector<Wbs> getByProject(int projectId);
+    std::vector<Wbs> getByProjectId(int projectId);
     std::vector<Wbs> getChildren(int curid);
     Wbs getParent(int id);
     std::vector<Wbs> getAll();
-		std::string get_tsv() const;
+    std::string get_tsv() const;
 
 private:
     std::vector<Wbs> wbss;
 };
 
-
-#endif //XERPARSER_WBSS1_H
+#endif // XERPARSER_WBSS1_H

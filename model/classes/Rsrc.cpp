@@ -226,9 +226,20 @@ Rsrc::Rsrc(const std::string *header, const std::string *params, Reader *readerO
 		.append("\n");
 }
 
+Rsrc Rsrc::getParent()
+{
+	Rsrc rsr = reader->rsrcs.findById(parent_rsrc_id);
+	return rsr;
+}
+
 std::vector<Rsrcrate> Rsrc::getRsrcRate()
 {
 	std::vector<Rsrcrate> toReturn;
 	toReturn = reader->rsrcrates.getAll();
 	return toReturn;
+}
+
+std::vector<Rsrc> Rsrc::getChildren()
+{
+	return reader->rsrcs.getChildren(rsrc_id);
 }
