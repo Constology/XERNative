@@ -189,5 +189,8 @@ void Reader::add(const std::string &table, const std::string *header, const std:
 	else if (table == "TASKPROC")
 	{
 		taskprocs.add(Taskproc(header, record));
+	}else if (table == "TASK")
+	{
+		tasks.add(Task(header, record));
 	}
 }

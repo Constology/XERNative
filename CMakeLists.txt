@@ -30,7 +30,7 @@ add_library(models
         model/Rsrccurvdatas.cpp
         model/Rsrcrates.cpp
         model/Schedoptions.cpp
-        model/Taskactvs.cpp model/Taskprocs.cpp model/Taskprocs.h)
+        model/Taskactvs.cpp model/Taskprocs.cpp model/Taskprocs.h model/Tasks.cpp model/Tasks.h)
 
 add_library(classes
         model/classes/Account.cpp
@@ -60,7 +60,7 @@ add_library(classes
         model/classes/Rsrcrate.cpp
         model/classes/Schedoption.cpp
         model/classes/Taskactv.cpp
-        model/classes/Taskproc.cpp)
+        model/classes/Taskproc.cpp model/classes/Task.cpp model/classes/Task.h)
 
 add_library(date Date/Date.cpp)
 target_link_libraries(classes  date)
