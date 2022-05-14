@@ -6,19 +6,19 @@
 #define XERPARSER_NONWORK_H
 
 #include <iostream>
+#include <vector>
 
-
-class NonWork{
+class NonWork
+{
 public:
-		int nonwork_type_id;
-		int seq_num;
-		std::string nonwork_code;
-		std::string nonwork_type;
+	int nonwork_type_id;
+	int seq_num;
+	std::string nonwork_code;
+	std::string nonwork_type;
 
-		std::string tsv;
+	std::string tsv;
 
-		NonWork(const std::string *header, const std::string *params);
+	NonWork(const std::vector<std::string> header, const std::vector<std::string> params);
 };
 
-
-#endif //XERPARSER_NONWORK_H
+#endif // XERPARSER_NONWORK_H

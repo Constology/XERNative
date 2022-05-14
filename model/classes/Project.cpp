@@ -5,323 +5,323 @@
 #include "Project.h"
 #include "../../Reader.h"
 
-Project::Project(const std::string *header, const std::string *params, Reader *readerObj)
+Project::Project(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj)
 {
 	tsv = "";
-	for (uint i = 0; i < params->length(); i++)
+	for (int i = 0; i < params.size(); i++)
 	{
-		if (header[i] == "proj_id")
+		if (header.at(i) == "proj_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				proj_id = stoi(params[i]);
+				proj_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "acct_id")
+		else if (header.at(i) == "acct_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				acct_id = stoi(params[i]);
+				acct_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "orig_proj_id")
+		else if (header.at(i) == "orig_proj_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				orig_proj_id = stoi(params[i]);
+				orig_proj_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "source_proj_id")
+		else if (header.at(i) == "source_proj_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				source_proj_id = stoi(params[i]);
+				source_proj_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "base_type_id")
+		else if (header.at(i) == "base_type_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				base_type_id = stoi(params[i]);
+				base_type_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "clndr_id")
+		else if (header.at(i) == "clndr_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				clndr_id = stoi(params[i]);
+				clndr_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "sum_base_proj_id")
+		else if (header.at(i) == "sum_base_proj_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				sum_base_proj_id = stoi(params[i]);
+				sum_base_proj_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "last_fin_dates_id")
+		else if (header.at(i) == "last_fin_dates_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				last_fin_dates_id = stoi(params[i]);
+				last_fin_dates_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "fintmpl_id")
+		else if (header.at(i) == "fintmpl_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				fintmpl_id = stoi(params[i]);
+				fintmpl_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "location_id")
+		else if (header.at(i) == "location_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				location_id = stoi(params[i]);
+				location_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "new_fin_dates_id")
+		else if (header.at(i) == "new_fin_dates_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				new_fin_dates_id = stoi(params[i]);
+				new_fin_dates_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "fy_start_month_num")
+		else if (header.at(i) == "fy_start_month_num")
 		{
-			fy_start_month_num = params[i];
+			fy_start_month_num = params.at(i);
 		}
-		else if (header[i] == "rsrc_self_add_flag")
+		else if (header.at(i) == "rsrc_self_add_flag")
 		{
-			rsrc_self_add_flag = params[i];
+			rsrc_self_add_flag = params.at(i);
 		}
-		else if (header[i] == "allow_complete_flag")
+		else if (header.at(i) == "allow_complete_flag")
 		{
-			allow_complete_flag = params[i];
+			allow_complete_flag = params.at(i);
 		}
-		else if (header[i] == "rsrc_multi_assign_flag")
+		else if (header.at(i) == "rsrc_multi_assign_flag")
 		{
-			rsrc_multi_assign_flag = params[i];
+			rsrc_multi_assign_flag = params.at(i);
 		}
-		else if (header[i] == "checkout_flag")
+		else if (header.at(i) == "checkout_flag")
 		{
-			checkout_flag = params[i];
+			checkout_flag = params.at(i);
 		}
-		else if (header[i] == "project_flag")
+		else if (header.at(i) == "project_flag")
 		{
-			project_flag = params[i];
+			project_flag = params.at(i);
 		}
-		else if (header[i] == "step_complete_flag")
+		else if (header.at(i) == "step_complete_flag")
 		{
-			step_complete_flag = params[i];
+			step_complete_flag = params.at(i);
 		}
-		else if (header[i] == "cost_qty_recalc_flag")
+		else if (header.at(i) == "cost_qty_recalc_flag")
 		{
-			cost_qty_recalc_flag = params[i];
+			cost_qty_recalc_flag = params.at(i);
 		}
-		else if (header[i] == "batch_sum_flag")
+		else if (header.at(i) == "batch_sum_flag")
 		{
-			batch_sum_flag = params[i];
+			batch_sum_flag = params.at(i);
 		}
-		else if (header[i] == "name_sep_char")
+		else if (header.at(i) == "name_sep_char")
 		{
-			name_sep_char = params[i];
+			name_sep_char = params.at(i);
 		}
-		else if (header[i] == "def_complete_pct_type")
+		else if (header.at(i) == "def_complete_pct_type")
 		{
-			def_complete_pct_type = params[i];
+			def_complete_pct_type = params.at(i);
 		}
-		else if (header[i] == "proj_short_name")
+		else if (header.at(i) == "proj_short_name")
 		{
-			proj_short_name = params[i];
+			proj_short_name = params.at(i);
 		}
-		else if (header[i] == "task_code_base")
+		else if (header.at(i) == "task_code_base")
 		{
-			task_code_base = params[i];
+			task_code_base = params.at(i);
 		}
-		else if (header[i] == "task_code_step")
+		else if (header.at(i) == "task_code_step")
 		{
-			task_code_step = params[i];
+			task_code_step = params.at(i);
 		}
-		else if (header[i] == "priority_num")
+		else if (header.at(i) == "priority_num")
 		{
-			priority_num = params[i];
+			priority_num = params.at(i);
 		}
-		else if (header[i] == "wbs_max_sum_level")
+		else if (header.at(i) == "wbs_max_sum_level")
 		{
-			wbs_max_sum_level = params[i];
+			wbs_max_sum_level = params.at(i);
 		}
-		else if (header[i] == "strgy_priority_num")
+		else if (header.at(i) == "strgy_priority_num")
 		{
-			strgy_priority_num = params[i];
+			strgy_priority_num = params.at(i);
 		}
-		else if (header[i] == "last_checksum")
+		else if (header.at(i) == "last_checksum")
 		{
-			last_checksum = params[i];
+			last_checksum = params.at(i);
 		}
-		else if (header[i] == "critical_drtn_hr_cnt")
+		else if (header.at(i) == "critical_drtn_hr_cnt")
 		{
-			critical_drtn_hr_cnt = params[i];
+			critical_drtn_hr_cnt = params.at(i);
 		}
-		else if (header[i] == "def_cost_per_qty")
+		else if (header.at(i) == "def_cost_per_qty")
 		{
-			def_cost_per_qty = params[i];
+			def_cost_per_qty = params.at(i);
 		}
-		else if (header[i] == "last_recalc_date")
+		else if (header.at(i) == "last_recalc_date")
 		{
-			last_recalc_date = params[i];
+			last_recalc_date = params.at(i);
 		}
-		else if (header[i] == "plan_start_date")
+		else if (header.at(i) == "plan_start_date")
 		{
-			plan_start_date = params[i];
+			plan_start_date = params.at(i);
 		}
-		else if (header[i] == "plan_end_date")
+		else if (header.at(i) == "plan_end_date")
 		{
-			plan_end_date = params[i];
+			plan_end_date = params.at(i);
 		}
-		else if (header[i] == "scd_end_date")
+		else if (header.at(i) == "scd_end_date")
 		{
-			scd_end_date = params[i];
+			scd_end_date = params.at(i);
 		}
-		else if (header[i] == "add_date")
+		else if (header.at(i) == "add_date")
 		{
-			add_date = params[i];
+			add_date = params.at(i);
 		}
-		else if (header[i] == "last_tasksum_date")
+		else if (header.at(i) == "last_tasksum_date")
 		{
-			last_tasksum_date = params[i];
+			last_tasksum_date = params.at(i);
 		}
-		else if (header[i] == "fcst_start_date")
+		else if (header.at(i) == "fcst_start_date")
 		{
-			fcst_start_date = params[i];
+			fcst_start_date = params.at(i);
 		}
-		else if (header[i] == "def_duration_type")
+		else if (header.at(i) == "def_duration_type")
 		{
-			def_duration_type = params[i];
+			def_duration_type = params.at(i);
 		}
-		else if (header[i] == "task_code_prefix")
+		else if (header.at(i) == "task_code_prefix")
 		{
-			task_code_prefix = params[i];
+			task_code_prefix = params.at(i);
 		}
-		else if (header[i] == "guid")
+		else if (header.at(i) == "guid")
 		{
-			guid = params[i];
+			guid = params.at(i);
 		}
-		else if (header[i] == "def_qty_type")
+		else if (header.at(i) == "def_qty_type")
 		{
-			def_qty_type = params[i];
+			def_qty_type = params.at(i);
 		}
-		else if (header[i] == "add_by_name")
+		else if (header.at(i) == "add_by_name")
 		{
-			add_by_name = params[i];
+			add_by_name = params.at(i);
 		}
-		else if (header[i] == "web_local_root_path")
+		else if (header.at(i) == "web_local_root_path")
 		{
-			web_local_root_path = params[i];
+			web_local_root_path = params.at(i);
 		}
-		else if (header[i] == "proj_url")
+		else if (header.at(i) == "proj_url")
 		{
-			proj_url = params[i];
+			proj_url = params.at(i);
 		}
-		else if (header[i] == "def_rate_type")
+		else if (header.at(i) == "def_rate_type")
 		{
-			def_rate_type = params[i];
+			def_rate_type = params.at(i);
 		}
-		else if (header[i] == "add_act_remain_flag")
+		else if (header.at(i) == "add_act_remain_flag")
 		{
-			add_act_remain_flag = params[i];
+			add_act_remain_flag = params.at(i);
 		}
-		else if (header[i] == "act_this_per_link_flag")
+		else if (header.at(i) == "act_this_per_link_flag")
 		{
-			act_this_per_link_flag = params[i];
+			act_this_per_link_flag = params.at(i);
 		}
-		else if (header[i] == "def_task_type")
+		else if (header.at(i) == "def_task_type")
 		{
-			def_task_type = params[i];
+			def_task_type = params.at(i);
 		}
-		else if (header[i] == "act_pct_link_flag")
+		else if (header.at(i) == "act_pct_link_flag")
 		{
-			act_pct_link_flag = params[i];
+			act_pct_link_flag = params.at(i);
 		}
-		else if (header[i] == "critical_path_type")
+		else if (header.at(i) == "critical_path_type")
 		{
-			critical_path_type = params[i];
+			critical_path_type = params.at(i);
 		}
-		else if (header[i] == "task_code_prefix_flag")
+		else if (header.at(i) == "task_code_prefix_flag")
 		{
-			task_code_prefix_flag = params[i];
+			task_code_prefix_flag = params.at(i);
 		}
-		else if (header[i] == "def_rollup_dates_flag")
+		else if (header.at(i) == "def_rollup_dates_flag")
 		{
-			def_rollup_dates_flag = params[i];
+			def_rollup_dates_flag = params.at(i);
 		}
-		else if (header[i] == "use_project_baseline_flag")
+		else if (header.at(i) == "use_project_baseline_flag")
 		{
-			use_project_baseline_flag = params[i];
+			use_project_baseline_flag = params.at(i);
 		}
-		else if (header[i] == "rem_target_link_flag")
+		else if (header.at(i) == "rem_target_link_flag")
 		{
-			rem_target_link_flag = params[i];
+			rem_target_link_flag = params.at(i);
 		}
-		else if (header[i] == "reset_planned_flag")
+		else if (header.at(i) == "reset_planned_flag")
 		{
-			reset_planned_flag = params[i];
+			reset_planned_flag = params.at(i);
 		}
-		else if (header[i] == "allow_neg_act_flag")
+		else if (header.at(i) == "allow_neg_act_flag")
 		{
-			allow_neg_act_flag = params[i];
+			allow_neg_act_flag = params.at(i);
 		}
-		else if (header[i] == "sum_assign_level")
+		else if (header.at(i) == "sum_assign_level")
 		{
-			sum_assign_level = params[i];
+			sum_assign_level = params.at(i);
 		}
-		else if (header[i] == "last_baseline_update_date")
+		else if (header.at(i) == "last_baseline_update_date")
 		{
-			last_baseline_update_date = params[i];
+			last_baseline_update_date = params.at(i);
 		}
-		else if (header[i] == "cr_external_key")
+		else if (header.at(i) == "cr_external_key")
 		{
-			cr_external_key = params[i];
+			cr_external_key = params.at(i);
 		}
-		else if (header[i] == "apply_actuals_date")
+		else if (header.at(i) == "apply_actuals_date")
 		{
-			apply_actuals_date = params[i];
+			apply_actuals_date = params.at(i);
 		}
-		else if (header[i] == "loaded_scope_level")
+		else if (header.at(i) == "loaded_scope_level")
 		{
-			loaded_scope_level = params[i];
+			loaded_scope_level = params.at(i);
 		}
-		else if (header[i] == "export_flag")
+		else if (header.at(i) == "export_flag")
 		{
-			export_flag = params[i];
+			export_flag = params.at(i);
 		}
-		else if (header[i] == "baselines_to_export")
+		else if (header.at(i) == "baselines_to_export")
 		{
-			baselines_to_export = params[i];
+			baselines_to_export = params.at(i);
 		}
-		else if (header[i] == "baseline_names_to_export")
+		else if (header.at(i) == "baseline_names_to_export")
 		{
-			baseline_names_to_export = params[i];
+			baseline_names_to_export = params.at(i);
 		}
-		else if (header[i] == "next_data_date")
+		else if (header.at(i) == "next_data_date")
 		{
-			next_data_date = params[i];
+			next_data_date = params.at(i);
 		}
-		else if (header[i] == "close_period_flag")
+		else if (header.at(i) == "close_period_flag")
 		{
-			close_period_flag = params[i];
+			close_period_flag = params.at(i);
 		}
-		else if (header[i] == "sum_refresh_date")
+		else if (header.at(i) == "sum_refresh_date")
 		{
-			sum_refresh_date = params[i];
+			sum_refresh_date = params.at(i);
 		}
-		else if (header[i] == "trsrcsum_loaded")
+		else if (header.at(i) == "trsrcsum_loaded")
 		{
-			trsrcsum_loaded = params[i];
+			trsrcsum_loaded = params.at(i);
 		}
-		else if (header[i] == "sumtask_loaded")
+		else if (header.at(i) == "sumtask_loaded")
 		{
-			sumtask_loaded = params[i];
+			sumtask_loaded = params.at(i);
 		}
 	}
 	reader = readerObj;

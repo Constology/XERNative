@@ -22,7 +22,7 @@ std::string trim(const std::string &s)
 	return rtrim(ltrim(s));
 }
 
-void Reader::split(std::string *strings, const std::string &str)
+void Reader::split(std::vector<std::string> &strings, const std::string &str)
 {
 	int currIndex = 0, i = 0;
 	int startIndex = 0, endIndex;
@@ -33,7 +33,7 @@ void Reader::split(std::string *strings, const std::string &str)
 			endIndex = i;
 			std::string subStr;
 			subStr.append(str, startIndex, endIndex - startIndex);
-			strings[currIndex] = subStr;
+			strings.emplace_back(subStr);
 			currIndex++;
 			startIndex = endIndex + 1;
 		}
@@ -48,39 +48,41 @@ int Reader::parse(const std::string &filename)
 	{
 		std::string line;
 		std::string current_table;
-		std::string current_header[MAX_HEADER_LEN];
-		std::string current_record[MAX_HEADER_LEN];
+		std::vector<std::string> current_header;
+		std::vector<std::string> current_record;
 
 		while (getline(fin, line))
 		{
+			current_record.clear();
 			// Split line into tab-separated parts
-			std::string parts[MAX_HEADER_LEN] = {""};
+			std::vector<std::string> parts;
 			split(parts, line);
 			// check if line starts with %T then it's a table
-			if (parts[0] == "%T")
+			if (parts.at(0) == "%T")
 			{
-				current_table = parts[1];
+				current_table = parts.at(1);
 				current_table = trim(current_table);
+				current_header.clear();
 			}
 			// check if line starts with %F then it's a header
-			else if (parts[0] == "%F")
+			else if (parts.at(0) == "%F")
 			{
-				for (uint i = 0; i < MAX_HEADER_LEN; i++)
+				for (int i = 0; i < parts.size() - 1; i++)
 				{
-					if (parts[i + 1].empty())
+					if (parts.at(i + 1).empty())
 						break;
-					current_header[i] = parts[i + 1];
+					current_header.emplace_back(parts.at(i + 1));
 				}
 			}
 			// check if line starts with %R then it is a record that could be parsed to the class
 			// matching the table name
-			else if (parts[0] == "%R")
+			else if (parts.at(0) == "%R")
 			{
-				for (uint i = 0; i < MAX_HEADER_LEN; i++)
+				for (int i = 0; i < parts.size() - 1; i++)
 				{
-					if (current_header[i].empty())
+					if (current_header.at(i).empty())
 						break;
-					current_record[i] = parts[i + 1];
+					current_record.emplace_back(parts.at(i + 1));
 				}
 				add(current_table, current_header, current_record);
 			}
@@ -94,9 +96,9 @@ int Reader::parse(const std::string &filename)
 	return 0;
 }
 
-void Reader::add(const std::string &table, const std::string *header, const std::string *record)
+void Reader::add(const std::string &table, const std::vector<std::string> header, const std::vector<std::string> record)
 {
-	assert(not(table.empty() || header == nullptr || record == nullptr));
+	// assert(not(table.empty() || header == nullptr || record == nullptr));
 
 	if (table == "ACCOUNT")
 	{
@@ -116,7 +118,7 @@ void Reader::add(const std::string &table, const std::string *header, const std:
 	}
 	else if (table == "PROJWBS")
 	{
-		wbss.add(Wbs(header, record));
+		wbss.add(Wbs(header, record, this));
 	}
 	else if (table == "UDFVALUE")
 	{
@@ -209,7 +211,8 @@ void Reader::add(const std::string &table, const std::string *header, const std:
 	else if (table == "TASKPROC")
 	{
 		taskprocs.add(Taskproc(header, record));
-	}else if (table == "TASK")
+	}
+	else if (table == "TASK")
 	{
 		tasks.add(Task(header, record));
 	}

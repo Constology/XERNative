@@ -1,46 +1,46 @@
 #include "UDFType.h"
 #include "../../Reader.h"
 
-UDFType::UDFType(const std::string header[], const std::string params[], Reader *readerObj)
+UDFType::UDFType(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj)
 {
-    for (int i = 0; i < header->length(); i++)
+    for (int i = 0; i < header.size(); i++)
     {
-        if (header[i].empty())
+        if (header.at(i).empty())
             break;
-        if (header[i] == "udf_type_id")
+        if (header.at(i) == "udf_type_id")
         {
-            if (!params[i].empty())
+            if (!params.at(i).empty())
             {
-                udf_type_id = stoi(params[i]);
+                udf_type_id = stoi(params.at(i));
             }
         }
-        else if (header[i] == "table_name")
+        else if (header.at(i) == "table_name")
         {
-            table_name = params[i];
+            table_name = params.at(i);
         }
-        else if (header[i] == "udf_type_name")
+        else if (header.at(i) == "udf_type_name")
         {
-            udf_type_name = params[i];
+            udf_type_name = params.at(i);
         }
-        else if (header[i] == "udf_type_label")
+        else if (header.at(i) == "udf_type_label")
         {
-            udf_type_label = params[i];
+            udf_type_label = params.at(i);
         }
-        else if (header[i] == "logical_data_type")
+        else if (header.at(i) == "logical_data_type")
         {
-            logical_data_type = params[i];
+            logical_data_type = params.at(i);
         }
-        else if (header[i] == "super_flag")
+        else if (header.at(i) == "super_flag")
         {
-            super_flag = params[i];
+            super_flag = params.at(i);
         }
-        else if (header[i] == "indicator_expression")
+        else if (header.at(i) == "indicator_expression")
         {
-            indicator_expression = params[i];
+            indicator_expression = params.at(i);
         }
-        else if (header[i] == "summary_indicator_expression")
+        else if (header.at(i) == "summary_indicator_expression")
         {
-            summary_indicator_expression = params[i];
+            summary_indicator_expression = params.at(i);
         }
     }
     reader = readerObj;

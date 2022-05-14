@@ -21,7 +21,7 @@ public:
 	std::string tsv;
 	// std::vector<Pcattype> getTypes();
 	Pcatval getValue();
-	Projpcat(const std::string *header, const std::string *params, Reader *readerObj);
+	Projpcat(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
 
 private:
 	Reader *reader;

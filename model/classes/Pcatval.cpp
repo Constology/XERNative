@@ -5,46 +5,46 @@
 #include "Pcatval.h"
 #include "../../Reader.h"
 
-Pcatval::Pcatval(const std::string *header, const std::string *params, Reader *readerObj)
+Pcatval::Pcatval(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj)
 {
 	tsv = "";
-	for (uint i = 0; i < params->length(); i++)
+	for (int i = 0; i < params.size(); i++)
 	{
-		if (header[i] == "proj_catg_id")
+		if (header.at(i) == "proj_catg_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				proj_catg_id = stoi(params[i]);
+				proj_catg_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "proj_catg_type_id")
+		else if (header.at(i) == "proj_catg_type_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				proj_catg_type_id = stoi(params[i]);
+				proj_catg_type_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "seq_num")
+		else if (header.at(i) == "seq_num")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				seq_num = stoi(params[i]);
+				seq_num = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "parent_proj_catg_id")
+		else if (header.at(i) == "parent_proj_catg_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				parent_proj_catg_id = stoi(params[i]);
+				parent_proj_catg_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "proj_catg_short_name")
+		else if (header.at(i) == "proj_catg_short_name")
 		{
-			proj_catg_short_name = params[i];
+			proj_catg_short_name = params.at(i);
 		}
-		else if (header[i] == "proj_catg_name")
+		else if (header.at(i) == "proj_catg_name")
 		{
-			proj_catg_name = params[i];
+			proj_catg_name = params.at(i);
 		}
 	}
 

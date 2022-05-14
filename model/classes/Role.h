@@ -2,7 +2,7 @@
 #define XERPARSER_ROLE_H
 
 #include <vector>
-#include<string>
+#include <string>
 #include "../RoleRates.h"
 class Reader;
 
@@ -21,15 +21,14 @@ public:
     std::string role_descr;
     std::string last_checksum;
 
-    Role(const std::string *header, const std::string *params, Reader *reader);
+    Role(const std::vector<std::string> header, const std::vector<std::string> params, Reader *reader);
     std::string get_tsv();
     std::vector<RoleRate> getRoleRate();
-    
 
 private:
     std::string tsv;
     RoleRates roleRates;
-    Reader * reader;
+    Reader *reader;
 };
 
-#endif //XERPARSER_ROLE_H
+#endif // XERPARSER_ROLE_H

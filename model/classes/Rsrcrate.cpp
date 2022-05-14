@@ -4,77 +4,80 @@
 
 #include "Rsrcrate.h"
 
-Rsrcrate::Rsrcrate(const std::string *header, const std::string *params)
+Rsrcrate::Rsrcrate(const std::vector<std::string> header, const std::vector<std::string> params)
 {
 	tsv = "";
-	for (uint i = 0; i < params->length(); i++)
+	for (int i = 0; i < params.size(); i++)
 	{
-		if (header[i] == "rsrc_rate")
+		if (header.at(i) == "rsrc_rate")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				rsrc_rate = stoi(params[i]);
+				rsrc_rate = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "rsrc_id")
+		else if (header.at(i) == "rsrc_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				rsrc_id = stoi(params[i]);
+				rsrc_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "max_qty_per_hr")
+		else if (header.at(i) == "max_qty_per_hr")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				max_qty_per_hr = stoi(params[i]);
+				max_qty_per_hr = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "cost_per_qty")
+		else if (header.at(i) == "cost_per_qty")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				cost_per_qty = stoi(params[i]);
+				cost_per_qty = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "cost_per_qty2")
+		else if (header.at(i) == "cost_per_qty2")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				cost_per_qty2 = stoi(params[i]);
+				cost_per_qty2 = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "cost_per_qty3")
+		else if (header.at(i) == "cost_per_qty3")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				cost_per_qty3 = stoi(params[i]);
+				cost_per_qty3 = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "cost_per_qty4")
+		else if (header.at(i) == "cost_per_qty4")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				cost_per_qty4 = stoi(params[i]);
+				cost_per_qty4 = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "cost_per_qty5")
+		else if (header.at(i) == "cost_per_qty5")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				cost_per_qty5 = stoi(params[i]);
+				cost_per_qty5 = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "shift_period_id")
+		else if (header.at(i) == "shift_period_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				shift_period_id = stoi(params[i]);
+				shift_period_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "start_date")
+		else if (header.at(i) == "start_date")
 		{
-			start_date = Date(params[i]);
+			if (!params.at(i).empty())
+			{
+				start_date = Date(params.at(i));
+			}
 		}
 	}
 	tsv

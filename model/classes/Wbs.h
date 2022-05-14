@@ -2,9 +2,12 @@
 #define XERPARSER_WBS_H
 
 #include <vector>
-#include<string>
+#include <string>
 
 #include "../../Date/Date.h"
+#include "../Tasks.h"
+
+class Reader;
 
 // TODO: convert dates from string to Date
 class Wbs
@@ -36,12 +39,14 @@ public:
     std::string plan_open_state;
     Date anticip_start_date;
     Date anticip_end_date;
+    std::vector<Task> getTasks();
 
-    Wbs(const std::string *header, const std::string *params);
+    Wbs(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
     std::string get_tsv();
 
 private:
     std::string tsv;
+    Reader *reader;
 };
 
-#endif //EXRPARSER_ACCOUNTS_H
+#endif // EXRPARSER_ACCOUNTS_H

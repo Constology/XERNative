@@ -35,43 +35,44 @@
 #include "model/Taskprocs.h"
 #include "model/Tasks.h"
 
-class Reader{
+class Reader
+{
 public:
-		int parse(const std::string& filename);
-		Wbss wbss;
-		Udfs udfs;
-		UDFTypes udftypes;
-		Accounts accounts;
-		Actvcodes actvcodes;
-		Actvtypes actvtypes;
-		Calendars calendars;
-		Roles roles;
-		Currtypes currencies;
-		RCatTypes rCatTypes;
-		RCatValues rCatValues;
-		RoleRates roleRates;
-		TaskRsrcs taskRsrcs;
-		Obss obss;
-		NonWorks nonWorks;
-		Fintmpls fintmpls;
-		Pcattypes pcattypes;
-		Pcatvals pcatvals;
-		Taskpreds taskpreds;
-		Projpcats projpcats;
-		Projects projects;
-		Rsrcs rsrcs;
-		Rsrcrcats rsrcrcats;
-		Rsrccurvdatas rsrccurvdatas;
-		Rsrcrates rsrcrates;
-		Schedoptions schedoptions;
-		Taskactvs taskactvs;
-		Taskprocs taskprocs;
-		Tasks tasks;
+	int parse(const std::string &filename);
+	Wbss wbss;
+	Udfs udfs;
+	UDFTypes udftypes;
+	Accounts accounts;
+	Actvcodes actvcodes;
+	Actvtypes actvtypes;
+	Calendars calendars;
+	Roles roles;
+	Currtypes currencies;
+	RCatTypes rCatTypes;
+	RCatValues rCatValues;
+	RoleRates roleRates;
+	TaskRsrcs taskRsrcs;
+	Obss obss;
+	NonWorks nonWorks;
+	Fintmpls fintmpls;
+	Pcattypes pcattypes;
+	Pcatvals pcatvals;
+	Taskpreds taskpreds;
+	Projpcats projpcats;
+	Projects projects;
+	Rsrcs rsrcs;
+	Rsrcrcats rsrcrcats;
+	Rsrccurvdatas rsrccurvdatas;
+	Rsrcrates rsrcrates;
+	Schedoptions schedoptions;
+	Taskactvs taskactvs;
+	Taskprocs taskprocs;
+	Tasks tasks;
 
-	private:
-		static void split(std::string *strings, const std::string &str);
+private:
+	static void split(std::vector<std::string> &strings, const std::string &str);
 
-		void add(const std::string& table, const std::string *header, const std::string *record);
+	void add(const std::string &table, const std::vector<std::string> header, const std::vector<std::string> record);
 };
 
-#endif //EXRPARSER_READER_H
+#endif // EXRPARSER_READER_H

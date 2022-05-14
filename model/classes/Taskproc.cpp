@@ -4,58 +4,58 @@
 
 #include "Taskproc.h"
 
-Taskproc::Taskproc(const std::string *header, const std::string *params)
+Taskproc::Taskproc(const std::vector<std::string> header, const std::vector<std::string> params)
 {
 	tsv = "";
-	for (uint i = 0; i < params->length(); i++)
+	for (int i = 0; i < params.size(); i++)
 	{
-		if (header[i] == "proc_id")
+		if (header.at(i) == "proc_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				proc_id = stoi(params[i]);
+				proc_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "task_id")
+		else if (header.at(i) == "task_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				task_id = stoi(params[i]);
+				task_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "proj_id")
+		else if (header.at(i) == "proj_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				proj_id = stoi(params[i]);
+				proj_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "seq_num")
+		else if (header.at(i) == "seq_num")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				seq_num = stoi(params[i]);
+				seq_num = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "proc_name")
+		else if (header.at(i) == "proc_name")
 		{
-			proc_name = params[i];
+			proc_name = params.at(i);
 		}
-		else if (header[i] == "complete_flag")
+		else if (header.at(i) == "complete_flag")
 		{
-			complete_flag = params[i];
+			complete_flag = params.at(i);
 		}
-		else if (header[i] == "proc_wt")
+		else if (header.at(i) == "proc_wt")
 		{
-			proc_wt = params[i];
+			proc_wt = params.at(i);
 		}
-		else if (header[i] == "complete_pct")
+		else if (header.at(i) == "complete_pct")
 		{
-			complete_pct = params[i];
+			complete_pct = params.at(i);
 		}
-		else if (header[i] == "proc_descr")
+		else if (header.at(i) == "proc_descr")
 		{
-			proc_descr = params[i];
+			proc_descr = params.at(i);
 		}
 	}
 	tsv

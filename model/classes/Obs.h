@@ -6,20 +6,21 @@
 #define XERPARSER_OBS_H
 
 #include <iostream>
+#include <vector>
 
-class Obs{
+class Obs
+{
 public:
-		int obs_id;
-		int guid;
-		std::string obs_name;
-		std::string obs_descr;
-		int parent_obs_id;
-		int seq_num;
+	int obs_id;
+	int guid;
+	std::string obs_name;
+	std::string obs_descr;
+	int parent_obs_id;
+	int seq_num;
 
-		std::string tsv;
+	std::string tsv;
 
-		Obs(const std::string *header, const std::string *params);
+	Obs(const std::vector<std::string> header, const std::vector<std::string> params);
 };
 
-
-#endif //XERPARSER_OBS_H
+#endif // XERPARSER_OBS_H

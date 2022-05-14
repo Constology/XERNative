@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include "../Pcattypes.h"
+#include <vector>
 
 class Reader;
 
@@ -24,7 +25,7 @@ public:
 
 	Pcattype getType();
 
-	Pcatval(const std::string *header, const std::string *params, Reader *readerObj);
+	Pcatval(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
 
 private:
 	Reader *reader;

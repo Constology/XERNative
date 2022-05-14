@@ -6,20 +6,21 @@
 #define EXRPARSER_ACCOUNT_H
 
 #include <iostream>
+#include <vector>
 
-class Account{
+class Account
+{
 public:
-		int acct_id;
-		int acct_seq_num;
-		int parent_acct_id;
-		std::string acct_name;
-		std::string acct_descr;
-		std::string acct_short_name;
+	int acct_id;
+	int acct_seq_num;
+	int parent_acct_id;
+	std::string acct_name;
+	std::string acct_descr;
+	std::string acct_short_name;
 
-		std::string tsv;
+	std::string tsv;
 
-		Account(const std::string *header, const std::string *params);
+	Account(const std::vector<std::string> header, const std::vector<std::string> params);
 };
 
-
-#endif //EXRPARSER_ACCOUNT_H
+#endif // EXRPARSER_ACCOUNT_H

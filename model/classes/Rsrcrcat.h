@@ -6,17 +6,19 @@
 #define XERPARSER_RSRCRCAT_H
 
 #include <iostream>
+#include <vector>
+#include <string>
 
-class Rsrcrcat{
+class Rsrcrcat
+{
 public:
-		int rsrc_id;
-		int rsrc_catg_type_id;
-		int rsrc_catg_id;
+	int rsrc_id;
+	int rsrc_catg_type_id;
+	int rsrc_catg_id;
 
-		std::string tsv;
+	std::string tsv;
 
-		Rsrcrcat(const std::string *header, const std::string *params);
+	Rsrcrcat(const std::vector<std::string> header, const std::vector<std::string> params);
 };
 
-
-#endif //XERPARSER_RSRCRCAT_H
+#endif // XERPARSER_RSRCRCAT_H

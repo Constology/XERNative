@@ -6,17 +6,18 @@
 #define XERPARSER_FINTMPL_H
 
 #include <iostream>
+#include <vector>
 
-class Fintmpl{
+class Fintmpl
+{
 public:
-		int fintmpl_id;
-		std::string fintmpl_name;
-		std::string default_flag;
+	int fintmpl_id;
+	std::string fintmpl_name;
+	std::string default_flag;
 
-		std::string tsv;
+	std::string tsv;
 
-		Fintmpl(const std::string *header, const std::string *params);
+	Fintmpl(const std::vector<std::string> header, const std::vector<std::string> params);
 };
 
-
-#endif //XERPARSER_FINTMPL_H
+#endif // XERPARSER_FINTMPL_H

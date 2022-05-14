@@ -23,7 +23,7 @@ public:
 
 	std::string tsv;
 
-	Pcattype(const std::string header[], const std::string params[], Reader *readerObj);
+	Pcattype(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
 	std::vector<Pcatval> getProjectCodeValues();
 
 private:

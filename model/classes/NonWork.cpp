@@ -4,24 +4,33 @@
 
 #include "NonWork.h"
 
-NonWork::NonWork(const std::string *header, const std::string *params){
+NonWork::NonWork(const std::vector<std::string> header, const std::vector<std::string> params)
+{
 	tsv = "";
-	for(uint i = 0; i < header->size(); i++){
-		if (header[i] == "nonwork_type_id"){ 
-			if(!params[i].empty()){
-				nonwork_type_id = std::stoi(params[i]); 
-				}
-		}
-		else if (header[i] == "seq_num"){ 
-		if(!params[i].empty()){
-			seq_num = std::stoi(params[i]); 
+	for (int i = 0; i < header.size(); i++)
+	{
+		if (header.at(i) == "nonwork_type_id")
+		{
+			if (!params.at(i).empty())
+			{
+				nonwork_type_id = std::stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "nonwork_code"){ nonwork_code = params[i]; }
-		else if (header[i] == "nonwork_type"){ nonwork_type = params[i]; }
+		else if (header.at(i) == "seq_num")
+		{
+			if (!params.at(i).empty())
+			{
+				seq_num = std::stoi(params.at(i));
+			}
+		}
+		else if (header.at(i) == "nonwork_code")
+		{
+			nonwork_code = params.at(i);
+		}
+		else if (header.at(i) == "nonwork_type")
+		{
+			nonwork_type = params.at(i);
+		}
 	}
-	tsv.append(std::to_string(nonwork_type_id)).append("\t")
-	.append(std::to_string(seq_num)).append("\t")
-	.append(nonwork_code).append("\t")
-	.append(nonwork_type).append("\n");
+	tsv.append(std::to_string(nonwork_type_id)).append("\t").append(std::to_string(seq_num)).append("\t").append(nonwork_code).append("\t").append(nonwork_type).append("\n");
 }

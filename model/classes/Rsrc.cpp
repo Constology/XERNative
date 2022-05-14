@@ -5,159 +5,159 @@
 #include "Rsrc.h"
 #include "../../Reader.h"
 
-Rsrc::Rsrc(const std::string *header, const std::string *params, Reader *readerObj)
+Rsrc::Rsrc(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj)
 {
 	tsv = "";
-	for (uint i = 0; i < params->length(); i++)
+	for (int i = 0; i < params.size(); i++)
 	{
-		if (header[i] == "rsrc_id")
+		if (header.at(i) == "rsrc_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				rsrc_id = stoi(params[i]);
+				rsrc_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "parent_rsrc_id")
+		else if (header.at(i) == "parent_rsrc_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				parent_rsrc_id = stoi(params[i]);
+				parent_rsrc_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "clndr_id")
+		else if (header.at(i) == "clndr_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				clndr_id = stoi(params[i]);
+				clndr_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "role_id")
+		else if (header.at(i) == "role_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				role_id = stoi(params[i]);
+				role_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "shift_id")
+		else if (header.at(i) == "shift_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				shift_id = stoi(params[i]);
+				shift_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "user_id")
+		else if (header.at(i) == "user_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				user_id = stoi(params[i]);
+				user_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "pobs_id")
+		else if (header.at(i) == "pobs_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				pobs_id = stoi(params[i]);
+				pobs_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "rsrc_seq_num")
+		else if (header.at(i) == "rsrc_seq_num")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				rsrc_seq_num = stoi(params[i]);
+				rsrc_seq_num = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "curr_id")
+		else if (header.at(i) == "curr_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				curr_id = stoi(params[i]);
+				curr_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "unit_id")
+		else if (header.at(i) == "unit_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				unit_id = stoi(params[i]);
+				unit_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "location_id")
+		else if (header.at(i) == "location_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				location_id = stoi(params[i]);
+				location_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "guid")
+		else if (header.at(i) == "guid")
 		{
-			guid = params[i];
+			guid = params.at(i);
 		}
-		else if (header[i] == "email_addr")
+		else if (header.at(i) == "email_addr")
 		{
-			email_addr = params[i];
+			email_addr = params.at(i);
 		}
-		else if (header[i] == "employee_code")
+		else if (header.at(i) == "employee_code")
 		{
-			employee_code = params[i];
+			employee_code = params.at(i);
 		}
-		else if (header[i] == "office_phone")
+		else if (header.at(i) == "office_phone")
 		{
-			office_phone = params[i];
+			office_phone = params.at(i);
 		}
-		else if (header[i] == "rsrc_name")
+		else if (header.at(i) == "rsrc_name")
 		{
-			rsrc_name = params[i];
+			rsrc_name = params.at(i);
 		}
-		else if (header[i] == "rsrc_short_name")
+		else if (header.at(i) == "rsrc_short_name")
 		{
-			rsrc_short_name = params[i];
+			rsrc_short_name = params.at(i);
 		}
-		else if (header[i] == "rsrc_title_name")
+		else if (header.at(i) == "rsrc_title_name")
 		{
-			rsrc_title_name = params[i];
+			rsrc_title_name = params.at(i);
 		}
-		else if (header[i] == "def_qty_per_hr")
+		else if (header.at(i) == "def_qty_per_hr")
 		{
-			def_qty_per_hr = params[i];
+			def_qty_per_hr = params.at(i);
 		}
-		else if (header[i] == "cost_qty_type")
+		else if (header.at(i) == "cost_qty_type")
 		{
-			cost_qty_type = params[i];
+			cost_qty_type = params.at(i);
 		}
-		else if (header[i] == "ot_factor")
+		else if (header.at(i) == "ot_factor")
 		{
-			ot_factor = params[i];
+			ot_factor = params.at(i);
 		}
-		else if (header[i] == "active_flag")
+		else if (header.at(i) == "active_flag")
 		{
-			active_flag = params[i];
+			active_flag = params.at(i);
 		}
-		else if (header[i] == "auto_compute_act_flag")
+		else if (header.at(i) == "auto_compute_act_flag")
 		{
-			auto_compute_act_flag = params[i];
+			auto_compute_act_flag = params.at(i);
 		}
-		else if (header[i] == "ot_flag")
+		else if (header.at(i) == "ot_flag")
 		{
-			ot_flag = params[i];
+			ot_flag = params.at(i);
 		}
-		else if (header[i] == "rsrc_type")
+		else if (header.at(i) == "rsrc_type")
 		{
-			rsrc_type = params[i];
+			rsrc_type = params.at(i);
 		}
-		else if (header[i] == "rsrc_notes")
+		else if (header.at(i) == "rsrc_notes")
 		{
-			rsrc_notes = params[i];
+			rsrc_notes = params.at(i);
 		}
-		else if (header[i] == "load_tasks_flag")
+		else if (header.at(i) == "load_tasks_flag")
 		{
-			load_tasks_flag = params[i];
+			load_tasks_flag = params.at(i);
 		}
-		else if (header[i] == "level_flag")
+		else if (header.at(i) == "level_flag")
 		{
-			level_flag = params[i];
+			level_flag = params.at(i);
 		}
-		else if (header[i] == "last_checksum")
+		else if (header.at(i) == "last_checksum")
 		{
-			last_checksum = params[i];
+			last_checksum = params.at(i);
 		}
 	}
 	reader = readerObj;

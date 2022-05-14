@@ -4,184 +4,184 @@
 
 #include "Schedoption.h"
 
-Schedoption::Schedoption(const std::string *header, const std::string *params)
+Schedoption::Schedoption(const std::vector<std::string> header, const std::vector<std::string> params)
 {
 	tsv = "";
-	for (int i = 0; i < params->length(); i++)
+	for (int i = 0; i < params.size(); i++)
 	{
-		if (header[i] == "schedoptions_id")
+		if (header.at(i) == "schedoptions_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				schedoptions_id = stoi(params[i]);
+				schedoptions_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "proj_id")
+		else if (header.at(i) == "proj_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				proj_id = stoi(params[i]);
+				proj_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "sched_outer_depend_type")
+		else if (header.at(i) == "sched_outer_depend_type")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				sched_outer_depend_type = stoi(params[i]);
+				sched_outer_depend_type = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "sched_open_critical_flag")
+		else if (header.at(i) == "sched_open_critical_flag")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				sched_open_critical_flag = stoi(params[i]);
+				sched_open_critical_flag = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "sched_lag_early_start_flag")
+		else if (header.at(i) == "sched_lag_early_start_flag")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				sched_lag_early_start_flag = stoi(params[i]);
+				sched_lag_early_start_flag = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "sched_retained_logic")
+		else if (header.at(i) == "sched_retained_logic")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				sched_retained_logic = stoi(params[i]);
+				sched_retained_logic = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "sched_setplantoforecast")
+		else if (header.at(i) == "sched_setplantoforecast")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				sched_setplantoforecast = stoi(params[i]);
+				sched_setplantoforecast = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "sched_float_type")
+		else if (header.at(i) == "sched_float_type")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				sched_float_type = stoi(params[i]);
+				sched_float_type = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "sched_calendar_on_relationship_lag")
+		else if (header.at(i) == "sched_calendar_on_relationship_lag")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				sched_calendar_on_relationship_lag = stoi(params[i]);
+				sched_calendar_on_relationship_lag = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "sched_use_expect_end_flag")
+		else if (header.at(i) == "sched_use_expect_end_flag")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				sched_use_expect_end_flag = stoi(params[i]);
+				sched_use_expect_end_flag = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "sched_progress_override")
+		else if (header.at(i) == "sched_progress_override")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				sched_progress_override = stoi(params[i]);
+				sched_progress_override = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "level_float_hrs_cnt")
+		else if (header.at(i) == "level_float_hrs_cnt")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				level_float_hrs_cnt = stoi(params[i]);
+				level_float_hrs_cnt = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "level_outer_assign_flag")
+		else if (header.at(i) == "level_outer_assign_flag")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				level_outer_assign_flag = stoi(params[i]);
+				level_outer_assign_flag = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "level_outer_assign_priority")
+		else if (header.at(i) == "level_outer_assign_priority")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				level_outer_assign_priority = stoi(params[i]);
+				level_outer_assign_priority = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "level_over_alloc_pct")
+		else if (header.at(i) == "level_over_alloc_pct")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				level_over_alloc_pct = stoi(params[i]);
+				level_over_alloc_pct = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "level_within_float_flag")
+		else if (header.at(i) == "level_within_float_flag")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				level_within_float_flag = stoi(params[i]);
+				level_within_float_flag = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "level_keep_sched_date_flag")
+		else if (header.at(i) == "level_keep_sched_date_flag")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				level_keep_sched_date_flag = stoi(params[i]);
+				level_keep_sched_date_flag = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "level_all_rsrc_flag")
+		else if (header.at(i) == "level_all_rsrc_flag")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				level_all_rsrc_flag = stoi(params[i]);
+				level_all_rsrc_flag = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "sched_use_project_end_date_for_float")
+		else if (header.at(i) == "sched_use_project_end_date_for_float")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				sched_use_project_end_date_for_float = stoi(params[i]);
+				sched_use_project_end_date_for_float = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "enable_multiple_longest_path_calc")
+		else if (header.at(i) == "enable_multiple_longest_path_calc")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				enable_multiple_longest_path_calc = stoi(params[i]);
+				enable_multiple_longest_path_calc = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "limit_multiple_longest_path_calc")
+		else if (header.at(i) == "limit_multiple_longest_path_calc")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				limit_multiple_longest_path_calc = stoi(params[i]);
+				limit_multiple_longest_path_calc = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "max_multiple_longest_path")
+		else if (header.at(i) == "max_multiple_longest_path")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				max_multiple_longest_path = stoi(params[i]);
+				max_multiple_longest_path = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "use_total_float_multiple_longest_paths")
+		else if (header.at(i) == "use_total_float_multiple_longest_paths")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				use_total_float_multiple_longest_paths = stoi(params[i]);
+				use_total_float_multiple_longest_paths = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "key_activity_for_multiple_longest_paths")
+		else if (header.at(i) == "key_activity_for_multiple_longest_paths")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				key_activity_for_multiple_longest_paths = stoi(params[i]);
+				key_activity_for_multiple_longest_paths = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "LevelPriorityList")
+		else if (header.at(i) == "LevelPriorityList")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				LevelPriorityList = stoi(params[i]);
+				LevelPriorityList = stoi(params.at(i));
 			}
 		}
 	}

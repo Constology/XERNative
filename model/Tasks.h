@@ -9,20 +9,19 @@
 
 #include "classes/Task.h"
 
-class Tasks{
+class Tasks
+{
 public:
-		void add(const Task& task);
+	void add(const Task &task);
 
-		Task findById(int id);
-		std::vector<Task> getAll();
+	Task findById(int id);
+	std::vector<Task> getAll();
+	std::vector<Task> getByWbs(int id);
 
-
-		std::string get_tsv() const;
-
+	std::string get_tsv() const;
 
 private:
-		std::vector<Task> tasks;
+	std::vector<Task> tasks;
 };
 
-
-#endif //XERPARSER_TASKS_H
+#endif // XERPARSER_TASKS_H

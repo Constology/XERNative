@@ -4,30 +4,30 @@
 
 #include "Rsrcrcat.h"
 
-Rsrcrcat::Rsrcrcat(const std::string *header, const std::string *params)
+Rsrcrcat::Rsrcrcat(const std::vector<std::string> header, const std::vector<std::string> params)
 {
 	tsv = "";
-	for (uint i = 0; i < params->length(); i++)
+	for (int i = 0; i < params.size(); i++)
 	{
-		if (header[i] == "rsrc_id")
+		if (header.at(i) == "rsrc_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				rsrc_id = stoi(params[i]);
+				rsrc_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "rsrc_catg_type_id")
+		else if (header.at(i) == "rsrc_catg_type_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				rsrc_catg_type_id = stoi(params[i]);
+				rsrc_catg_type_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "rsrc_catg_id")
+		else if (header.at(i) == "rsrc_catg_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				rsrc_catg_id = stoi(params[i]);
+				rsrc_catg_id = stoi(params.at(i));
 			}
 		}
 	}

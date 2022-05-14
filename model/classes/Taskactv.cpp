@@ -4,37 +4,37 @@
 
 #include "Taskactv.h"
 
-Taskactv::Taskactv(const std::string *header, const std::string *params)
+Taskactv::Taskactv(const std::vector<std::string> header, const std::vector<std::string> params)
 {
 	tsv = "";
-	for (uint i = 0; i < params->length(); i++)
+	for (int i = 0; i < params.size(); i++)
 	{
-		if (header[i] == "task_id")
+		if (header.at(i) == "task_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				task_id = stoi(params[i]);
+				task_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "actv_code_type_id")
+		else if (header.at(i) == "actv_code_type_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				actv_code_type_id = stoi(params[i]);
+				actv_code_type_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "actv_code_id")
+		else if (header.at(i) == "actv_code_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				actv_code_id = stoi(params[i]);
+				actv_code_id = stoi(params.at(i));
 			}
 		}
-		else if (header[i] == "proj_id")
+		else if (header.at(i) == "proj_id")
 		{
-			if (!params[i].empty())
+			if (!params.at(i).empty())
 			{
-				proj_id = stoi(params[i]);
+				proj_id = stoi(params.at(i));
 			}
 		}
 	}

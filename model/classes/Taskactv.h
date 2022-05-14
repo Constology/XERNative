@@ -6,18 +6,20 @@
 #define XERPARSER_TASKACTV_H
 
 #include <iostream>
+#include <vector>
+#include <string>
 
-class Taskactv{
+class Taskactv
+{
 public:
-		int task_id;
-		int actv_code_type_id;
-		int actv_code_id;
-		int proj_id;
+	int task_id;
+	int actv_code_type_id;
+	int actv_code_id;
+	int proj_id;
 
-		std::string tsv;
+	std::string tsv;
 
-		Taskactv(const std::string *header, const std::string *params);
+	Taskactv(const std::vector<std::string> header, const std::vector<std::string> params);
 };
 
-
-#endif //XERPARSER_TASKACTV_H
+#endif // XERPARSER_TASKACTV_H

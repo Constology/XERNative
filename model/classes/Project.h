@@ -8,6 +8,7 @@
 #include <iostream>
 #include "../Wbss.h"
 #include "../Projpcats.h"
+#include <vector>
 
 class Reader;
 
@@ -87,7 +88,7 @@ public:
 
 	std::string tsv;
 
-	Project(const std::string *header, const std::string *params, Reader *readerObj);
+	Project(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
 	std::vector<Wbs> getWbs();
 	std::vector<Projpcat> getProjectCodes();
 

@@ -6,23 +6,25 @@
 #define XERPARSER_TASKPROC_H
 
 #include <iostream>
+#include <vector>
+#include <string>
 
-class Taskproc{
+class Taskproc
+{
 public:
-		int proc_id;
-		int task_id;
-		int proj_id;
-		int seq_num;
-		std::string proc_name;
-		std::string complete_flag;
-		std::string proc_wt;
-		std::string complete_pct;
-		std::string proc_descr;
+	int proc_id;
+	int task_id;
+	int proj_id;
+	int seq_num;
+	std::string proc_name;
+	std::string complete_flag;
+	std::string proc_wt;
+	std::string complete_pct;
+	std::string proc_descr;
 
-		std::string tsv;
+	std::string tsv;
 
-		Taskproc(const std::string *header, const std::string *params);
+	Taskproc(const std::vector<std::string> header, const std::vector<std::string> params);
 };
 
-
-#endif //XERPARSER_TASKPROC_H
+#endif // XERPARSER_TASKPROC_H

@@ -7,7 +7,7 @@ int main()
 {
     Reader reader;
 
-    reader.parse("/home/hassan/programming/xerParser/QC2.xer");
+    reader.parse("/home/hassan/programming/xerParser/wk2.xer");
 
     cout << "*********** Project and WBS **********************" << endl;
 
@@ -17,7 +17,12 @@ int main()
         cout << "prj " << prj.tsv << endl;
         for (Wbs wbs : wbss)
         {
-            cout << "WBS " << wbs.get_tsv() << endl;
+            cout << "WBS " << wbs.wbs_name << endl;
+            for (Task task : wbs.getTasks())
+            {
+                cout << "\t"
+                     << "Task " << task.task_code << "\t" << task.task_name << "\t" << task.early_start_date.to_string() << "\t" << task.early_end_date.to_string() << endl;
+            }
         }
         for (Projpcat pcat : reader.projpcats.getAll())
         {
@@ -61,7 +66,7 @@ int main()
         std::vector<Rsrc> childs = rsrc.getChildren();
         for (Rsrc par : childs)
         {
-            cout << "Children for rsrc " << to_string(rsrc.rsrc_id) << " is " << par.tsv;
+            cout << "Children for rsrc " << to_string(rsrc.rsrc_id) << rsrc.rsrc_name << " is " << par.tsv;
         }
 
         for (Rsrcrate rr : rRates)

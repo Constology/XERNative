@@ -19,7 +19,7 @@ public:
     std::string indicator_expression;
     std::string summary_indicator_expression;
 
-    UDFType(const std::string *header, const std::string *params, Reader *readerObj);
+    UDFType(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
     std::string get_tsv();
     std::vector<Udf> getUdfValues();
 

@@ -6,25 +6,27 @@
 #define XERPARSER_TASKPRED_H
 
 #include <iostream>
+#include <vector>
+#include <string>
 
-class Taskpred{
+class Taskpred
+{
 public:
-		int task_pred_id;
-		int task_id;
-		int pred_task_id;
-		int proj_id;
-		int pred_proj_id;
-		std::string pred_type;
-		std::string lag_hr_cnt;
-		std::string comments;
-		std::string float_path;
-		std::string aref;
-		std::string arls;
+	int task_pred_id;
+	int task_id;
+	int pred_task_id;
+	int proj_id;
+	int pred_proj_id;
+	std::string pred_type;
+	std::string lag_hr_cnt;
+	std::string comments;
+	std::string float_path;
+	std::string aref;
+	std::string arls;
 
-		std::string tsv;
+	std::string tsv;
 
-		Taskpred(const std::string *header, const std::string *params);
+	Taskpred(const std::vector<std::string> header, const std::vector<std::string> params);
 };
 
-
-#endif //XERPARSER_TASKPRED_H
+#endif // XERPARSER_TASKPRED_H

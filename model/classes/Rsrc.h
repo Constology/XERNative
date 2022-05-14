@@ -7,6 +7,8 @@
 
 #include <iostream>
 #include "../Rsrcrates.h"
+#include <vector>
+#include <string>
 
 class Reader;
 
@@ -47,7 +49,7 @@ public:
 	std::vector<Rsrcrate> getRsrcRate();
 	std::string tsv;
 
-	Rsrc(const std::string *header, const std::string *params, Reader *readerObj);
+	Rsrc(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
 	Rsrc getParent();
 	std::vector<Rsrc> getChildren();
 
