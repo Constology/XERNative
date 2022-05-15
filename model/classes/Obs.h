@@ -8,19 +8,24 @@
 #include <iostream>
 #include <vector>
 
-class Obs
-{
+class Obs {
 public:
-	int obs_id;
-	int guid;
-	std::string obs_name;
-	std::string obs_descr;
-	int parent_obs_id;
-	int seq_num;
+    int obs_id;
+    std::string guid;
+    std::string obs_name;
+    std::string obs_descr;
+    int parent_obs_id;
+    int seq_num;
 
-	std::string tsv;
+    std::string get_tsv() const;
+    Obs(const std::vector<std::string> header, const std::vector<std::string> params);
 
-	Obs(const std::vector<std::string> header, const std::vector<std::string> params);
+private:
+    std::string tsv;
+    void update_tsv();
+    std::string obs_id_str;
+    std::string parent_obs_id_str;
+    std::string seq_num_str;
 };
 
 #endif // XERPARSER_OBS_H

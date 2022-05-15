@@ -8,17 +8,21 @@
 #include <iostream>
 #include <vector>
 
-class NonWork
-{
+class NonWork {
 public:
-	int nonwork_type_id;
-	int seq_num;
-	std::string nonwork_code;
-	std::string nonwork_type;
+    int nonwork_type_id;
+    int seq_num;
+    std::string nonwork_code;
+    std::string nonwork_type;
 
-	std::string tsv;
+    std::string get_tsv() const;
+    NonWork(const std::vector<std::string> header, const std::vector<std::string> params);
 
-	NonWork(const std::vector<std::string> header, const std::vector<std::string> params);
+private:
+    std::string tsv;
+    void update_tsv();
+    std::string nonwork_type_id_str;
+    std::string seq_num_str;
 };
 
 #endif // XERPARSER_NONWORK_H

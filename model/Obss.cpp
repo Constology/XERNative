@@ -4,28 +4,26 @@
 
 #include "Obss.h"
 
-void Obss::add(const Obs& obs){ obss.emplace_back(obs); }
+void Obss::add(const Obs &obs) { obss.emplace_back(obs); }
 
-Obs Obss::findById(int id){
-	for(auto & obs : obss){
-		if(obs.obs_id == id){
-			return obs;
-		}
-	}
-	printf("Account not found");
-	exit(EXIT_FAILURE);
+Obs Obss::findById(int id) {
+    for (auto &obs : obss) {
+        if (obs.obs_id == id) {
+            return obs;
+        }
+    }
+    printf("Account not found");
+    exit(EXIT_FAILURE);
 }
 
-std::vector<Obs> Obss::getAll(){
-	return obss;
-}
+std::vector<Obs> Obss::getAll() { return obss; }
 
-std::string Obss::get_tsv() const{
-	std::string tsv;
-	tsv.append("%T\tOBS\n");
-	tsv.append("%F\tobs_id\tquid\tobs_name\tobs_descr\tparent_obs_id\tseq_num\n");
-	for(auto & obs : obss){
-		tsv.append(obs.tsv);
-	}
-	return tsv;
+std::string Obss::get_tsv() const {
+    std::string tsv;
+    tsv.append("%T\tOBS\n");
+    tsv.append("%F\tobs_id\tparent_obs_id\tguid\tseq_num\tobs_name\tobs_descr\n");
+    for (auto &obs : obss) {
+        tsv.append(obs.get_tsv());
+    }
+    return tsv;
 }

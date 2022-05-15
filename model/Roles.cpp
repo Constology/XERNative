@@ -1,12 +1,10 @@
 #include "Roles.h"
 
-void Roles::add(const Role & role){
-    roles.emplace_back(role);
-}
+void Roles::add(const Role &role) { roles.emplace_back(role); }
 
-Role Roles::findById(int id){
-    for(auto role: roles){
-        if(role.role_id == id){
+Role Roles::findById(int id) {
+    for (auto role : roles) {
+        if (role.role_id == id) {
             return role;
         }
     }
@@ -14,28 +12,26 @@ Role Roles::findById(int id){
     exit(EXIT_FAILURE);
 }
 
-Role Roles::getParent(int id){
+Role Roles::getParent(int id) {
     Role currentRole = findById(id);
     int parent_id = currentRole.parent_role_id;
     return findById(parent_id);
 }
 
-Role Roles::getParent(Role &role){
+Role Roles::getParent(Role &role) {
     Role parent = getParent(role.role_id);
     return parent;
 }
 
-std::vector<Role> Roles::getAll(){
-    return roles;
-}
+std::vector<Role> Roles::getAll() { return roles; }
 
-std::string Roles::get_tsv() const{
-	std::string tsv;
-	tsv.append("%T\tROLE\n");
-	tsv.append("%F\trole_id\tparent_role_id\tseq_num\trole_name\trole_short_name\tpobs_id"
-						 "\tdef_cost_qty_link_flag\tcost_qty_type\trole_descr\tlast_checksum\n");
-	for(auto role : roles){
-		tsv.append(role.get_tsv());
-	}
-	return tsv;
+std::string Roles::get_tsv() const {
+    std::string tsv;
+    tsv.append("%T\tROLE\n");
+    tsv.append("%F\trole_id\tparent_role_id\tseq_num\trole_name\trole_short_name\tpobs_id"
+               "\tdef_cost_qty_link_flag\tcost_qty_type\trole_descr\tlast_checksum\n");
+    for (auto &role : roles) {
+        tsv.append(role.get_tsv());
+    }
+    return tsv;
 }

@@ -1,10 +1,9 @@
 #if !defined(XERPARSER_ROLERATE_H)
-#define XERPARSER_ROLERATE_H
-#include <string>
-#include <vector>
+#    define XERPARSER_ROLERATE_H
+#    include <string>
+#    include <vector>
 
-class RoleRate
-{
+class RoleRate {
 public:
     RoleRate(const std::vector<std::string> header, const std::vector<std::string> params);
     int role_rate_id;
@@ -15,10 +14,18 @@ public:
     double cost_per_qty4;
     double cost_per_qty5;
 
-    std::string get_tsv();
+    std::string get_tsv() const;
 
 private:
     std::string tsv;
+    std::string role_rate_id_str;
+    std::string role_id_str;
+    std::string cost_per_qty_str;
+    std::string cost_per_qty2_str;
+    std::string cost_per_qty3_str;
+    std::string cost_per_qty4_str;
+    std::string cost_per_qty5_str;
+    void update_tsv();
 };
 
 #endif // XERPARSER_ROLERATE_H

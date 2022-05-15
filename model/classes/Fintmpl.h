@@ -8,16 +8,19 @@
 #include <iostream>
 #include <vector>
 
-class Fintmpl
-{
+class Fintmpl {
 public:
-	int fintmpl_id;
-	std::string fintmpl_name;
-	std::string default_flag;
+    int fintmpl_id;
+    std::string fintmpl_name;
+    std::string default_flag;
 
-	std::string tsv;
+    std::string get_tsv() const;
+    Fintmpl(const std::vector<std::string> header, const std::vector<std::string> params);
 
-	Fintmpl(const std::vector<std::string> header, const std::vector<std::string> params);
+private:
+    void update_tsv();
+    std::string fintmpl_id_str;
+    std::string tsv;
 };
 
 #endif // XERPARSER_FINTMPL_H

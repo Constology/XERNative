@@ -8,19 +8,24 @@
 #include <iostream>
 #include <vector>
 
-class Account
-{
+class Account {
 public:
-	int acct_id;
-	int acct_seq_num;
-	int parent_acct_id;
-	std::string acct_name;
-	std::string acct_descr;
-	std::string acct_short_name;
+    int acct_id;
+    int acct_seq_num;
+    int parent_acct_id;
+    std::string acct_name;
+    std::string acct_descr;
+    std::string acct_short_name;
 
-	std::string tsv;
+    Account(const std::vector<std::string> header, const std::vector<std::string> params);
+    std::string get_tsv() const;
 
-	Account(const std::vector<std::string> header, const std::vector<std::string> params);
+private:
+    std::string acct_id_str;
+    std::string acct_seq_num_str;
+    std::string parent_acct_id_str;
+    std::string update_tsv();
+    std::string tsv;
 };
 
 #endif // EXRPARSER_ACCOUNT_H

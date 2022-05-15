@@ -8,19 +8,25 @@
 #include <iostream>
 #include <vector>
 
-class Actvcode
-{
+class Actvcode {
 public:
-	int actv_code_id;
-	int actv_code_type_id;
-	int parent_actv_code_id;
-	int seq_num;
-	std::string actv_code_name;
-	std::string short_name;
+    int actv_code_id;
+    std::string actv_code_id_str;
+    int actv_code_type_id;
+    std::string actv_code_type_id_str;
+    int parent_actv_code_id;
+    std::string parent_actv_code_id_str;
+    int seq_num;
+    std::string seq_num_str;
+    std::string actv_code_name;
+    std::string short_name;
 
-	std::string tsv;
+    Actvcode(const std::vector<std::string> header, const std::vector<std::string> params);
+    std::string get_tsv() const;
 
-	Actvcode(const std::vector<std::string> header, const std::vector<std::string> params);
+private:
+    void update_tsv();
+    std::string tsv;
 };
 
 #endif // EXRPARSER_ACTVCODE_H
