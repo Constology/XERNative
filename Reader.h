@@ -69,6 +69,7 @@ public:
 	Taskactvs taskactvs;
 	Taskprocs taskprocs;
 	Tasks tasks;
+	Reader();
 
 private:
 	static void split(std::vector<std::string> &strings, const std::string &str);

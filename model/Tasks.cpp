@@ -1,8 +1,15 @@
-//
-// Created by sorat on 13/05/2022.
-//
 
 #include "Tasks.h"
+#include "../Reader.h"
+
+Tasks::Tasks(Reader *readerObj)
+{
+	reader = readerObj;
+}
+
+Tasks::Tasks()
+{
+}
 
 void Tasks::add(Task &task)
 {
@@ -27,7 +34,7 @@ std::vector<Task> Tasks::getAll()
 	return tasks;
 }
 
-std::string Tasks::get_tsv() 
+std::string Tasks::get_tsv()
 {
 	std::string tsv;
 	tsv.append("%T\tTASK\n");
@@ -45,7 +52,7 @@ std::string Tasks::get_tsv()
 			   "external_early_start_date\texternal_late_end_date\tcreate_date\tupdate_date\n");
 	for (auto &task : tasks)
 	{
-		tsv.append(task.tsv);
+		tsv.append(task.get_tsv());
 	}
 	return tsv;
 }
@@ -56,12 +63,25 @@ std::vector<Task> Tasks::getByWbs(int id)
 	std::vector<Task>::iterator iter, end;
 	for (auto t : tasks)
 	{
-		// std::cout << t->task_code << t->task_name << std::endl;
-		// std::cout << "From getByWbs function " << t->task_id << " " << t->wbs_id << " " << id << std::endl;
 		if (t.wbs_id == id)
 		{
 			toReturn.emplace_back(t);
 		}
 	}
 	return toReturn;
+}
+
+std::vector<Task> Tasks::getByRsrc(int id)
+{
+	std::vector<Task> toReturn;
+	std::vector<TaskRsrc> taskrsrcs = reader->taskRsrcs.getByRsrcId(id);
+	for (auto tr : taskrsrcs)
+	{
+		Task task = reader->tasks.findById(tr.task_id);
+	}
+	return toReturn;
+}
+
+std::vector<Task> Tasks::getByRsrc(Rsrc rsrc){
+	return getByRsrc(rsrc.rsrc_id);
 }

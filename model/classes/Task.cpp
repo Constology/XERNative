@@ -1,10 +1,8 @@
-//
-// Created by sorat on 13/05/2022.
-//
-
 #include "Task.h"
 
-Task::Task(std::vector<std::string> header, std::vector<std::string> params)
+#include "../../Reader.h"
+
+Task::Task(std::vector<std::string> header, std::vector<std::string> params, Reader *readerObj)
 {
 	tsv = "";
 	for (int i = 0; i < header.size(); i++)
@@ -14,6 +12,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				task_id = stoi(params.at(i));
+				task_id_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "proj_id")
@@ -21,6 +20,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				proj_id = stoi(params.at(i));
+				proj_id_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "wbs_id")
@@ -28,6 +28,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				wbs_id = stoi(params.at(i));
+				wbs_id_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "clndr_id")
@@ -35,6 +36,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				clndr_id = stoi(params.at(i));
+				clndr_id_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "rsrc_id")
@@ -42,6 +44,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				rsrc_id = stoi(params.at(i));
+				rsrc_id_str = params.at(i);
 			}
 		}
 
@@ -50,6 +53,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				location_id = stoi(params.at(i));
+				location_id_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "total_float_hr_cnt")
@@ -57,6 +61,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				total_float_hr_cnt = stof(params.at(i));
+				total_float_hr_cnt_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "free_float_hr_cnt")
@@ -64,6 +69,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				free_float_hr_cnt = stof(params.at(i));
+				free_float_hr_cnt_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "remain_drtn_hr_cnt")
@@ -71,6 +77,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				remain_drtn_hr_cnt = stof(params.at(i));
+				remain_drtn_hr_cnt_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "float_path")
@@ -78,6 +85,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				float_path = stof(params.at(i));
+				float_path_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "float_path_order")
@@ -85,6 +93,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				float_path_order = stof(params.at(i));
+				float_path_order_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "phys_complete_pct")
@@ -204,6 +213,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				cstr_date = Date(params.at(i));
+				cstr_date = params.at(i);
 			}
 		}
 		else if (header.at(i) == "act_start_date")
@@ -211,6 +221,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				act_start_date = Date(params.at(i));
+				act_start_date_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "act_end_date")
@@ -218,6 +229,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				act_end_date = Date(params.at(i));
+				act_end_date_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "late_start_date")
@@ -225,6 +237,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				late_start_date = Date(params.at(i));
+				late_end_date_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "late_end_date")
@@ -232,6 +245,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				late_end_date = Date(params.at(i));
+				late_end_date_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "expect_end_date")
@@ -239,6 +253,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				expect_end_date = Date(params.at(i));
+				expect_end_date_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "early_start_date")
@@ -246,6 +261,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				early_start_date = Date(params.at(i));
+				early_start_date_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "early_end_date")
@@ -253,6 +269,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				early_end_date = Date(params.at(i));
+				early_end_date = params.at(i);
 			}
 		}
 		else if (header.at(i) == "restart_date")
@@ -260,6 +277,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				restart_date = Date(params.at(i));
+				restart_date_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "reend_date")
@@ -267,6 +285,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				reend_date = Date(params.at(i));
+				reend_date_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "target_end_date")
@@ -274,6 +293,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				target_end_date = Date(params.at(i));
+				target_end_date_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "rem_late_start_date")
@@ -281,6 +301,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				rem_late_start_date = Date(params.at(i));
+				rem_late_start_date_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "rem_late_end_date")
@@ -288,6 +309,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				rem_late_end_date = Date(params.at(i));
+				rem_late_end_date_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "suspend_date")
@@ -295,6 +317,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				suspend_date = Date(params.at(i));
+				suspend_date_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "resume_date")
@@ -302,6 +325,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				resume_date = Date(params.at(i));
+				resume_date_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "cstr_date2")
@@ -309,6 +333,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				cstr_date2 = Date(params.at(i));
+				cstr_date2 = params.at(i);
 			}
 		}
 		else if (header.at(i) == "external_early_start_date")
@@ -316,6 +341,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				external_early_start_date = Date(params.at(i));
+				external_early_start_date_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "external_late_end_date")
@@ -323,6 +349,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				external_late_end_date = Date(params.at(i));
+				external_late_end_date_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "create_date")
@@ -330,6 +357,7 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				create_date = Date(params.at(i));
+				create_date_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "update_date")
@@ -337,8 +365,24 @@ Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 			if (!params.at(i).empty())
 			{
 				update_date = Date(params.at(i));
+				update_date_str = params.at(i);
 			}
 		}
 	}
+	reader = readerObj;
+}
+
+void Task::update_tsv()
+{
+	tsv = "%R\t";
 	tsv.append(std::to_string(task_id)).append("\t").append(std::to_string(proj_id)).append("\t").append(std::to_string(wbs_id)).append("\t").append(std::to_string(clndr_id)).append("\t").append(std::to_string(rsrc_id)).append("\t").append(std::to_string(location_id)).append("\t").append(std::to_string(total_float_hr_cnt)).append("\t").append(std::to_string(free_float_hr_cnt)).append("\t").append(std::to_string(remain_drtn_hr_cnt)).append("\t").append(std::to_string(float_path)).append("\t").append(std::to_string(float_path_order)).append("\t").append(phys_complete_pct).append("\t").append(rev_fdbk_flag).append("\t").append(est_wt).append("\t").append(lock_plan_flag).append("\t").append(auto_compute_act_flag).append("\t").append(complete_pct_type).append("\t").append(task_type).append("\t").append(duration_type).append("\t").append(status_code).append("\t").append(task_code).append("\t").append(task_name).append("\t").append(act_work_qty).append("\t").append(remain_work_qty).append("\t").append(target_work_qty).append("\t").append(target_drtn_hr_cnt).append("\t").append(target_equip_qty).append("\t").append(act_equip_qty).append("\t").append(remain_equip_qty).append("\t").append(cstr_type).append("\t").append(priority_type).append("\t").append(guid).append("\t").append(tmpl_guid).append("\t").append(cstr_type2).append("\t").append(driving_path_flag).append("\t").append(act_this_per_work_qty).append("\t").append(act_this_per_equip_qty).append("\t").append(create_user).append("\t").append(update_user).append("\t").append(cstr_date.to_string()).append("\t").append(act_start_date.to_string()).append("\t").append(act_end_date.to_string()).append("\t").append(late_start_date.to_string()).append("\t").append(late_end_date.to_string()).append("\t").append(expect_end_date.to_string()).append("\t").append(early_start_date.to_string()).append("\t").append(early_end_date.to_string()).append("\t").append(restart_date.to_string()).append("\t").append(reend_date.to_string()).append("\t").append(target_start_date.to_string()).append("\t").append(target_end_date.to_string()).append("\t").append(rem_late_start_date.to_string()).append("\t").append(rem_late_end_date.to_string()).append("\t").append(suspend_date.to_string()).append("\t").append(resume_date.to_string()).append("\t").append(cstr_date2.to_string()).append("\t").append(external_early_start_date.to_string()).append("\t").append(external_late_end_date.to_string()).append("\t").append(create_date.to_string()).append("\t").append(update_date.to_string()).append("\n");
+}
+
+std::string Task::get_tsv() { return tsv; }
+
+std::vector<TaskRsrc> Task::getResources()
+{
+	std::vector<TaskRsrc> toReturn;
+	toReturn = reader->taskRsrcs.getByRsrcId(task_id);
+	return toReturn;
 }

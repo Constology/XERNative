@@ -8,7 +8,7 @@ int main()
 {
     Reader reader;
 
-    reader.parse("/workspaces/XERNative/sample.xer");
+    reader.parse("/workspaces/XERNative/wk2.xer");
 
     for (auto account : reader.accounts.getAll())
     {
@@ -92,4 +92,11 @@ int main()
     //     }
     // }
     cout << reader.rCatValues.get_tsv() << endl;
+    cout << reader.rsrcs.get_tsv() << endl;
+
+    vector<Task> ts = reader.tasks.getByRsrc(10552);
+    for (auto t : ts)
+    {
+        cout << ts.size() << endl;
+    }
 }

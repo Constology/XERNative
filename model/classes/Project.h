@@ -1,6 +1,3 @@
-//
-// Created by sorat on 12/05/2022.
-//
 
 #ifndef XERPARSER_PROJECT_H
 #define XERPARSER_PROJECT_H
@@ -13,7 +10,8 @@
 
 class Reader;
 
-class Project {
+class Project
+{
 public:
     int proj_id;
     int acct_id;

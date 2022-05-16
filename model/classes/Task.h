@@ -1,15 +1,13 @@
-//
-// Created by sorat on 13/05/2022.
-//
-
 #ifndef XERPARSER_TASK_H
 #define XERPARSER_TASK_H
 
 #include <iostream>
 #include <vector>
 #include <string>
+#include "../TaskRsrcs.h"
 
 #include "../../Date/Date.h"
+class Reader;
 
 class Task
 {
@@ -74,10 +72,46 @@ public:
 	Date external_late_end_date;
 	Date create_date;
 	Date update_date;
+	std::string get_tsv();
+	std::vector<TaskRsrc> getResources();
+	Task(std::vector<std::string> header, std::vector<std::string> params, Reader *readerObj);
 
+private:
+	Reader *reader;
 	std::string tsv;
-
-	Task(std::vector<std::string> header, std::vector<std::string> params);
+	void update_tsv();
+	std::string task_id_str;
+	std::string proj_id_str;
+	std::string wbs_id_str;
+	std::string clndr_id_str;
+	std::string rsrc_id_str;
+	std::string location_id_str;
+	std::string total_float_hr_cnt_str;
+	std::string free_float_hr_cnt_str;
+	std::string remain_drtn_hr_cnt_str;
+	std::string float_path_str;
+	std::string float_path_order_str;
+	std::string cstr_date_str;
+	std::string act_start_date_str;
+	std::string act_end_date_str;
+	std::string late_start_date_str;
+	std::string late_end_date_str;
+	std::string expect_end_date_str;
+	std::string early_start_date_str;
+	std::string early_end_date_str;
+	std::string restart_date_str;
+	std::string reend_date_str;
+	std::string target_start_date_str;
+	std::string target_end_date_str;
+	std::string rem_late_start_date_str;
+	std::string rem_late_end_date_str;
+	std::string suspend_date_str;
+	std::string resume_date_str;
+	std::string cstr_date2_str;
+	std::string external_early_start_date_str;
+	std::string external_late_end_date_str;
+	std::string create_date_str;
+	std::string update_date_str;
 };
 
 #endif // XERPARSER_TASK_H

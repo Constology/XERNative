@@ -1,14 +1,17 @@
-//
-// Created by Taraxtix on 10/05/2022.
-//
+
 
 #include "TaskRsrcs.h"
 
-void TaskRsrcs::add( TaskRsrc &taskRsrc) { taskRsrcs.emplace_back(taskRsrc); }
+TaskRsrcs::TaskRsrcs()
+{
+	taskrsrcs.clear();
+}
+
+void TaskRsrcs::add(TaskRsrc &taskRsrc) { taskrsrcs.emplace_back(taskRsrc); }
 
 TaskRsrc TaskRsrcs::findById(int id)
 {
-	for (auto &taskRsrc : taskRsrcs)
+	for (auto &taskRsrc : taskrsrcs)
 	{
 		if (taskRsrc.taskrsrc_id == id)
 		{
@@ -21,10 +24,10 @@ TaskRsrc TaskRsrcs::findById(int id)
 
 std::vector<TaskRsrc> TaskRsrcs::getAll()
 {
-	return taskRsrcs;
+	return taskrsrcs;
 }
 
-std::string TaskRsrcs::get_tsv() 
+std::string TaskRsrcs::get_tsv()
 {
 	std::string tsv;
 	tsv.append("%T\tTASKRSRC\n");
@@ -38,7 +41,7 @@ std::string TaskRsrcs::get_tsv()
 			   "ts_pend_act_end_flag\tguid\trate_type\tact_this_per_cost\tact_this_per_qty\t"
 			   "curv_id\trsrc_type\tcost_per_qty_source_type\tcreate_user\tcreate_date\t"
 			   "cbs_id\thas_rsrchours\ttaskrsrc_sum_id\n");
-	for (auto &taskRsrc : taskRsrcs)
+	for (auto &taskRsrc : taskrsrcs)
 	{
 		tsv.append(taskRsrc.tsv);
 	}
@@ -48,9 +51,22 @@ std::string TaskRsrcs::get_tsv()
 std::vector<TaskRsrc> TaskRsrcs::getByRsrcId(int id)
 {
 	std::vector<TaskRsrc> toReturn;
-	for (auto tr : taskRsrcs)
+	for (auto &tr : taskrsrcs)
 	{
 		if (tr.rsrc_id == id)
+		{
+			toReturn.emplace_back(tr);
+		}
+	}
+	return toReturn;
+}
+
+std::vector<TaskRsrc> TaskRsrcs::getByTaskId(int id)
+{
+	std::vector<TaskRsrc> toReturn;
+	for (auto &tr : taskrsrcs)
+	{
+		if (tr.task_id == id)
 		{
 			toReturn.emplace_back(tr);
 		}

@@ -39,8 +39,15 @@ void Reader::split(std::vector<std::string> &strings, const std::string &str)
     }
 }
 
+Reader::Reader()
+{
+    int i = 0;
+    // Tasks tasks(this);
+}
+
 int Reader::parse(const std::string &filename)
 {
+
     std::ifstream fin(filename);
     if (fin.is_open())
     {
@@ -242,7 +249,8 @@ void Reader::add(std::string &table,
     }
     else if (table == "TASK")
     {
-        Task task(header, record);
+
+        Task task(header, record, this);
         tasks.add(task);
     }
 }
