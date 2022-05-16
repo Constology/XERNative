@@ -2,12 +2,12 @@
 
 #include "Rsrcs.h"
 
-void Rsrcs::add( Rsrc &rsrc) { rsrcs.emplace_back(rsrc); }
+void Rsrcs::add(Rsrc &rsrc) { rsrcs.emplace_back(rsrc); }
 
-Rsrc Rsrcs::findById(int id) {
-    for (auto rsrc : rsrcs) {
+Rsrc *Rsrcs::findById(int id) {
+    for (auto &rsrc : rsrcs) {
         if (rsrc.rsrc_id == id) {
-            return rsrc;
+            return &rsrc;
         }
     }
     printf("Rsrc not found");
