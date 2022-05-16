@@ -4,19 +4,30 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
     Reader reader;
 
-    reader.parse("/home/hassan/programming/xerParser/wk2.xer");
+    reader.parse("/workspaces/XERNative/sample.xer");
+
+    for (auto account : reader.accounts.getAll())
+    {
+        std::cout << account.get_tsv() << endl;
+    }
 
     cout << "*********** Project and WBS **********************" << endl;
 
-    for (Project prj : reader.projects.getAll()) {
+    for (Project prj : reader.projects.getAll())
+    {
         std::vector<Wbs> wbss = prj.getWbs();
         cout << "prj " << prj.get_tsv() << endl;
-        for (Wbs wbs : wbss) {
+        for (Wbs wbs : wbss)
+        {
             cout << "WBS " << wbs.wbs_name << endl;
-            for (Task task : wbs.getTasks()) {
+            vector<Task> tasks = wbs.getTasks();
+            for (Task task : wbs.getTasks())
+            {
+
                 cout << "\t"
                      << "Task " << task.task_code << "\t" << task.task_name << "\t"
                      << task.early_start_date.to_string() << "\t"

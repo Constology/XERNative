@@ -11,13 +11,13 @@
 
 class Actvcodes{
 public:
-		void add(const Actvcode& account);
+		void add(Actvcode& account);
 
 		Actvcode findById(int id);
 		std::vector<Actvcode> getAll();
 
 
-		std::string get_tsv() const;
+		std::string get_tsv();
 
 private:
 		std::vector<Actvcode> actvcodes;

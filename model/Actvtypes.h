@@ -9,20 +9,18 @@
 
 #include "classes/Actvtype.h"
 
-class Actvtypes{
+class Actvtypes
+{
 public:
-		void add(const Actvtype& account);
+	void add(Actvtype &account);
 
-		Actvtype findById(int id);
-		std::vector<Actvtype> getAll();
+	Actvtype findById(int id);
+	std::vector<Actvtype> getAll();
 
-
-		std::string get_tsv() const;
-
+	std::string get_tsv();
 
 private:
-		std::vector<Actvtype> actvtypes;
+	std::vector<Actvtype> actvtypes;
 };
 
-
-#endif //EXRPARSER_ACTVTYPES_H
+#endif // EXRPARSER_ACTVTYPES_H

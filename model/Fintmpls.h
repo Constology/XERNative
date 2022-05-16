@@ -9,21 +9,18 @@
 
 #include "classes/Fintmpl.h"
 
-class Fintmpls{
+class Fintmpls
+{
 public:
-		void add(const Fintmpl& fintmpl);
+	void add(Fintmpl &fintmpl);
 
-		Fintmpl findById(int id);
-		std::vector<Fintmpl> getAll();
+	Fintmpl findById(int id);
+	std::vector<Fintmpl> getAll();
 
-
-		std::string get_tsv() const;
-
+	std::string get_tsv();
 
 private:
-		std::vector<Fintmpl> fintmpls;
-
+	std::vector<Fintmpl> fintmpls;
 };
 
-
-#endif //XERPARSER_FINTMPLS_H
+#endif // XERPARSER_FINTMPLS_H

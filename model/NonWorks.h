@@ -9,20 +9,18 @@
 
 #include <vector>
 
-class NonWorks{
+class NonWorks
+{
 public:
-		void add(const NonWork& nonWork);
+	void add(NonWork &nonWork);
 
-		NonWork findById(int id);
-		std::vector<NonWork> getAll();
+	NonWork findById(int id);
+	std::vector<NonWork> getAll();
 
-
-		std::string get_tsv() const;
-
+	std::string get_tsv();
 
 private:
-		std::vector<NonWork> nonWorks;
+	std::vector<NonWork> nonWorks;
 };
 
-
-#endif //XERPARSER_NONWORKS_H
+#endif // XERPARSER_NONWORKS_H

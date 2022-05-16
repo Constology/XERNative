@@ -9,20 +9,18 @@
 
 #include "classes/Account.h"
 
-class Accounts{
+class Accounts
+{
 public:
-		void add(const Account& account);
+	void add(Account &account);
 
-		Account findById(int id);
-		std::vector<Account> getAll();
+	Account findById(int id);
+	std::vector<Account> getAll();
 
-
-		std::string get_tsv() const;
-
+	std::string get_tsv();
 
 private:
 	std::vector<Account> accounts;
 };
 
-
-#endif //EXRPARSER_ACCOUNTS_H
+#endif // EXRPARSER_ACCOUNTS_H

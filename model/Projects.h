@@ -9,20 +9,18 @@
 
 #include "classes/Project.h"
 
-class Projects{
+class Projects
+{
 public:
-		void add(const Project& project);
+	void add(Project &project);
 
-		Project findById(int id);
-		std::vector<Project> getAll();
+	Project findById(int id);
+	std::vector<Project> getAll();
 
-
-		std::string get_tsv() const;
-
+	std::string get_tsv();
 
 private:
-		std::vector<Project> projects;
+	std::vector<Project> projects;
 };
 
-
-#endif //XERPARSER_PROJECTS_H
+#endif // XERPARSER_PROJECTS_H

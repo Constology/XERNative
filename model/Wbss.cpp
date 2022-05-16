@@ -1,6 +1,6 @@
 #include "Wbss.h"
 
-void Wbss::add(const Wbs &wbs)
+void Wbss::add(Wbs &wbs)
 {
     wbss.emplace_back(wbs);
 }
@@ -60,7 +60,7 @@ std::vector<Wbs> Wbss::getAll()
     return wbss;
 }
 
-std::string Wbss::get_tsv() const
+std::string Wbss::get_tsv()
 {
     std::string tsv;
     tsv.append("%T\tPROJWBS\n");

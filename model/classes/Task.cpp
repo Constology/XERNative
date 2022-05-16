@@ -4,7 +4,7 @@
 
 #include "Task.h"
 
-Task::Task(const std::vector<std::string> header, const std::vector<std::string> params)
+Task::Task(std::vector<std::string> header, std::vector<std::string> params)
 {
 	tsv = "";
 	for (int i = 0; i < header.size(); i++)

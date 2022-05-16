@@ -12,13 +12,13 @@
 class Tasks
 {
 public:
-	void add(const Task &task);
+	void add(Task &task);
 
 	Task findById(int id);
 	std::vector<Task> getAll();
 	std::vector<Task> getByWbs(int id);
 
-	std::string get_tsv() const;
+	std::string get_tsv() ;
 
 private:
 	std::vector<Task> tasks;

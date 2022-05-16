@@ -12,13 +12,13 @@
 
 class Pcattypes{
 public:
-		void add(const Pcattype& pcattype);
+		void add(Pcattype& pcattype);
 
 		Pcattype findById(int id);
 		std::vector<Pcattype> getAll();
 
 
-		std::string get_tsv() const;
+		std::string get_tsv();
 
 
 private:

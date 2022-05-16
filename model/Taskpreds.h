@@ -12,13 +12,13 @@
 
 class Taskpreds{
 public:
-		void add(const Taskpred& taskpred);
+		void add( Taskpred& taskpred);
 
 		Taskpred findById(int id);
 		std::vector<Taskpred> getAll();
 
 
-		std::string get_tsv() const;
+		std::string get_tsv() ;
 
 
 private:

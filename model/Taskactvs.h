@@ -9,20 +9,18 @@
 
 #include "classes/Taskactv.h"
 
-class Taskactvs{
+class Taskactvs
+{
 public:
-		void add(const Taskactv& taskactv);
+	void add(Taskactv &taskactv);
 
-		Taskactv findById(int id);
-		std::vector<Taskactv> getAll();
+	Taskactv findById(int id);
+	std::vector<Taskactv> getAll();
 
-
-		std::string get_tsv() const;
-
+	std::string get_tsv();
 
 private:
-		std::vector<Taskactv> taskactvs;
+	std::vector<Taskactv> taskactvs;
 };
 
-
-#endif //XERPARSER_TASKACTVS_H
+#endif // XERPARSER_TASKACTVS_H

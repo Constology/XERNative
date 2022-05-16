@@ -5,16 +5,17 @@
 #include <vector>
 #include <string>
 
-class RoleRates{
-    public:
-        void add(const RoleRate &rCatValue);
-        std::vector<RoleRate> getAll();
-        RoleRate findById(int id);
-        RoleRate findByRole(int id);
-				std::string get_tsv() const;
+class RoleRates
+{
+public:
+    void add(RoleRate &rCatValue);
+    std::vector<RoleRate> getAll();
+    RoleRate findById(int id);
+    RoleRate findByRole(int id);
+    std::string get_tsv();
 
-    private:
-        std::vector<RoleRate> roleRates;
+private:
+    std::vector<RoleRate> roleRates;
 };
 
 #endif

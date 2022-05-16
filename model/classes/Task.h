@@ -77,7 +77,7 @@ public:
 
 	std::string tsv;
 
-	Task(const std::vector<std::string> header, const std::vector<std::string> params);
+	Task(std::vector<std::string> header, std::vector<std::string> params);
 };
 
 #endif // XERPARSER_TASK_H

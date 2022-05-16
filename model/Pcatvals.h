@@ -12,13 +12,13 @@
 class Pcatvals
 {
 public:
-	void add(const Pcatval &pcatval);
+	void add(Pcatval &pcatval);
 
 	Pcatval findById(int id);
 	std::vector<Pcatval> getAll();
 	std::vector<Pcatval> getByTypeId(int id);
 
-	std::string get_tsv() const;
+	std::string get_tsv();
 
 private:
 	std::vector<Pcatval> pcatvals;

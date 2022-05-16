@@ -9,20 +9,18 @@
 
 #include "classes/Rsrcrcat.h"
 
-class Rsrcrcats{
+class Rsrcrcats
+{
 public:
-		void add(const Rsrcrcat& rsrcrcat);
+	void add(Rsrcrcat &rsrcrcat);
 
-		Rsrcrcat findById(int id);
-		std::vector<Rsrcrcat> getAll();
+	Rsrcrcat findById(int id);
+	std::vector<Rsrcrcat> getAll();
 
-
-		std::string get_tsv() const;
-
+	std::string get_tsv();
 
 private:
-		std::vector<Rsrcrcat> rsrcrcats;
+	std::vector<Rsrcrcat> rsrcrcats;
 };
 
-
-#endif //XERPARSER_RSRCRCATS_H
+#endif // XERPARSER_RSRCRCATS_H

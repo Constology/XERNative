@@ -4,11 +4,14 @@
 
 #include "Projects.h"
 
-void Projects::add(const Project &project) { projects.emplace_back(project); }
+void Projects::add(Project &project) { projects.emplace_back(project); }
 
-Project Projects::findById(int id) {
-    for (auto &project : projects) {
-        if (project.proj_id == id) {
+Project Projects::findById(int id)
+{
+    for (auto &project : projects)
+    {
+        if (project.proj_id == id)
+        {
             return project;
         }
     }
@@ -18,7 +21,8 @@ Project Projects::findById(int id) {
 
 std::vector<Project> Projects::getAll() { return projects; }
 
-std::string Projects::get_tsv() const {
+std::string Projects::get_tsv()
+{
     std::string tsv;
     tsv.append("%T\tPROJECT\n");
 
@@ -38,7 +42,8 @@ std::string Projects::get_tsv() const {
         "key\tapply_actuals_date\tfintmpl_id\tlocation_id\tloaded_scope_level\texport_flag\tnew_"
         "fin_dates_id\tbaselines_to_export\tbaseline_names_to_export\tnext_data_date\tclose_"
         "period_flag\tsum_refresh_date\ttrsrcsum_loaded\tsumtask_loaded\n");
-    for (auto &project : projects) {
+    for (auto &project : projects)
+    {
         tsv.append(project.get_tsv());
     }
     return tsv;

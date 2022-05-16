@@ -12,13 +12,13 @@
 class TaskRsrcs
 {
 public:
-	void add(const TaskRsrc &taskRsrc);
+	void add( TaskRsrc &taskRsrc);
 
 	TaskRsrc findById(int id);
 	std::vector<TaskRsrc> getAll();
 	std::vector<TaskRsrc> getByRsrcId(int id);
 
-	std::string get_tsv() const;
+	std::string get_tsv() ;
 
 private:
 	std::vector<TaskRsrc> taskRsrcs;

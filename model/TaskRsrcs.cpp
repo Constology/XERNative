@@ -4,7 +4,7 @@
 
 #include "TaskRsrcs.h"
 
-void TaskRsrcs::add(const TaskRsrc &taskRsrc) { taskRsrcs.emplace_back(taskRsrc); }
+void TaskRsrcs::add( TaskRsrc &taskRsrc) { taskRsrcs.emplace_back(taskRsrc); }
 
 TaskRsrc TaskRsrcs::findById(int id)
 {
@@ -24,7 +24,7 @@ std::vector<TaskRsrc> TaskRsrcs::getAll()
 	return taskRsrcs;
 }
 
-std::string TaskRsrcs::get_tsv() const
+std::string TaskRsrcs::get_tsv() 
 {
 	std::string tsv;
 	tsv.append("%T\tTASKRSRC\n");

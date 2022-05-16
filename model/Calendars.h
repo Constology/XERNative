@@ -9,21 +9,18 @@
 
 #include "classes/Calendar.h"
 
-class Calendars{
+class Calendars
+{
 public:
-		void add(const Calendar& account);
+	void add(Calendar &account);
 
-		Calendar findById(int id);
-		std::vector<Calendar> getAll();
+	Calendar findById(int id);
+	std::vector<Calendar> getAll();
 
-		std::string get_tsv() const;
-
+	std::string get_tsv();
 
 private:
-		std::vector<Calendar> calendars;
-
-		
+	std::vector<Calendar> calendars;
 };
 
-
-#endif //EXRPARSER_CALENDARS_H
+#endif // EXRPARSER_CALENDARS_H

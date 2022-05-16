@@ -17,8 +17,8 @@ public:
     std::string acct_descr;
     std::string acct_short_name;
 
-    Account(const std::vector<std::string> header, const std::vector<std::string> params);
-    std::string get_tsv() const;
+    Account(std::vector<std::string> header, std::vector<std::string> params);
+    std::string get_tsv();
 
 private:
     std::string acct_id_str;

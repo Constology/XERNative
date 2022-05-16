@@ -60,6 +60,7 @@ public:
 	Taskpreds taskpreds;
 	Projpcats projpcats;
 	Projects projects;
+	Currtypes currtypes;
 	Rsrcs rsrcs;
 	Rsrcrcats rsrcrcats;
 	Rsrccurvdatas rsrccurvdatas;
@@ -72,7 +73,7 @@ public:
 private:
 	static void split(std::vector<std::string> &strings, const std::string &str);
 
-	void add(const std::string &table, const std::vector<std::string> header, const std::vector<std::string> record);
+	void add(std::string &table, std::vector<std::string> header, std::vector<std::string> record);
 };
 
 #endif // EXRPARSER_READER_H

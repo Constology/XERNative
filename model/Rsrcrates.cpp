@@ -4,7 +4,7 @@
 
 #include "Rsrcrates.h"
 
-void Rsrcrates::add(const Rsrcrate &rsrcrate) { rsrcrates.emplace_back(rsrcrate); }
+void Rsrcrates::add(Rsrcrate &rsrcrate) { rsrcrates.emplace_back(rsrcrate); }
 
 Rsrcrate Rsrcrates::findById(int id)
 {
@@ -24,7 +24,7 @@ std::vector<Rsrcrate> Rsrcrates::getAll()
 	return rsrcrates;
 }
 
-std::string Rsrcrates::get_tsv() const
+std::string Rsrcrates::get_tsv()
 {
 	std::string tsv;
 	tsv.append("%T\tRSRCRATE\n");

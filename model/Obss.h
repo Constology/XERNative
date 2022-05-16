@@ -9,20 +9,18 @@
 
 #include <vector>
 
-class Obss{
+class Obss
+{
 public:
-		void add(const Obs& obs);
+	void add(Obs &obs);
 
-		Obs findById(int id);
-		std::vector<Obs> getAll();
+	Obs findById(int id);
+	std::vector<Obs> getAll();
 
-
-		std::string get_tsv() const;
-
+	std::string get_tsv();
 
 private:
-		std::vector<Obs> obss;
+	std::vector<Obs> obss;
 };
 
-
-#endif //XERPARSER_OBSS_H
+#endif // XERPARSER_OBSS_H

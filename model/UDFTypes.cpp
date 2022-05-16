@@ -1,6 +1,6 @@
 #include "UDFTypes.h"
 
-void UDFTypes::add(const UDFType & udfType){
+void UDFTypes::add( UDFType & udfType){
     udftypes.emplace_back(udfType);
 }
 
@@ -19,7 +19,7 @@ std::vector<UDFType> UDFTypes::getAll(){
     return udftypes;
 }
 
-std::string UDFTypes::get_tsv() const{
+std::string UDFTypes::get_tsv() {
 	std::string tsv;
 	tsv.append("%T\tUDFTYPE\n");
 	tsv.append("%F\tudf_type_id\ttable_name\tudf_type_name\tudf_type_label\tlogical_data_type\t"

@@ -4,7 +4,7 @@
 
 #include "Taskpreds.h"
 
-void Taskpreds::add(const Taskpred& taskpred){ taskpreds.emplace_back(taskpred); }
+void Taskpreds::add( Taskpred& taskpred){ taskpreds.emplace_back(taskpred); }
 
 Taskpred Taskpreds::findById(int id){
 	for(auto & taskpred : taskpreds){
@@ -20,7 +20,7 @@ std::vector<Taskpred> Taskpreds::getAll(){
 	return taskpreds;
 }
 
-std::string Taskpreds::get_tsv() const{
+std::string Taskpreds::get_tsv() {
 	std::string tsv;
 	tsv.append("%T\tTASKPRED\n");
 	tsv.append("%F\ttask_pred_id\ttask_id\tpred_task_id\tproj_id\tpred_proj_id\tpred_type\t"

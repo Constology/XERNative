@@ -4,7 +4,7 @@
 
 #include "Pcattypes.h"
 
-void Pcattypes::add(const Pcattype &pcattype) { pcattypes.emplace_back(pcattype); }
+void Pcattypes::add(Pcattype &pcattype) { pcattypes.emplace_back(pcattype); }
 
 Pcattype Pcattypes::findById(int id) {
     for (auto &pcattype : pcattypes) {
@@ -18,7 +18,7 @@ Pcattype Pcattypes::findById(int id) {
 
 std::vector<Pcattype> Pcattypes::getAll() { return pcattypes; }
 
-std::string Pcattypes::get_tsv() const {
+std::string Pcattypes::get_tsv() {
     std::string tsv;
     tsv.append("%T\tPCATTYPE\n");
     tsv.append(

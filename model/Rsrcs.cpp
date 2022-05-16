@@ -4,7 +4,7 @@
 
 #include "Rsrcs.h"
 
-void Rsrcs::add(const Rsrc &rsrc) { rsrcs.emplace_back(rsrc); }
+void Rsrcs::add( Rsrc &rsrc) { rsrcs.emplace_back(rsrc); }
 
 Rsrc Rsrcs::findById(int id) {
     for (auto rsrc : rsrcs) {
@@ -28,7 +28,7 @@ std::vector<Rsrc> Rsrcs::getChildren(int id) {
     return toReturn;
 }
 
-std::string Rsrcs::get_tsv() const {
+std::string Rsrcs::get_tsv() {
     std::string tsv;
     tsv.append("%T\tRSRC\n");
     tsv.append(

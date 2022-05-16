@@ -9,17 +9,17 @@
 
 #include "classes/Currtype.h"
 
-class Currtypes{
+class Currtypes
+{
 public:
-		void add(const Currtype& account);
+	void add(Currtype &account);
 
-		Currtype findById(int id);
-		std::vector<Currtype> getAll();
-		std::string get_tsv() const;
+	Currtype findById(int id);
+	std::vector<Currtype> getAll();
+	std::string get_tsv();
 
-	private:
-		std::vector<Currtype> currtypes;
+private:
+	std::vector<Currtype> currtypes;
 };
 
-
-#endif //EXRPARSER_CURRTYPES1_H
+#endif // EXRPARSER_CURRTYPES1_H

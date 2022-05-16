@@ -5,15 +5,16 @@
 #include <vector>
 #include <string>
 
-class RCatValues{
-    public:
-        void add(const RCatValue &rCatValue);
-        std::vector<RCatValue> getAll();
-        RCatValue findById(int id);
-				std::string get_tsv() const;
+class RCatValues
+{
+public:
+    void add(RCatValue &rCatValue);
+    std::vector<RCatValue> getAll();
+    RCatValue findById(int id);
+    std::string get_tsv();
 
-    private:
-        std::vector<RCatValue> rCatValues;
+private:
+    std::vector<RCatValue> rCatValues;
 };
 
 #endif

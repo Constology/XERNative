@@ -9,15 +9,16 @@
 
 #include <vector>
 
-class Rsrcs {
+class Rsrcs
+{
 public:
-    void add(const Rsrc &rsrc);
+    void add(Rsrc &rsrc);
 
     Rsrc findById(int id);
     std::vector<Rsrc> getAll();
     std::vector<Rsrc> getChildren(int id);
 
-    std::string get_tsv() const;
+    std::string get_tsv();
 
 private:
     std::vector<Rsrc> rsrcs;

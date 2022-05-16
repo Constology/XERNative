@@ -4,7 +4,7 @@
 
 #include "Account.h"
 
-Account::Account(const std::vector<std::string> header, const std::vector<std::string> params) {
+Account::Account(std::vector<std::string> header, std::vector<std::string> params) {
 
     tsv = "";
 
@@ -54,4 +54,4 @@ std::string Account::update_tsv() {
     return tsv;
 }
 
-std::string Account::get_tsv() const { return tsv; }
+std::string Account::get_tsv() { return tsv; }

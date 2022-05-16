@@ -9,20 +9,18 @@
 
 #include "classes/Schedoption.h"
 
-class Schedoptions{
+class Schedoptions
+{
 public:
-		void add(const Schedoption& schedoption);
+	void add(Schedoption &schedoption);
 
-		Schedoption findById(int id);
-		std::vector<Schedoption> getAll();
+	Schedoption findById(int id);
+	std::vector<Schedoption> getAll();
 
-
-		std::string get_tsv() const;
-
+	std::string get_tsv();
 
 private:
-		std::vector<Schedoption> schedoptions;
+	std::vector<Schedoption> schedoptions;
 };
 
-
-#endif //XERPARSER_SCHEDOPTIONS_H
+#endif // XERPARSER_SCHEDOPTIONS_H

@@ -12,12 +12,12 @@
 class Rsrcrates
 {
 public:
-	void add(const Rsrcrate &rsrcrate);
+	void add(Rsrcrate &rsrcrate);
 
 	Rsrcrate findById(int id);
 	std::vector<Rsrcrate> getAll();
 
-	std::string get_tsv() const;
+	std::string get_tsv();
 	std::vector<Rsrcrate> getByRsrcId(int id);
 
 private:

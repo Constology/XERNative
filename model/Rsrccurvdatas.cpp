@@ -4,7 +4,7 @@
 
 #include "Rsrccurvdatas.h"
 
-void Rsrccurvdatas::add(const Rsrccurvdata& rsrccurvdata){ rsrccurvdatas.emplace_back
+void Rsrccurvdatas::add(Rsrccurvdata& rsrccurvdata){ rsrccurvdatas.emplace_back
 (rsrccurvdata); }
 
 Rsrccurvdata Rsrccurvdatas::findById(int id){
@@ -21,7 +21,7 @@ std::vector<Rsrccurvdata> Rsrccurvdatas::getAll(){
 	return rsrccurvdatas;
 }
 
-std::string Rsrccurvdatas::get_tsv() const{
+std::string Rsrccurvdatas::get_tsv() {
 	std::string tsv;
 	tsv.append("%T\tRSRCCURVDATA\n");
 	tsv.append("%F\tcurv_id\tcurv_name\tdefault_flag\tpct_usage_0\tpct_usage_1\tpct_usage_2\t"

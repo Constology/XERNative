@@ -12,12 +12,12 @@
 class Projpcats
 {
 public:
-	void add(const Projpcat &projpcat);
+	void add(Projpcat &projpcat);
 
 	Projpcat findById(int id);
 	std::vector<Projpcat> getAll();
 
-	std::string get_tsv() const;
+	std::string get_tsv();
 	std::vector<Projpcat> getByProjectId(int id);
 	std::vector<Projpcat> getById(int id);
 

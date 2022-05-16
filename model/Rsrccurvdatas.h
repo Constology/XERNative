@@ -9,20 +9,18 @@
 
 #include "classes/Rsrccurvdata.h"
 
-class Rsrccurvdatas{
+class Rsrccurvdatas
+{
 public:
-		void add(const Rsrccurvdata& rsrccurvdata);
+	void add(Rsrccurvdata &rsrccurvdata);
 
-		Rsrccurvdata findById(int id);
-		std::vector<Rsrccurvdata> getAll();
+	Rsrccurvdata findById(int id);
+	std::vector<Rsrccurvdata> getAll();
 
-
-		std::string get_tsv() const;
-
+	std::string get_tsv();
 
 private:
-		std::vector<Rsrccurvdata> rsrccurvdatas;
+	std::vector<Rsrccurvdata> rsrccurvdatas;
 };
 
-
-#endif //XERPARSER_RSRCCURVDATAS_H
+#endif // XERPARSER_RSRCCURVDATAS_H

@@ -4,11 +4,14 @@
 
 #include "Tasks.h"
 
-void Tasks::add(const Task &task) { tasks.emplace_back(task); }
+void Tasks::add(Task &task)
+{
+	tasks.push_back(task);
+}
 
 Task Tasks::findById(int id)
 {
-	for (auto &task : tasks)
+	for (auto task : tasks)
 	{
 		if (task.task_id == id)
 		{
@@ -24,7 +27,7 @@ std::vector<Task> Tasks::getAll()
 	return tasks;
 }
 
-std::string Tasks::get_tsv() const
+std::string Tasks::get_tsv() 
 {
 	std::string tsv;
 	tsv.append("%T\tTASK\n");
@@ -50,8 +53,11 @@ std::string Tasks::get_tsv() const
 std::vector<Task> Tasks::getByWbs(int id)
 {
 	std::vector<Task> toReturn;
+	std::vector<Task>::iterator iter, end;
 	for (auto t : tasks)
 	{
+		// std::cout << t->task_code << t->task_name << std::endl;
+		// std::cout << "From getByWbs function " << t->task_id << " " << t->wbs_id << " " << id << std::endl;
 		if (t.wbs_id == id)
 		{
 			toReturn.emplace_back(t);

@@ -1,6 +1,6 @@
 #include "Udfs.h"
 
-void Udfs::add(const Udf &udf) { udfs.emplace_back(udf); }
+void Udfs::add( Udf &udf) { udfs.emplace_back(udf); }
 
 Udf Udfs::findById(int id) {
     for (auto &udf : udfs) {
@@ -24,7 +24,7 @@ std::vector<Udf> Udfs::getByProject(int projId) {
 
 std::vector<Udf> Udfs::getAll() { return udfs; }
 
-std::string Udfs::get_tsv() const {
+std::string Udfs::get_tsv()  {
     std::string tsv;
     tsv.append("%T\tUDFVALUE\n");
     tsv.append("%F\tudf_code_id\tfk_id\tproj_id\tudf_date\tudf_number\tudf_text\tudf_code_id\n");

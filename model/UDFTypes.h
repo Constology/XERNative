@@ -10,9 +10,9 @@ class UDFTypes
 {
 public:
     UDFType findById(int id);
-    void add(const UDFType &udfType);
+    void add( UDFType &udfType);
     std::vector<UDFType> getAll();
-		std::string get_tsv() const;
+		std::string get_tsv() ;
 
 
 private:

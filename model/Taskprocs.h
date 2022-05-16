@@ -11,13 +11,13 @@
 
 class Taskprocs{
 public:
-		void add(const Taskproc& taskproc);
+		void add( Taskproc& taskproc);
 
 		Taskproc findById(int id);
 		std::vector<Taskproc> getAll();
 
 
-		std::string get_tsv() const;
+		std::string get_tsv() ;
 
 
 private:
