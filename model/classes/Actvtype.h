@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <vector>
+class Reader;
 
 class Actvtype {
 public:
@@ -18,7 +19,9 @@ public:
     std::string actv_code_type_scope;
     std::string super_flag;
 
-    Actvtype(const std::vector<std::string> header, const std::vector<std::string> params);
+    Actvtype(const std::vector<std::string> header,
+             const std::vector<std::string> params,
+             Reader *readerObj);
     std::string get_tsv() const;
 
 private:
@@ -28,6 +31,7 @@ private:
     std::string actv_short_len_str;
     std::string update_tsv();
     std::string tsv;
+    Reader *reader;
 };
 
 #endif // EXRPARSER_ACTVTYPE_H

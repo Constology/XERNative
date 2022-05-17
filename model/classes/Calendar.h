@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <vector>
+class Reader;
 
 class Calendar {
 public:
@@ -25,7 +26,9 @@ public:
 
     std::string get_tsv() const;
 
-    Calendar(const std::vector<std::string> header, const std::vector<std::string> params);
+    Calendar(const std::vector<std::string> header,
+             const std::vector<std::string> params,
+             Reader *readerObj);
 
 private:
     std::string clndr_id_str;
@@ -37,6 +40,7 @@ private:
     std::string proj_id_str;
     std::string tsv;
     void update_tsv();
+    Reader *reader;
 };
 
 #endif // EXRPARSER_CALENDAR_H

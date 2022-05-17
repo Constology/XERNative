@@ -1,13 +1,13 @@
-//
-// Created by Taraxtix on 06/05/2022.
-//
-
 #include "Account.h"
 
-Account::Account(std::vector<std::string> header, std::vector<std::string> params) {
+#include "../../Reader.h"
+
+Account::Account(std::vector<std::string> header,
+                 std::vector<std::string> params,
+                 Reader *readerObj) {
 
     tsv = "";
-
+    reader = readerObj;
     for (int i = 0; i < header.size(); i++) {
         if (header.at(i).empty())
             break;
@@ -35,6 +35,7 @@ Account::Account(std::vector<std::string> header, std::vector<std::string> param
             acct_short_name = params.at(i);
         }
     }
+    update_tsv();
 }
 
 std::string Account::update_tsv() {

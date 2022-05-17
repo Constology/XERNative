@@ -4,10 +4,14 @@
 
 #include "Actvcode.h"
 
-Actvcode::Actvcode(const std::vector<std::string> header, const std::vector<std::string> params) {
+#include "../../Reader.h"
+
+Actvcode::Actvcode(const std::vector<std::string> header,
+                   const std::vector<std::string> params,
+                   Reader *readerObj) {
 
     tsv = "";
-
+    reader = readerObj;
     for (int i = 0; i < header.size(); i++) {
         if (header.at(i).empty())
             break;

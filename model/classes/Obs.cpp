@@ -4,12 +4,16 @@
 
 #include "Obs.h"
 
-Obs::Obs(const std::vector<std::string> header, const std::vector<std::string> params) {
+Obs::Obs(const std::vector<std::string> header,
+         const std::vector<std::string> params,
+         Reader *readerObj) {
     tsv = "";
+    reader = readerObj;
     for (int i = 0; i < header.size(); i++) {
         if (header.at(i) == "obs_id") {
             if (!params.at(i).empty()) {
                 obs_id = stoi(params.at(i));
+                obs_id_str = params.at(i);
             }
         } else if (header.at(i) == "guid") {
             if (!params.at(i).empty()) {

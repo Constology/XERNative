@@ -90,16 +90,16 @@ void Reader::add(std::string &table,
     // assert(not(table.empty() || header == nullptr || record == nullptr));
 
     if (table == "ACCOUNT") {
-        Account account(header, record);
+        Account account(header, record, this);
         accounts.add(account);
     } else if (table == "ACTVCODE") {
-        Actvcode actvcode(header, record);
+        Actvcode actvcode(header, record, this);
         actvcodes.add(actvcode);
     } else if (table == "ACTVTYPE") {
-        Actvtype actvtype(header, record);
+        Actvtype actvtype(header, record, this);
         actvtypes.add(actvtype);
     } else if (table == "CALENDAR") {
-        Calendar calendar(header, record);
+        Calendar calendar(header, record, this);
         calendars.add(calendar);
     } else if (table == "PROJWBS") {
         Wbs wbs(header, record, this);
@@ -114,7 +114,7 @@ void Reader::add(std::string &table,
         Role role(header, record, this);
         roles.add(role);
     } else if (table == "CURRTYPE") {
-        Currtype currtype(header, record);
+        Currtype currtype(header, record, this);
         currtypes.add(currtype);
     } else if (table == "RCATTYPE") {
         RCatType rcattype(header, record);
@@ -135,7 +135,7 @@ void Reader::add(std::string &table,
         NonWork nonwork(header, record);
         nonWorks.add(nonwork);
     } else if (table == "FINTMPL") {
-        Fintmpl fintmpl(header, record);
+        Fintmpl fintmpl(header, record, this);
         fintmpls.add(fintmpl);
     } else if (table == "PCATTYPE") {
         Pcattype pcattype(header, record, this);
