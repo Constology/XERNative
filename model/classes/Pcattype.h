@@ -1,6 +1,4 @@
-//
-// Created by sorat on 12/05/2022.
-//
+
 
 #ifndef XERPARSER_PCATTYPE_H
 #define XERPARSER_PCATTYPE_H

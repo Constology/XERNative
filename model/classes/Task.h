@@ -1,117 +1,117 @@
 #ifndef XERPARSER_TASK_H
 #define XERPARSER_TASK_H
 
-#include <iostream>
-#include <vector>
-#include <string>
-#include "../TaskRsrcs.h"
-
 #include "../../Date/Date.h"
+#include "../TaskRsrcs.h"
+#include "TaskRsrc.h"
+
+#include <iostream>
+#include <string>
+#include <vector>
 class Reader;
 
-class Task
-{
+class Task {
 public:
-	int task_id;
-	int proj_id;
-	int wbs_id;
-	int clndr_id;
-	int rsrc_id;
-	int location_id;
-	float total_float_hr_cnt;
-	float free_float_hr_cnt;
-	float remain_drtn_hr_cnt;
-	float float_path;
-	float float_path_order;
-	std::string phys_complete_pct;
-	std::string rev_fdbk_flag;
-	std::string est_wt;
-	std::string lock_plan_flag;
-	std::string auto_compute_act_flag;
-	std::string complete_pct_type;
-	std::string task_type;
-	std::string duration_type;
-	std::string status_code;
-	std::string task_code;
-	std::string task_name;
-	std::string act_work_qty;
-	std::string remain_work_qty;
-	std::string target_work_qty;
-	std::string target_drtn_hr_cnt;
-	std::string target_equip_qty;
-	std::string act_equip_qty;
-	std::string remain_equip_qty;
-	std::string cstr_type;
-	std::string priority_type;
-	std::string guid;
-	std::string tmpl_guid;
-	std::string cstr_type2;
-	std::string driving_path_flag;
-	std::string act_this_per_work_qty;
-	std::string act_this_per_equip_qty;
-	std::string create_user;
-	std::string update_user;
-	Date cstr_date;
-	Date act_start_date;
-	Date act_end_date;
-	Date late_start_date;
-	Date late_end_date;
-	Date expect_end_date;
-	Date early_start_date;
-	Date early_end_date;
-	Date restart_date;
-	Date reend_date;
-	Date target_start_date;
-	Date target_end_date;
-	Date rem_late_start_date;
-	Date rem_late_end_date;
-	Date suspend_date;
-	Date resume_date;
-	Date cstr_date2;
-	Date external_early_start_date;
-	Date external_late_end_date;
-	Date create_date;
-	Date update_date;
-	std::string get_tsv();
-	std::vector<TaskRsrc> getResources();
-	Task(std::vector<std::string> header, std::vector<std::string> params, Reader *readerObj);
+    int task_id;
+    int proj_id;
+    int wbs_id;
+    int clndr_id;
+    int rsrc_id;
+    int location_id;
+    float total_float_hr_cnt;
+    float free_float_hr_cnt;
+    float remain_drtn_hr_cnt;
+    float float_path;
+    float float_path_order;
+    std::string phys_complete_pct;
+    std::string rev_fdbk_flag;
+    std::string est_wt;
+    std::string lock_plan_flag;
+    std::string auto_compute_act_flag;
+    std::string complete_pct_type;
+    std::string task_type;
+    std::string duration_type;
+    std::string status_code;
+    std::string task_code;
+    std::string task_name;
+    std::string act_work_qty;
+    std::string remain_work_qty;
+    std::string target_work_qty;
+    std::string target_drtn_hr_cnt;
+    std::string target_equip_qty;
+    std::string act_equip_qty;
+    std::string remain_equip_qty;
+    std::string cstr_type;
+    std::string priority_type;
+    std::string guid;
+    std::string tmpl_guid;
+    std::string cstr_type2;
+    std::string driving_path_flag;
+    std::string act_this_per_work_qty;
+    std::string act_this_per_equip_qty;
+    std::string create_user;
+    std::string update_user;
+    Date cstr_date;
+    Date act_start_date;
+    Date act_end_date;
+    Date late_start_date;
+    Date late_end_date;
+    Date expect_end_date;
+    Date early_start_date;
+    Date early_end_date;
+    Date restart_date;
+    Date reend_date;
+    Date target_start_date;
+    Date target_end_date;
+    Date rem_late_start_date;
+    Date rem_late_end_date;
+    Date suspend_date;
+    Date resume_date;
+    Date cstr_date2;
+    Date external_early_start_date;
+    Date external_late_end_date;
+    Date create_date;
+    Date update_date;
+    std::string get_tsv();
+    std::vector<TaskRsrc> getResources();
+    Task(std::vector<std::string> header, std::vector<std::string> params, Reader *readerObj);
 
 private:
-	Reader *reader;
-	std::string tsv;
-	void update_tsv();
-	std::string task_id_str;
-	std::string proj_id_str;
-	std::string wbs_id_str;
-	std::string clndr_id_str;
-	std::string rsrc_id_str;
-	std::string location_id_str;
-	std::string total_float_hr_cnt_str;
-	std::string free_float_hr_cnt_str;
-	std::string remain_drtn_hr_cnt_str;
-	std::string float_path_str;
-	std::string float_path_order_str;
-	std::string cstr_date_str;
-	std::string act_start_date_str;
-	std::string act_end_date_str;
-	std::string late_start_date_str;
-	std::string late_end_date_str;
-	std::string expect_end_date_str;
-	std::string early_start_date_str;
-	std::string early_end_date_str;
-	std::string restart_date_str;
-	std::string reend_date_str;
-	std::string target_start_date_str;
-	std::string target_end_date_str;
-	std::string rem_late_start_date_str;
-	std::string rem_late_end_date_str;
-	std::string suspend_date_str;
-	std::string resume_date_str;
-	std::string cstr_date2_str;
-	std::string external_early_start_date_str;
-	std::string external_late_end_date_str;
-	std::string create_date_str;
-	std::string update_date_str;
+    Reader *reader;
+    std::string tsv;
+    void update_tsv();
+    std::string task_id_str;
+    std::string proj_id_str;
+    std::string wbs_id_str;
+    std::string clndr_id_str;
+    std::string rsrc_id_str;
+    std::string location_id_str;
+    std::string total_float_hr_cnt_str;
+    std::string free_float_hr_cnt_str;
+    std::string remain_drtn_hr_cnt_str;
+    std::string float_path_str;
+    std::string float_path_order_str;
+    std::string cstr_date_str;
+    std::string act_start_date_str;
+    std::string act_end_date_str;
+    std::string late_start_date_str;
+    std::string late_end_date_str;
+    std::string expect_end_date_str;
+    std::string early_start_date_str;
+    std::string early_end_date_str;
+    std::string restart_date_str;
+    std::string reend_date_str;
+    std::string target_start_date_str;
+    std::string target_end_date_str;
+    std::string rem_late_start_date_str;
+    std::string rem_late_end_date_str;
+    std::string suspend_date_str;
+    std::string resume_date_str;
+    std::string cstr_date2_str;
+    std::string external_early_start_date_str;
+    std::string external_late_end_date_str;
+    std::string create_date_str;
+    std::string update_date_str;
 };
 
 #endif // XERPARSER_TASK_H

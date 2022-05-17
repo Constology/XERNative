@@ -7,12 +7,11 @@
 
 #include <vector>
 
-class Rsrcs
-{
+class Rsrcs {
 public:
     void add(Rsrc &rsrc);
 
-    Rsrc findById(int id);
+    Rsrc *findById(int id);
     std::vector<Rsrc> getAll();
     std::vector<Rsrc> getChildren(int id);
 

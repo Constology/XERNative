@@ -1,11 +1,14 @@
-//
-// Created by sorat on 11/05/2022.
-//
+
 
 #include "Fintmpl.h"
 
-Fintmpl::Fintmpl(const std::vector<std::string> header, const std::vector<std::string> params) {
+#include "../../Reader.h"
+
+Fintmpl::Fintmpl(const std::vector<std::string> header,
+                 const std::vector<std::string> params,
+                 Reader *readerObj) {
     tsv = "";
+    reader = readerObj;
     for (int i = 0; i < header.size(); i++) {
         if (header.at(i) == "fintmpl_id") {
             if (!params.at(i).empty()) {

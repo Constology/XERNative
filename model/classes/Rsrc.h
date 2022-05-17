@@ -48,7 +48,7 @@ public:
     Rsrc(const std::vector<std::string> header,
          const std::vector<std::string> params,
          Reader *readerObj);
-    Rsrc getParent();
+    Rsrc *getParent();
     std::vector<Rsrc> getChildren();
 
 private:

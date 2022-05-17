@@ -345,7 +345,8 @@ void TaskRsrc::update_tsv()
 		.append("\n");
 }
 
-std::string TaskRsrc::get_tsv(){
+std::string TaskRsrc::get_tsv()
+{
 	update_tsv();
 	return tsv;
 }

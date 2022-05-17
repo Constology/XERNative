@@ -1,12 +1,11 @@
-//
-// Created by Taraxtix on 10/05/2022.
-//
+
 
 #ifndef XERPARSER_NONWORK_H
 #define XERPARSER_NONWORK_H
 
 #include <iostream>
 #include <vector>
+class Reader;
 
 class NonWork {
 public:
@@ -16,13 +15,16 @@ public:
     std::string nonwork_type;
 
     std::string get_tsv() const;
-    NonWork(const std::vector<std::string> header, const std::vector<std::string> params);
+    NonWork(const std::vector<std::string> header,
+            const std::vector<std::string> params,
+            Reader *readerObj);
 
 private:
     std::string tsv;
     void update_tsv();
     std::string nonwork_type_id_str;
     std::string seq_num_str;
+    Reader *reader;
 };
 
 #endif // XERPARSER_NONWORK_H

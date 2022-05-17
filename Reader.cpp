@@ -39,12 +39,6 @@ void Reader::split(std::vector<std::string> &strings, const std::string &str)
     }
 }
 
-Reader::Reader()
-{
-    int i = 0;
-    // Tasks tasks(this);
-}
-
 int Reader::parse(const std::string &filename)
 {
 
@@ -76,7 +70,9 @@ int Reader::parse(const std::string &filename)
                 {
                     if (parts.at(i + 1).empty())
                         break;
-                    current_header.emplace_back(parts.at(i + 1));
+                    std::string chpart = parts.at(i + 1);
+                    chpart = trim(chpart);
+                    current_header.emplace_back(chpart);
                 }
             }
             // check if line starts with %R then it is a record that could be parsed to the class
@@ -87,7 +83,9 @@ int Reader::parse(const std::string &filename)
                 {
                     if (current_header.at(i).empty())
                         break;
-                    current_record.emplace_back(parts.at(i + 1));
+                    std::string crpart = parts.at(i + 1);
+                    crpart = trim(crpart);
+                    current_record.emplace_back(crpart);
                 }
                 add(current_table, current_header, current_record);
             }
@@ -109,22 +107,22 @@ void Reader::add(std::string &table,
 
     if (table == "ACCOUNT")
     {
-        Account account(header, record);
+        Account account(header, record, this);
         accounts.add(account);
     }
     else if (table == "ACTVCODE")
     {
-        Actvcode actvcode(header, record);
+        Actvcode actvcode(header, record, this);
         actvcodes.add(actvcode);
     }
     else if (table == "ACTVTYPE")
     {
-        Actvtype actvtype(header, record);
+        Actvtype actvtype(header, record, this);
         actvtypes.add(actvtype);
     }
     else if (table == "CALENDAR")
     {
-        Calendar calendar(header, record);
+        Calendar calendar(header, record, this);
         calendars.add(calendar);
     }
     else if (table == "PROJWBS")
@@ -149,7 +147,7 @@ void Reader::add(std::string &table,
     }
     else if (table == "CURRTYPE")
     {
-        Currtype currtype(header, record);
+        Currtype currtype(header, record, this);
         currtypes.add(currtype);
     }
     else if (table == "RCATTYPE")
@@ -174,17 +172,17 @@ void Reader::add(std::string &table,
     }
     else if (table == "OBS")
     {
-        Obs obs(header, record);
+        Obs obs(header, record, this);
         obss.add(obs);
     }
     else if (table == "NONWORK")
     {
-        NonWork nonwork(header, record);
+        NonWork nonwork(header, record, this);
         nonWorks.add(nonwork);
     }
     else if (table == "FINTMPL")
     {
-        Fintmpl fintmpl(header, record);
+        Fintmpl fintmpl(header, record, this);
         fintmpls.add(fintmpl);
     }
     else if (table == "PCATTYPE")

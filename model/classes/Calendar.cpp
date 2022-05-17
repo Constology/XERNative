@@ -4,8 +4,12 @@
 
 #include "Calendar.h"
 
-Calendar::Calendar(const std::vector<std::string> header, const std::vector<std::string> params) {
+#include "../../Reader.h"
 
+Calendar::Calendar(const std::vector<std::string> header,
+                   const std::vector<std::string> params,
+                   Reader *readerObj) {
+    reader = readerObj;
     tsv = "";
 
     for (int i = 0; i < header.size(); i++) {

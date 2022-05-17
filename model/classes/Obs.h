@@ -8,6 +8,8 @@
 #include <iostream>
 #include <vector>
 
+class Reader;
+
 class Obs {
 public:
     int obs_id;
@@ -18,7 +20,9 @@ public:
     int seq_num;
 
     std::string get_tsv() const;
-    Obs(const std::vector<std::string> header, const std::vector<std::string> params);
+    Obs(const std::vector<std::string> header,
+        const std::vector<std::string> params,
+        Reader *readerObj);
 
 private:
     std::string tsv;
@@ -26,6 +30,7 @@ private:
     std::string obs_id_str;
     std::string parent_obs_id_str;
     std::string seq_num_str;
+    Reader *reader;
 };
 
 #endif // XERPARSER_OBS_H

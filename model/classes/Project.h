@@ -10,8 +10,7 @@
 
 class Reader;
 
-class Project
-{
+class Project {
 public:
     int proj_id;
     int acct_id;

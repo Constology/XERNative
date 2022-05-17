@@ -1,6 +1,4 @@
-//
-// Created by Taraxtix on 06/05/2022.
-//
+class Reader;
 
 #ifndef EXRPARSER_ACTVCODE_H
 #define EXRPARSER_ACTVCODE_H
@@ -21,12 +19,15 @@ public:
     std::string actv_code_name;
     std::string short_name;
 
-    Actvcode(const std::vector<std::string> header, const std::vector<std::string> params);
+    Actvcode(const std::vector<std::string> header,
+             const std::vector<std::string> params,
+             Reader *readerObj);
     std::string get_tsv() const;
 
 private:
     void update_tsv();
     std::string tsv;
+    Reader *reader;
 };
 
 #endif // EXRPARSER_ACTVCODE_H

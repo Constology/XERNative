@@ -4,10 +4,12 @@
 
 #include "Actvtype.h"
 
-Actvtype::Actvtype(const std::vector<std::string> header, const std::vector<std::string> params) {
+Actvtype::Actvtype(const std::vector<std::string> header,
+                   const std::vector<std::string> params,
+                   Reader *readerObj) {
 
     tsv = "";
-
+    reader = readerObj;
     for (int i = 0; i < header.size(); i++) {
         if (header.at(i).empty())
             break;
@@ -42,6 +44,7 @@ Actvtype::Actvtype(const std::vector<std::string> header, const std::vector<std:
             super_flag = params.at(i);
         }
     }
+    update_tsv();
 }
 
 std::string Actvtype::update_tsv() {

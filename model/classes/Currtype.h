@@ -9,6 +9,8 @@
 #include <string>
 #include <vector>
 
+class Reader;
+
 class Currtype {
 
 public:
@@ -25,7 +27,9 @@ public:
     std::string pos_curr_fmt_type;
     std::string get_tsv() const;
 
-    Currtype(const std::vector<std::string> header, const std::vector<std::string> params);
+    Currtype(const std::vector<std::string> header,
+             const std::vector<std::string> params,
+             Reader *readerObj);
 
 private:
     std::string curr_id_str;
@@ -34,6 +38,7 @@ private:
     std::string group_digit_cnt_str;
     std::string update_tsv();
     std::string tsv;
+    Reader *reader;
 };
 
 #endif // EXRPARSER_CURRTYPE_H
