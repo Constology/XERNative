@@ -260,4 +260,7 @@ std::vector<Rsrcrate> Rsrc::getRsrcRate()
 
 std::vector<Rsrc> Rsrc::getChildren() { return reader->rsrcs.getChildren(rsrc_id); }
 
-std::string Rsrc::get_tsv() const { return tsv; }
+std::string Rsrc::get_tsv() {
+    update_tsv();
+    return tsv;
+}

@@ -12,6 +12,7 @@ UDFType::UDFType(const std::vector<std::string> header, const std::vector<std::s
             if (!params.at(i).empty())
             {
                 udf_type_id = stoi(params.at(i));
+                udf_type_id_str = params.at(i);
             }
         }
         else if (header.at(i) == "table_name")
@@ -46,10 +47,30 @@ UDFType::UDFType(const std::vector<std::string> header, const std::vector<std::s
     reader = readerObj;
 }
 
+void UDFType::update_tsv()
+{
+    tsv = "%R\t";
+    tsv
+        .append(std::to_string(udf_type_id))
+        .append("\t")
+        .append(table_name)
+        .append("\t")
+        .append(udf_type_name)
+        .append("\t")
+        .append(udf_type_label)
+        .append("\t")
+        .append(logical_data_type)
+        .append("\t")
+        .append(super_flag)
+        .append("\t")
+        .append(indicator_expression)
+        .append("\t")
+        .append(summary_indicator_expression)
+        .append("\n");
+}
 std::string UDFType::get_tsv()
 {
-    tsv = "";
-    tsv.append(std::to_string(udf_type_id)).append("\t").append(table_name).append("\t").append(udf_type_name).append("\t").append(udf_type_label).append("\t").append(logical_data_type).append("\t").append(super_flag).append("\t").append(indicator_expression).append("\t").append(summary_indicator_expression).append("\n");
+    update_tsv();
     return tsv;
 }
 

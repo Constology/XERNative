@@ -164,11 +164,70 @@ Wbs::Wbs(const std::vector<std::string> header, const std::vector<std::string> p
         }
     }
     reader = readerObj;
-    tsv.append(std::to_string(wbs_id)).append("\t").append(std::to_string(proj_id)).append("\t").append(std::to_string(obs_id)).append("\t").append(std::to_string(seq_num)).append("\t").append(std::to_string(est_wt)).append("\t").append(proj_node_flag).append("\t").append(sum_data_flag).append("\t").append(status_code).append("\t").append(wbs_short_name).append("\t").append(wbs_name).append("\t").append(std::to_string(phase_id)).append("\t").append(std::to_string(parent_wbs_id)).append("\t").append(std::to_string(ev_user_pct)).append("\t").append(std::to_string(ev_etc_user_value)).append("\t").append(std::to_string(orig_cost)).append("\t").append(std::to_string(indep_remain_total_cost)).append("\t").append(std::to_string(ann_dscnt_rate_pct)).append("\t").append(std::to_string(dscnt_period_type)).append("\t").append(std::to_string(indep_remain_work_qty)).append("\t").append(anticip_start_date.to_string()).append("\t").append(anticip_end_date.to_string()).append("\t").append(ev_compute_type).append("\t").append(ev_etc_compute_type).append("\t").append(guid).append("\t").append(tmpl_guid).append("\t").append(plan_open_state).append("\n");
+    update_tsv();
+}
+
+void Wbs::update_tsv()
+{
+    tsv = "%R\t";
+    tsv
+        .append(std::to_string(wbs_id))
+        .append("\t")
+        .append(std::to_string(proj_id))
+        .append("\t")
+        .append(std::to_string(obs_id))
+        .append("\t")
+        .append(std::to_string(seq_num))
+        .append("\t")
+        .append(std::to_string(est_wt))
+        .append("\t")
+        .append(proj_node_flag)
+        .append("\t")
+        .append(sum_data_flag)
+        .append("\t")
+        .append(status_code)
+        .append("\t")
+        .append(wbs_short_name)
+        .append("\t")
+        .append(wbs_name)
+        .append("\t")
+        .append(std::to_string(phase_id))
+        .append("\t")
+        .append(std::to_string(parent_wbs_id))
+        .append("\t")
+        .append(std::to_string(ev_user_pct))
+        .append("\t")
+        .append(std::to_string(ev_etc_user_value))
+        .append("\t")
+        .append(std::to_string(orig_cost))
+        .append("\t")
+        .append(std::to_string(indep_remain_total_cost))
+        .append("\t")
+        .append(std::to_string(ann_dscnt_rate_pct))
+        .append("\t")
+        .append(std::to_string(dscnt_period_type))
+        .append("\t")
+        .append(std::to_string(indep_remain_work_qty))
+        .append("\t")
+        .append(anticip_start_date.to_string())
+        .append("\t")
+        .append(anticip_end_date.to_string())
+        .append("\t")
+        .append(ev_compute_type)
+        .append("\t")
+        .append(ev_etc_compute_type)
+        .append("\t")
+        .append(guid)
+        .append("\t")
+        .append(tmpl_guid)
+        .append("\t")
+        .append(plan_open_state)
+        .append("\n");
 }
 
 std::string Wbs::get_tsv()
 {
+    update_tsv();
     return tsv;
 }
 

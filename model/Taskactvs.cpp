@@ -1,6 +1,3 @@
-//
-// Created by sorat on 12/05/2022.
-//
 
 #include "Taskactvs.h"
 
@@ -31,7 +28,7 @@ std::string Taskactvs::get_tsv()
 	tsv.append("%F\ttask_id\tactv_code_type_id\tactv_code_id\tproj_id\n");
 	for (auto &taskactv : taskactvs)
 	{
-		tsv.append(taskactv.tsv);
+		tsv.append(taskactv.get_tsv());
 	}
 	return tsv;
 }

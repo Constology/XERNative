@@ -1,11 +1,10 @@
-//
-// Created by sorat on 12/05/2022.
-//
 
 #include "Rsrccurvdata.h"
+#include "../../Reader.h"
 
-Rsrccurvdata::Rsrccurvdata(const std::vector<std::string> header, const std::vector<std::string> params)
+Rsrccurvdata::Rsrccurvdata(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj)
 {
+	reader = readerObj;
 	tsv = "";
 	for (int i = 0; i < params.size(); i++)
 	{
@@ -109,5 +108,17 @@ Rsrccurvdata::Rsrccurvdata(const std::vector<std::string> header, const std::vec
 			pct_usage_20 = params.at(i);
 		}
 	}
+	update_tsv();
+}
+
+void Rsrccurvdata::update_tsv()
+{
+	tsv = "%R\t";
 	tsv.append(std::to_string(curv_id)).append("\t").append(curv_name).append("\t").append(default_flag).append("\t").append(pct_usage_0).append("\t").append(pct_usage_1).append("\t").append(pct_usage_2).append("\t").append(pct_usage_3).append("\t").append(pct_usage_4).append("\t").append(pct_usage_5).append("\t").append(pct_usage_6).append("\t").append(pct_usage_7).append("\t").append(pct_usage_8).append("\t").append(pct_usage_9).append("\t").append(pct_usage_10).append("\t").append(pct_usage_11).append("\t").append(pct_usage_12).append("\t").append(pct_usage_13).append("\t").append(pct_usage_14).append("\t").append(pct_usage_15).append("\t").append(pct_usage_16).append("\t").append(pct_usage_17).append("\t").append(pct_usage_18).append("\t").append(pct_usage_19).append("\t").append(pct_usage_20).append("\n");
+}
+
+std::string Rsrccurvdata::get_tsv()
+{
+	update_tsv();
+	return tsv;
 }

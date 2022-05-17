@@ -1,6 +1,3 @@
-//
-// Created by sorat on 12/05/2022.
-//
 
 #ifndef XERPARSER_RSRCRATE_H
 #define XERPARSER_RSRCRATE_H
@@ -9,6 +6,7 @@
 #include "../../Date/Date.h"
 #include <vector>
 #include <string>
+class Reader;
 
 class Rsrcrate
 {
@@ -24,9 +22,23 @@ public:
 	int shift_period_id;
 	Date start_date;
 
-	std::string tsv;
+	std::string get_tsv();
+	Rsrcrate(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
 
-	Rsrcrate(const std::vector<std::string> header, const std::vector<std::string> params);
+private:
+	Reader *reader;
+	std::string rsrc_rate_str;
+	std::string rsrc_id_str;
+	std::string max_qty_per_hr_str;
+	std::string cost_per_qty_str;
+	std::string cost_per_qty2_str;
+	std::string cost_per_qty3_str;
+	std::string cost_per_qty4_str;
+	std::string cost_per_qty5_str;
+	std::string shift_period_id_str;
+	std::string start_date_str;
+	void update_tsv();
+	std::string tsv;
 };
 
 #endif // XERPARSER_RSRCRATE_H

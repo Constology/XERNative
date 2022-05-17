@@ -1,6 +1,3 @@
-//
-// Created by Taraxtix on 10/05/2022.
-//
 
 #ifndef XERPARSER_TASKRSRC_H
 #define XERPARSER_TASKRSRC_H
@@ -9,7 +6,8 @@
 #include <vector>
 #include <string>
 
-// TODO : Verify this
+class Reader;
+
 class TaskRsrc
 {
 public:
@@ -62,9 +60,28 @@ public:
 	std::string has_rsrchours;
 	std::string taskrsrc_sum_id;
 
+	std::string get_tsv();
+
+	TaskRsrc(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
+
+private:
+	Reader *reader;
+	void update_tsv();
 	std::string tsv;
 
-	TaskRsrc(const std::vector<std::string> header, const std::vector<std::string> params);
+	std::string taskrsrc_id_str;
+	std::string task_id_str;
+	std::string proj_id_str;
+	std::string role_id_str;
+	std::string acct_id_str;
+	std::string rsrc_id_str;
+	std::string pobs_id_str;
+
+	std::string remain_qty_str;
+	std::string target_qty_str;
+	std::string remain_qty_per_hour_str;
+	std::string target_lag_drtn_hr_cnt_str;
+	std::string target_qty_per_hour_str;
 };
 
 #endif // XERPARSER_TASKRSRC_H

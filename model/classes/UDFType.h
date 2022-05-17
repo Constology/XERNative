@@ -26,6 +26,8 @@ public:
 private:
     std::string tsv;
     Reader *reader;
+    void update_tsv();
+    std::string udf_type_id_str;
 };
 
 #endif // XERPARSER_UDFType_H

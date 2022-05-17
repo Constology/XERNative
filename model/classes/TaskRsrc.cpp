@@ -1,11 +1,10 @@
-//
-// Created by Taraxtix on 10/05/2022.
-//
 
 #include "TaskRsrc.h"
+#include "../../Reader.h"
 
-TaskRsrc::TaskRsrc(const std::vector<std::string> header, const std::vector<std::string> params)
+TaskRsrc::TaskRsrc(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj)
 {
+	reader = readerObj;
 	tsv = "";
 	for (int i = 0; i < header.size(); i++)
 	{
@@ -241,5 +240,112 @@ TaskRsrc::TaskRsrc(const std::vector<std::string> header, const std::vector<std:
 			taskrsrc_sum_id = params.at(i);
 		}
 	}
-	tsv.append(std::to_string(taskrsrc_id)).append("\t").append(std::to_string(task_id)).append("\t").append(std::to_string(proj_id)).append("\t").append(cost_qty_link_flag).append("\t").append(std::to_string(role_id)).append("\t").append(std::to_string(acct_id)).append("\t").append(std::to_string(rsrc_id)).append("\t").append(std::to_string(pobs_id)).append("\t").append(skill_level).append("\t").append(std::to_string(remain_qty)).append("\t").append(std::to_string(target_qty)).append("\t").append(std::to_string(remain_qty_per_hour)).append("\t").append(std::to_string(target_lag_drtn_hr_cnt)).append("\t").append(std::to_string(target_qty_per_hour)).append("\t").append(act_ot_qty).append("\t").append(act_reg_qty).append("\t").append(relag_drtn_hr_cnt).append("\t").append(ot_factor).append("\t").append(cost_per_qty).append("\t").append(target_cost).append("\t").append(act_reg_cost).append("\t").append(act_ot_cost).append("\t").append(remain_cost).append("\t").append(act_start_date).append("\t").append(act_end_date).append("\t").append(restart_date).append("\t").append(reend_date).append("\t").append(target_start_date).append("\t").append(target_end_date).append("\t").append(rem_late_start_date).append("\t").append(rem_late_end_date).append("\t").append(rollup_dates_flag).append("\t").append(target_crv).append("\t").append(remain_crv).append("\t").append(actual_crv).append("\t").append(ts_pend_act_end_flag).append("\t").append(guid).append("\t").append(rate_type).append("\t").append(act_this_per_cost).append("\t").append(act_this_per_qty).append("\t").append(curv_id).append("\t").append(rsrc_type).append("\t").append(cost_per_qty_source_type).append("\t").append(create_user).append("\t").append(create_date).append("\t").append(cbs_id).append("\t").append(has_rsrchours).append("\t").append(taskrsrc_sum_id).append("\n");
+	update_tsv();
+}
+
+void TaskRsrc::update_tsv()
+{
+	tsv = "%R\t";
+	tsv
+		.append(std::to_string(taskrsrc_id))
+		.append("\t")
+		.append(std::to_string(task_id))
+		.append("\t")
+		.append(std::to_string(proj_id))
+		.append("\t")
+		.append(cost_qty_link_flag)
+		.append("\t")
+		.append(std::to_string(role_id))
+		.append("\t")
+		.append(std::to_string(acct_id))
+		.append("\t")
+		.append(std::to_string(rsrc_id))
+		.append("\t")
+		.append(std::to_string(pobs_id))
+		.append("\t")
+		.append(skill_level)
+		.append("\t")
+		.append(std::to_string(remain_qty))
+		.append("\t")
+		.append(std::to_string(target_qty))
+		.append("\t")
+		.append(std::to_string(remain_qty_per_hour))
+		.append("\t")
+		.append(std::to_string(target_lag_drtn_hr_cnt))
+		.append("\t")
+		.append(std::to_string(target_qty_per_hour))
+		.append("\t")
+		.append(act_ot_qty)
+		.append("\t")
+		.append(act_reg_qty)
+		.append("\t")
+		.append(relag_drtn_hr_cnt)
+		.append("\t")
+		.append(ot_factor)
+		.append("\t")
+		.append(cost_per_qty)
+		.append("\t")
+		.append(target_cost)
+		.append("\t")
+		.append(act_reg_cost)
+		.append("\t")
+		.append(act_ot_cost)
+		.append("\t")
+		.append(remain_cost)
+		.append("\t")
+		.append(act_start_date)
+		.append("\t")
+		.append(act_end_date)
+		.append("\t")
+		.append(restart_date)
+		.append("\t")
+		.append(reend_date)
+		.append("\t")
+		.append(target_start_date)
+		.append("\t")
+		.append(target_end_date)
+		.append("\t")
+		.append(rem_late_start_date)
+		.append("\t")
+		.append(rem_late_end_date)
+		.append("\t")
+		.append(rollup_dates_flag)
+		.append("\t")
+		.append(target_crv)
+		.append("\t")
+		.append(remain_crv)
+		.append("\t")
+		.append(actual_crv)
+		.append("\t")
+		.append(ts_pend_act_end_flag)
+		.append("\t")
+		.append(guid)
+		.append("\t")
+		.append(rate_type)
+		.append("\t")
+		.append(act_this_per_cost)
+		.append("\t")
+		.append(act_this_per_qty)
+		.append("\t")
+		.append(curv_id)
+		.append("\t")
+		.append(rsrc_type)
+		.append("\t")
+		.append(cost_per_qty_source_type)
+		.append("\t")
+		.append(create_user)
+		.append("\t")
+		.append(create_date)
+		.append("\t")
+		.append(cbs_id)
+		.append("\t")
+		.append(has_rsrchours)
+		.append("\t")
+		.append(taskrsrc_sum_id)
+		.append("\n");
+}
+
+std::string TaskRsrc::get_tsv(){
+	update_tsv();
+	return tsv;
 }

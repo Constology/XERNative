@@ -32,7 +32,7 @@ std::string Rsrcrates::get_tsv()
 			   "cost_per_qty3\tcost_per_qty4\tcost_per_qty5\tshift_period_id\tstart_date\n");
 	for (auto &rsrcrate : rsrcrates)
 	{
-		tsv.append(rsrcrate.tsv);
+		tsv.append(rsrcrate.get_tsv());
 	}
 	return tsv;
 }

@@ -1,7 +1,3 @@
-//
-// Created by sorat on 12/05/2022.
-//
-
 #ifndef XERPARSER_RSRC_H
 #define XERPARSER_RSRC_H
 
@@ -13,7 +9,8 @@
 
 class Reader;
 
-class Rsrc {
+class Rsrc
+{
 public:
     int rsrc_id;
     int parent_rsrc_id;
@@ -47,7 +44,7 @@ public:
     std::string level_flag;
     std::string last_checksum;
     std::vector<Rsrcrate> getRsrcRate();
-    std::string get_tsv() const;
+    std::string get_tsv();
     Rsrc(const std::vector<std::string> header,
          const std::vector<std::string> params,
          Reader *readerObj);

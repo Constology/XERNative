@@ -1,11 +1,15 @@
 #if !defined(XERPARSER_RCATVALUE_H)
-#    define XERPARSER_RCATVALUE_H
-#    include <string>
-#    include <vector>
+#define XERPARSER_RCATVALUE_H
+#include <string>
+#include <vector>
 
-class RCatValue {
+class Reader;
+
+class RCatValue
+{
 public:
-    RCatValue(const std::vector<std::string> header, const std::vector<std::string> params);
+    RCatValue(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
+
     int parent_rsrc_catg_id;
     int rsrc_catg_id;
 
@@ -23,6 +27,7 @@ private:
     std::string rsrc_catg_type_id_str;
     std::string seq_num_str;
     void update_tsv();
+    Reader *reader;
 };
 
 #endif // XERPARSER_RCATVALUE_H

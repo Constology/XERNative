@@ -94,9 +94,10 @@ int main()
     cout << reader.rCatValues.get_tsv() << endl;
     cout << reader.rsrcs.get_tsv() << endl;
 
-    vector<Task> ts = reader.tasks.getByRsrc(10552);
-    for (auto t : ts)
-    {
-        cout << ts.size() << endl;
-    }
+    //TODO: check segmentation fault
+    // vector<Task> ts = reader.tasks.getByRsrc(10552);
+    // for (auto t : ts)
+    // {
+    //     cout << ts.size() << endl;
+    // }
 }

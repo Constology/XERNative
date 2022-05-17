@@ -9,6 +9,8 @@
 #include <vector>
 #include <string>
 
+class Reader;
+
 class Schedoption
 {
 public:
@@ -37,10 +39,16 @@ public:
 	std::string use_total_float_multiple_longest_paths;
 	std::string key_activity_for_multiple_longest_paths;
 	std::string LevelPriorityList;
+	std::string get_tsv();
 
+	Schedoption(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
+
+private:
+	Reader *reader;
+	void update_tsv();
 	std::string tsv;
-
-	Schedoption(const std::vector<std::string> header, const std::vector<std::string> params);
+	std::string schedoptions_id_str;
+	std::string proj_id_str;
 };
 
 #endif // XERPARSER_SCHEDOPTION_H

@@ -1,6 +1,3 @@
-//
-// Created by sorat on 12/05/2022.
-//
 
 #ifndef XERPARSER_RSRCCURVDATA_H
 #define XERPARSER_RSRCCURVDATA_H
@@ -8,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+class Reader;
 
 class Rsrccurvdata
 {
@@ -38,8 +36,13 @@ public:
 	std::string pct_usage_20;
 
 	std::string tsv;
+	std::string get_tsv();
 
-	Rsrccurvdata(const std::vector<std::string> header, const std::vector<std::string> params);
+	Rsrccurvdata(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
+
+private:
+	Reader *reader;
+	void update_tsv();
 };
 
 #endif // XERPARSER_RSRCCURVDATA_H

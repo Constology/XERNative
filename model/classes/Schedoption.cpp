@@ -3,9 +3,11 @@
 //
 
 #include "Schedoption.h"
+#include "../../Reader.h"
 
-Schedoption::Schedoption(const std::vector<std::string> header, const std::vector<std::string> params)
+Schedoption::Schedoption(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj)
 {
+	reader = readerObj;
 	tsv = "";
 	for (int i = 0; i < params.size(); i++)
 	{
@@ -14,6 +16,7 @@ Schedoption::Schedoption(const std::vector<std::string> header, const std::vecto
 			if (!params.at(i).empty())
 			{
 				schedoptions_id = stoi(params.at(i));
+				schedoptions_id_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "proj_id")
@@ -21,6 +24,7 @@ Schedoption::Schedoption(const std::vector<std::string> header, const std::vecto
 			if (!params.at(i).empty())
 			{
 				proj_id = stoi(params.at(i));
+				proj_id_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "sched_outer_depend_type")
@@ -185,5 +189,39 @@ Schedoption::Schedoption(const std::vector<std::string> header, const std::vecto
 			}
 		}
 	}
-	tsv.append(std::to_string(schedoptions_id)).append("\t").append(std::to_string(proj_id)).append("\t").append(sched_outer_depend_type).append("\t").append(sched_open_critical_flag).append("\t").append(sched_lag_early_start_flag).append("\t").append(sched_retained_logic).append("\t").append(sched_setplantoforecast).append("\t").append(sched_float_type).append("\t").append(sched_calendar_on_relationship_lag).append("\t").append(sched_use_expect_end_flag).append("\t").append(sched_progress_override).append("\t").append(level_float_hrs_cnt).append("\t").append(level_outer_assign_flag).append("\t").append(level_outer_assign_priority).append("\t").append(level_over_alloc_pct).append("\t").append(level_within_float_flag).append("\t").append(level_keep_sched_date_flag).append("\t").append(level_all_rsrc_flag).append("\t").append(sched_use_project_end_date_for_float).append("\t").append(enable_multiple_longest_path_calc).append("\t").append(limit_multiple_longest_path_calc).append("\t").append(max_multiple_longest_path).append("\t").append(use_total_float_multiple_longest_paths).append("\t").append(key_activity_for_multiple_longest_paths).append("\t").append(LevelPriorityList).append("\n");
+	update_tsv();
+}
+
+void Schedoption::update_tsv(){
+	tsv = "%R\t";
+	tsv.append(schedoptions_id_str).append("\t")
+	.append(proj_id_str).append("\t")
+	.append(sched_outer_depend_type).append("\t")
+	.append(sched_open_critical_flag).append("\t")
+	.append(sched_lag_early_start_flag).append("\t")
+	.append(sched_retained_logic).append("\t")
+	.append(sched_setplantoforecast).append("\t")
+	.append(sched_float_type).append("\t")
+	.append(sched_calendar_on_relationship_lag).append("\t")
+	.append(sched_use_expect_end_flag).append("\t")
+	.append(sched_progress_override).append("\t")
+	.append(level_float_hrs_cnt).append("\t")
+	.append(level_outer_assign_flag).append("\t")
+	.append(level_outer_assign_priority).append("\t")
+	.append(level_over_alloc_pct).append("\t")
+	.append(level_within_float_flag).append("\t")
+	.append(level_keep_sched_date_flag).append("\t")
+	.append(level_all_rsrc_flag).append("\t")
+	.append(sched_use_project_end_date_for_float)
+	.append("\t").append(enable_multiple_longest_path_calc)
+	.append("\t").append(limit_multiple_longest_path_calc)
+	.append("\t").append(max_multiple_longest_path).append("\t")
+	.append(use_total_float_multiple_longest_paths).append("\t")
+	.append(key_activity_for_multiple_longest_paths).append("\t")
+	.append(LevelPriorityList).append("\n");
+}
+
+std::string Schedoption::get_tsv(){
+	update_tsv();
+	return tsv;
 }

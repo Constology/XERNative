@@ -3,9 +3,11 @@
 //
 
 #include "Rsrcrcat.h"
+#include "../../Reader.h"
 
-Rsrcrcat::Rsrcrcat(const std::vector<std::string> header, const std::vector<std::string> params)
+Rsrcrcat::Rsrcrcat(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj)
 {
+	reader = readerObj;
 	tsv = "";
 	for (int i = 0; i < params.size(); i++)
 	{
@@ -31,5 +33,17 @@ Rsrcrcat::Rsrcrcat(const std::vector<std::string> header, const std::vector<std:
 			}
 		}
 	}
-	tsv.append(std::to_string(rsrc_id)).append("\t").append(std::to_string(rsrc_catg_type_id)).append("\t").append(std::to_string(rsrc_catg_id)).append("\n");
+	update_tsv();
+}
+
+void Rsrcrcat::update_tsv()
+{
+	tsv = "%R\t";
+	tsv.append(rsrc_id_str).append("\t").append(rsrc_catg_type_id_str).append("\t").append(rsrc_catg_id_str).append("\n");
+}
+
+std::string Rsrcrate::get_tsv()
+{
+	update_tsv();
+	return tsv;
 }

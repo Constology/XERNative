@@ -134,7 +134,7 @@ void Reader::add(std::string &table,
     }
     else if (table == "UDFVALUE")
     {
-        Udf udf(header, record);
+        Udf udf(header, record, this);
         udfs.add(udf);
     }
     else if (table == "UDFTYPE")
@@ -154,22 +154,22 @@ void Reader::add(std::string &table,
     }
     else if (table == "RCATTYPE")
     {
-        RCatType rcattype(header, record);
+        RCatType rcattype(header, record, this);
         rCatTypes.add(rcattype);
     }
     else if (table == "RCATVAL")
     {
-        RCatValue rcatval(header, record);
+        RCatValue rcatval(header, record, this);
         rCatValues.add(rcatval);
     }
     else if (table == "ROLERATE")
     {
-        RoleRate rolerate(header, record);
+        RoleRate rolerate(header, record, this);
         roleRates.add(rolerate);
     }
     else if (table == "TASKRSRC")
     {
-        TaskRsrc taskrsrc(header, record);
+        TaskRsrc taskrsrc(header, record, this);
         taskRsrcs.add(taskrsrc);
     }
     else if (table == "OBS")
@@ -199,7 +199,7 @@ void Reader::add(std::string &table,
     }
     else if (table == "TASKPRED")
     {
-        Taskpred taskpred(header, record);
+        Taskpred taskpred(header, record, this);
         taskpreds.add(taskpred);
     }
     else if (table == "PROJPCAT")
@@ -219,32 +219,32 @@ void Reader::add(std::string &table,
     }
     else if (table == "RSRCRCAT")
     {
-        Rsrcrcat rsrccat(header, record);
+        Rsrcrcat rsrccat(header, record, this);
         rsrcrcats.add(rsrccat);
     }
     else if (table == "RSRCCURVDATA")
     {
-        Rsrccurvdata rsrccurve(header, record);
+        Rsrccurvdata rsrccurve(header, record, this);
         rsrccurvdatas.add(rsrccurve);
     }
     else if (table == "RSRCRATE")
     {
-        Rsrcrate rsrcrate(header, record);
+        Rsrcrate rsrcrate(header, record, this);
         rsrcrates.add(rsrcrate);
     }
     else if (table == "SCHEDOPTION")
     {
-        Schedoption schedoptin(header, record);
+        Schedoption schedoptin(header, record, this);
         schedoptions.add(schedoptin);
     }
     else if (table == "TASKACTV")
     {
-        Taskactv taskactv(header, record);
+        Taskactv taskactv(header, record, this);
         taskactvs.add(taskactv);
     }
     else if (table == "TASKPROC")
     {
-        Taskproc taskproc(header, record);
+        Taskproc taskproc(header, record, this);
         taskprocs.add(taskproc);
     }
     else if (table == "TASK")

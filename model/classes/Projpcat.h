@@ -1,6 +1,4 @@
-//
-// Created by sorat on 12/05/2022.
-//
+
 
 #ifndef XERPARSER_PROJPCAT_H
 #define XERPARSER_PROJPCAT_H
@@ -12,7 +10,8 @@
 
 class Reader;
 
-class Projpcat {
+class Projpcat
+{
 public:
     int proj_id;
     int proj_catg_type_id;

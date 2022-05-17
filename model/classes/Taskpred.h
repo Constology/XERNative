@@ -1,6 +1,4 @@
-//
-// Created by sorat on 12/05/2022.
-//
+
 
 #ifndef XERPARSER_TASKPRED_H
 #define XERPARSER_TASKPRED_H
@@ -8,6 +6,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+class Reader;
 
 class Taskpred
 {
@@ -24,9 +23,19 @@ public:
 	std::string aref;
 	std::string arls;
 
-	std::string tsv;
+	std::string get_tsv();
 
-	Taskpred(const std::vector<std::string> header, const std::vector<std::string> params);
+	Taskpred(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
+
+private:
+	Reader *reader;
+	std::string tsv;
+	void update_tsv();
+	std::string task_pred_id_str;
+	std::string task_id_str;
+	std::string pred_task_id_str;
+	std::string proj_id_str;
+	std::string pred_proj_id_str;
 };
 
 #endif // XERPARSER_TASKPRED_H

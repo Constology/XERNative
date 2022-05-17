@@ -9,6 +9,8 @@
 #include <vector>
 #include <string>
 
+class Reader;
+
 class Taskproc
 {
 public:
@@ -22,9 +24,18 @@ public:
 	std::string complete_pct;
 	std::string proc_descr;
 
-	std::string tsv;
+	std::string get_tsv();
 
-	Taskproc(const std::vector<std::string> header, const std::vector<std::string> params);
+	Taskproc(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
+
+private:
+	Reader *reader;
+	std::string tsv;
+	void update_tsv();
+	std::string proc_id_str;
+	std::string task_id_str;
+	std::string proj_id_str;
+	std::string seq_num_str;
 };
 
 #endif // XERPARSER_TASKPROC_H

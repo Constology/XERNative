@@ -47,6 +47,7 @@ public:
 private:
     std::string tsv;
     Reader *reader;
+    void update_tsv();
 };
 
 #endif // EXRPARSER_ACCOUNTS_H

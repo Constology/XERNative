@@ -39,7 +39,7 @@ std::string Schedoptions::get_tsv()
 			   "\tLevelPriorityList\n");
 	for (auto &schedoption : schedoptions)
 	{
-		tsv.append(schedoption.tsv);
+		tsv.append(schedoption.get_tsv());
 	}
 	return tsv;
 }

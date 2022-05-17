@@ -43,7 +43,7 @@ std::string TaskRsrcs::get_tsv()
 			   "cbs_id\thas_rsrchours\ttaskrsrc_sum_id\n");
 	for (auto &taskRsrc : taskrsrcs)
 	{
-		tsv.append(taskRsrc.tsv);
+		tsv.append(taskRsrc.get_tsv());
 	}
 	return tsv;
 }

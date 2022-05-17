@@ -26,7 +26,7 @@ std::string Taskprocs::get_tsv() {
 	tsv.append("%F\tproc_id\ttask_id\tproj_id\tseq_num\tproc_name\tcomplete_flag\tproc_wt\t"
 						 "complete_pct\tproc_descr\n");
 	for(auto & taskproc : taskprocs){
-		tsv.append(taskproc.tsv);
+		tsv.append(taskproc.get_tsv());
 	}
 	return tsv;
 }

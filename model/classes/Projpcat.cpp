@@ -1,6 +1,3 @@
-//
-// Created by sorat on 12/05/2022.
-//
 
 #include "Projpcat.h"
 
@@ -8,19 +5,29 @@
 
 Projpcat::Projpcat(const std::vector<std::string> header,
                    const std::vector<std::string> params,
-                   Reader *readerObj) {
+                   Reader *readerObj)
+{
     tsv = "";
-    for (int i = 0; i < params.size(); i++) {
-        if (header.at(i) == "proj_id") {
-            if (!params.at(i).empty()) {
+    for (int i = 0; i < params.size(); i++)
+    {
+        if (header.at(i) == "proj_id")
+        {
+            if (!params.at(i).empty())
+            {
                 proj_id = stoi(params.at(i));
             }
-        } else if (header.at(i) == "proj_catg_type_id") {
-            if (!params.at(i).empty()) {
+        }
+        else if (header.at(i) == "proj_catg_type_id")
+        {
+            if (!params.at(i).empty())
+            {
                 proj_catg_type_id = stoi(params.at(i));
             }
-        } else if (header.at(i) == "proj_catg_id") {
-            if (!params.at(i).empty()) {
+        }
+        else if (header.at(i) == "proj_catg_id")
+        {
+            if (!params.at(i).empty())
+            {
 
                 proj_catg_id = stoi(params.at(i));
             }
@@ -32,7 +39,8 @@ Projpcat::Projpcat(const std::vector<std::string> header,
 
 Pcatval Projpcat::getValue() { return reader->pcatvals.findById(proj_catg_id); }
 
-void Projpcat::update_tsv() {
+void Projpcat::update_tsv()
+{
     tsv = "%R\t";
     tsv.append(proj_id_str)
         .append("\t")
