@@ -6,38 +6,27 @@
 
 Pcattype::Pcattype(std::vector<std::string> header,
                    std::vector<std::string> params,
-                   Reader *readerObj)
-{
+                   Reader *readerObj) {
     tsv = "";
-    for (int i = 0; i < params.size(); i++)
-    {
-        if (header.at(i) == "proj_catg_type_id")
-        {
-            if (!params.at(i).empty())
-            {
+    for (int i = 0; i < params.size(); i++) {
+        if (header.at(i) == "proj_catg_type_id") {
+            if (!params.at(i).empty()) {
                 proj_catg_type_id = stoi(params.at(i));
                 proj_catg_type_id_str = params.at(i);
             }
-        }
-        else if (header.at(i) == "seq_num")
-        {
-            if (!params.at(i).empty())
-            {
+        } else if (header.at(i) == "seq_num") {
+            if (!params.at(i).empty()) {
                 seq_num = stoi(params.at(i));
                 seq_num_str = params.at(i);
             }
-        }
-        else if (header.at(i) == "proj_catg_short_len")
-        {
-            proj_catg_short_len = stoi(params.at(i));
-            proj_catg_short_len_str = params.at(i);
-        }
-        else if (header.at(i) == "proj_catg_type")
-        {
+        } else if (header.at(i) == "proj_catg_short_len") {
+            if (!params.at(i).empty()) {
+                proj_catg_short_len = stoi(params.at(i));
+                proj_catg_short_len_str = params.at(i);
+            }
+        } else if (header.at(i) == "proj_catg_type") {
             proj_catg_type = params.at(i);
-        }
-        else if (header.at(i) == "export_flag")
-        {
+        } else if (header.at(i) == "export_flag") {
             export_flag = params.at(i);
         }
     }
@@ -45,13 +34,11 @@ Pcattype::Pcattype(std::vector<std::string> header,
     update_tsv();
 }
 
-std::vector<Pcatval> Pcattype::getProjectCodeValues()
-{
+std::vector<Pcatval> Pcattype::getProjectCodeValues() {
     return reader->pcatvals.getByTypeId(proj_catg_type_id);
 }
 
-void Pcattype::update_tsv()
-{
+void Pcattype::update_tsv() {
     tsv = "%R\t";
     tsv.append(proj_catg_type_id_str)
         .append("\t")
@@ -65,62 +52,41 @@ void Pcattype::update_tsv()
         .append("\n");
 }
 
-std::string Pcattype::get_tsv()
-{
+std::string Pcattype::get_tsv() {
     update_tsv();
     return tsv;
 }
 
-int Pcattype::getProjCatgTypeId()
-{
-    return proj_catg_type_id;
-}
+int Pcattype::getProjCatgTypeId() { return proj_catg_type_id; }
 
-void Pcattype::setProjCatgTypeId(int value)
-{
-    if (value > 0)
-    {
+void Pcattype::setProjCatgTypeId(int value) {
+    if (value > 0) {
         proj_catg_type_id = value;
         proj_catg_type_id_str = std::to_string(value);
     }
 }
 
-int Pcattype::getSeqNum()
-{
-    return seq_num;
-}
+int Pcattype::getSeqNum() { return seq_num; }
 
-void Pcattype::setSeqNum(int value)
-{
-    if (value > 0)
-    {
+void Pcattype::setSeqNum(int value) {
+    if (value > 0) {
         seq_num = value;
         seq_num_str = std::to_string(value);
     }
 }
 
-std::string Pcattype::getProjCatgType()
-{
-    return proj_catg_type;
-}
+std::string Pcattype::getProjCatgType() { return proj_catg_type; }
 
-void Pcattype::setProjCatgType(std::string value)
-{
-    if (!value.empty())
-    {
+void Pcattype::setProjCatgType(std::string value) {
+    if (!value.empty()) {
         proj_catg_type = value;
     }
 }
 
-std::string Pcattype::getExportFlag()
-{
-    return export_flag;
-}
+std::string Pcattype::getExportFlag() { return export_flag; }
 
-void Pcattype::setExportFlag(std::string value)
-{
-    if (!value.empty())
-    {
+void Pcattype::setExportFlag(std::string value) {
+    if (!value.empty()) {
         export_flag = value;
     }
 }

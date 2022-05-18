@@ -1,17 +1,16 @@
 #ifndef XERPARSER_WBS_H
 #define XERPARSER_WBS_H
 
-#include <vector>
-#include <string>
-
 #include "../../Date/Date.h"
 #include "../Tasks.h"
+
+#include <string>
+#include <vector>
 
 class Reader;
 
 // TODO: convert dates from string to Date
-class Wbs
-{
+class Wbs {
 public:
     int getWbsId();
     void setWbsId(int value);
@@ -47,8 +46,8 @@ public:
     void setIndepRemainTotalCost(double value);
     double getAnnDscntRatePct();
     void setAnnDscntRatePct(double value);
-    int getDscntPeriodType();
-    void setDscntPeriodType(int value);
+    std::string getDscntPeriodType();
+    void setDscntPeriodType(std::string value);
     double getIndepRemainWorkQty();
     void setIndepRemainWorkQty(double value);
     std::string getEvComputeType();
@@ -68,7 +67,9 @@ public:
 
     std::vector<Task> getTasks();
 
-    Wbs(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
+    Wbs(const std::vector<std::string> header,
+        const std::vector<std::string> params,
+        Reader *readerObj);
     std::string get_tsv();
 
 private:
@@ -90,7 +91,7 @@ private:
     double orig_cost;
     double indep_remain_total_cost;
     double ann_dscnt_rate_pct;
-    int dscnt_period_type;
+    std::string dscnt_period_type;
     double indep_remain_work_qty;
     std::string ev_compute_type;
     std::string ev_etc_compute_type;

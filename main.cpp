@@ -4,41 +4,36 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
     Reader reader;
 
-    reader.parse("/workspaces/XERNative/wk2.xer");
+    reader.parse("/home/hassan/programming/xerParser/C23_Curr.xer");
 
-    for (auto account : reader.accounts.getAll())
-    {
-        std::cout << account.get_tsv() << endl;
-    }
+    // for (auto account : reader.accounts.getAll()) {
+    //     std::cout << account.get_tsv() << endl;
+    // }
 
-    cout << "*********** Project and WBS **********************" << endl;
+    // cout << "*********** Project and WBS **********************" << endl;
 
-    for (Project prj : reader.projects.getAll())
-    {
-        std::vector<Wbs> wbss = prj.getWbs();
-        cout << "prj " << prj.get_tsv() << endl;
-        for (Wbs wbs : wbss)
-        {
-            cout << "WBS " << wbs.getWbsName() << endl;
-            vector<Task> tasks = wbs.getTasks();
-            for (Task task : tasks)
-            {
-                cout << "\t"
-                     << "Task " << task.getTaskCode() << "\t" << task.getTaskName() << "\t"
-                     << task.getEarlyStartDate().to_string() << "\t"
-                     << task.getEarlyEndDate().to_string() << endl;
-            }
-        }
-        // for (Projpcat pcat : reader.projpcats.getAll())
-        // {
-        //     cout << "Project code assignment" << pcat.tsv << endl;
-        //     cout << "Values" << pcat.getValue().tsv << endl;
-        // }
-    }
+    // for (Project prj : reader.projects.getAll()) {
+    //     std::vector<Wbs> wbss = prj.getWbs();
+    //     cout << "prj " << prj.get_tsv() << endl;
+    //     for (Wbs wbs : wbss) {
+    //         cout << "WBS " << wbs.getWbsName() << endl;
+    //         vector<Task> tasks = wbs.getTasks();
+    //         for (Task task : tasks) {
+    //             cout << "\t"
+    //                  << "Task " << task.getTaskCode() << "\t" << task.getTaskName() << "\t"
+    //                  << task.getEarlyStartDate().to_string() << "\t"
+    //                  << task.getEarlyEndDate().to_string() << endl;
+    //         }
+    //     }
+    // for (Projpcat pcat : reader.projpcats.getAll())
+    // {
+    //     cout << "Project code assignment" << pcat.tsv << endl;
+    //     cout << "Values" << pcat.getValue().tsv << endl;
+    // }
+    // }
 
     // cout << "*********** UDF **********************" << endl;
 
@@ -90,12 +85,18 @@ int main()
     //         cout << to_string(tr.rsrc_id) << " => " << to_string(tr.task_id) << endl;
     //     }
     // }
-    cout << reader.rCatValues.get_tsv() << endl;
-    cout << reader.rsrcs.get_tsv() << endl;
-    cout << "************filter by resource*************" << endl;
-    vector<Task> tsks = reader.tasks.getByRsrc(10554);
-    for (auto &t : tsks)
-    {
-        cout << t.get_tsv() << endl;
-    }
+    // cout << reader.rCatValues.get_tsv() << endl;
+    // cout << reader.rsrcs.get_tsv() << endl;
+    // cout << "************filter by resource*************" << endl;
+    // vector<Task> tsks = reader.tasks.getByRsrc(10552);
+    // for (auto &t : tsks) {
+    //     cout << t.getTaskName() << endl;
+    // }
+
+    cout << "# of Tasks\t\t\t" << reader.tasks.getAll().size() << endl;
+    cout << "# of WBS nodes\t\t\t" << reader.wbss.getAll().size() << endl;
+    cout << "# of Resources\t\t\t" << reader.rsrcs.getAll().size() << endl;
+    cout << "# of Relations\t\t\t" << reader.taskpreds.getAll().size() << endl;
+    cout << "# of Resource Allocations\t" << reader.taskRsrcs.getAll().size() << endl;
+    cout << "# of Activity codes\t\t" << reader.taskactvs.getAll().size() << endl;
 }
