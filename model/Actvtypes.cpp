@@ -1,6 +1,3 @@
-//
-// Created by Taraxtix on 07/05/2022.
-//
 
 #include "Actvtypes.h"
 
@@ -10,7 +7,7 @@ Actvtype Actvtypes::findById(int id)
 {
     for (auto &actvtype : actvtypes)
     {
-        if (actvtype.actv_code_type_id == id)
+        if (actvtype.getActvCodeTypeId() == id)
         {
             return actvtype;
         }

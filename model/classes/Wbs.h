@@ -13,6 +13,63 @@ class Reader;
 class Wbs
 {
 public:
+    int getWbsId();
+    void setWbsId(int value);
+    int getProjId();
+    void setProjId(int value);
+    int getObsId();
+    void setObsId(int value);
+    int getSeqNum();
+    void setSeqNum(int value);
+    int getEstWt();
+    void setEstWt(int value);
+    std::string getProjNodeFlag();
+    void setProjNodeFlag(std::string value);
+    std::string getSumDataFlag();
+    void setSumDataFlag(std::string value);
+    std::string getStatusCode();
+    void setStatusCode(std::string value);
+    std::string getWbsShortName();
+    void setWbsShortName(std::string value);
+    std::string getWbsName();
+    void setWbsName(std::string value);
+    int getPhaseId();
+    void setPhaseId(int value);
+    int getParentWbsId();
+    void setParentWbsId(int value);
+    int getEvUserPct();
+    void setEvUserPct(int value);
+    double getEvEtcUserValue();
+    void setEvEtcUserValue(double value);
+    double getOrigCost();
+    void setOrigCost(double value);
+    double getIndepRemainTotalCost();
+    void setIndepRemainTotalCost(double value);
+    double getAnnDscntRatePct();
+    void setAnnDscntRatePct(double value);
+    int getDscntPeriodType();
+    void setDscntPeriodType(int value);
+    double getIndepRemainWorkQty();
+    void setIndepRemainWorkQty(double value);
+    std::string getEvComputeType();
+    void setEvComputeType(std::string value);
+    std::string getEvEtcComputeType();
+    void setEvEtcComputeType(std::string value);
+    std::string getGuid();
+    void setGuid(std::string value);
+    std::string getTmplGuid();
+    void setTmplGuid(std::string value);
+    std::string getPlanOpenState();
+    void setPlanOpenState(std::string value);
+    Date getAnticipStartDate();
+    void setAnticipStartDate(Date value);
+    Date getAnticipEndDate();
+    void setAnticipEndDate(Date value);
+
+    Wbs(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
+    std::string get_tsv();
+
+private:
     int wbs_id;
     int proj_id;
     int obs_id;
@@ -41,13 +98,26 @@ public:
     Date anticip_end_date;
     std::vector<Task> getTasks();
 
-    Wbs(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
-    std::string get_tsv();
-
-private:
     std::string tsv;
     Reader *reader;
     void update_tsv();
+
+    std::string bs_id_str;
+    std::string proj_id_str;
+    std::string obs_id_str;
+    std::string seq_num_str;
+    std::string est_wt_str;
+    std::string phase_id_str;
+    std::string parent_wbs_id_str;
+    std::string ev_user_pct_str;
+    std::string ev_etc_user_value_str;
+    std::string orig_cost_str;
+    std::string indep_remain_total_cost_str;
+    std::string ann_dscnt_rate_pct_str;
+    std::string dscnt_period_type_str;
+    std::string indep_remain_work_qty_str;
+    std::string anticip_start_date_str;
+    std::string anticip_end_date_str;
 };
 
 #endif // EXRPARSER_ACCOUNTS_H

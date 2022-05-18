@@ -12,6 +12,26 @@ class Reader;
 
 class Pcatval {
 public:
+    int getProjCatgId();
+    void setProjCatgId(int value);
+    int getParentProjCatgId();
+    void setParentProjCatgId(int value);
+    int getProjCatgTypeId();
+    void setProjCatgTypeId(int value);
+    int getSeqNum();
+    void setSeqNum(int value);
+    std::string getProjCatgShortName();
+    void setProjCatgShortName(std::string value);
+    std::string getProjCatgName();
+    void setProjCatgName(std::string);
+
+    Pcattype getType();
+    std::string get_tsv();
+    Pcatval( std::vector<std::string> header,
+             std::vector<std::string> params,
+            Reader *readerObj);
+
+private:
     int proj_catg_id;
     int proj_catg_type_id;
     int seq_num;
@@ -19,19 +39,12 @@ public:
     std::string proj_catg_short_name;
     std::string proj_catg_name;
 
-    Pcattype getType();
-    std::string get_tsv() const;
-    Pcatval(const std::vector<std::string> header,
-            const std::vector<std::string> params,
-            Reader *readerObj);
-
-private:
     Reader *reader;
     std::string tsv;
     void update_tsv();
     std::string proj_catg_id_str;
     std::string seq_num_str;
-    std::string proj_catg_type_str;
+    std::string proj_catg_type_id_str;
     std::string parent_proj_catg_id_str;
 };
 

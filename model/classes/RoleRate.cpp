@@ -1,7 +1,7 @@
 #include "RoleRate.h"
 #include "../../Reader.h"
 
-RoleRate::RoleRate(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj)
+RoleRate::RoleRate(std::vector<std::string> header, std::vector<std::string> params, Reader *readerObj)
 {
     reader = readerObj;
     for (int i = 0; i < header.size(); i++)
@@ -91,4 +91,68 @@ std::string RoleRate::get_tsv()
 {
     update_tsv();
     return tsv;
+}
+
+int RoleRate::getRoleRateId() { return role_rate_id; }
+void RoleRate::setRoleRateId(int value)
+{
+    if (value > 0)
+    {
+        role_rate_id = value;
+        role_rate_id_str = std::to_string(value);
+    }
+}
+int RoleRate::getRoleId() { return role_id; }
+void RoleRate::setRoleId(int value)
+{
+    if (value > 0)
+    {
+        role_id = value;
+        role_id_str = std::to_string(value);
+    }
+}
+double RoleRate::getCostPerQty() { return cost_per_qty; }
+void RoleRate::setCostPerQty(double value)
+{
+    if (value > 0.0f)
+    {
+        cost_per_qty = value;
+        cost_per_qty_str = std::to_string(value);
+    }
+}
+double RoleRate::getCostPerQty2() { return cost_per_qty2; }
+void RoleRate::setCostPerQty2(double value)
+{
+    if (value > 0.0f)
+    {
+        cost_per_qty2 = value;
+        cost_per_qty2_str = std::to_string(value);
+    }
+}
+double RoleRate::getCostPerQty3() { return cost_per_qty3; }
+void RoleRate::setCostPerQty3(double value)
+{
+    if (value > 0.0f)
+    {
+        cost_per_qty3 = value;
+        cost_per_qty3_str = std::to_string(value);
+    }
+}
+double RoleRate::getCostPerQty4() { return cost_per_qty4; }
+void RoleRate::setCostPerQty4(double value)
+{
+    if (value > 0.0f)
+    {
+        cost_per_qty4 = value;
+        cost_per_qty4_str = std::to_string(value);
+    }
+}
+double RoleRate::getCostPerQty5() { return cost_per_qty5; }
+void RoleRate::setCostPerQty5(double value)
+{
+    if (value > 0.0f)
+    {
+        cost_per_qty5 = value;
+        cost_per_qty5_str = std::to_string(value);
+    }
 }

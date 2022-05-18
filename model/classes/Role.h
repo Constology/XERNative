@@ -10,6 +10,35 @@ class Reader;
 class Role {
 public:
     Role(Reader *reader);
+
+    int getRoleId();
+    void setRoleId(int value);
+    int getParentRoleId();
+    void setParentRoleId(int value);
+    int getSeqNum();
+    void setSeqNum(int value);
+    std::string getRoleName();
+    void setRoleName(std::string value);
+    std::string getRoleShortName();
+    void setRoleShortName(std::string value);
+    int getPobsId();
+    void setPobsId(int value);
+    std::string getDefCostQtyLinkFlag();
+    void setDefCostQtyLinkFlag(std::string value);
+    std::string getCostQtyType();
+    void setCostQtyType(std::string value);
+    std::string getRoleDescr();
+    void setRoleDescr(std::string value);
+    std::string getLastChecksum();
+    void setLastChecksum(std::string value);
+
+    Role( std::vector<std::string> header,
+          std::vector<std::string> params,
+         Reader *reader);
+    std::string get_tsv();
+    std::vector<RoleRate> getRoleRate();
+
+private:
     int role_id;
     int parent_role_id;
     int seq_num;
@@ -21,13 +50,6 @@ public:
     std::string role_descr;
     std::string last_checksum;
 
-    Role(const std::vector<std::string> header,
-         const std::vector<std::string> params,
-         Reader *reader);
-    std::string get_tsv() const;
-    std::vector<RoleRate> getRoleRate();
-
-private:
     std::string tsv;
     RoleRates roleRates;
     Reader *reader;

@@ -225,3 +225,206 @@ std::string Schedoption::get_tsv(){
 	update_tsv();
 	return tsv;
 }
+
+int Schedoption::getSchedoptionsId() { return schedoptions_id; }
+void Schedoption::setSchedoptionsId(int value)
+{
+	if (value > 0)
+	{
+		schedoptions_id = value;
+		schedoptions_id_str = std::to_string(value);
+	}
+}
+int Schedoption::getProjId() { return proj_id; }
+void Schedoption::setProjId(int value)
+{
+	if (value > 0)
+	{
+		proj_id = value;
+		proj_id_str = std::to_string(value);
+	}
+}
+std::string Schedoption::getSchedOuterDependType() { return sched_outer_depend_type; }
+void Schedoption::setSchedOuterDependType(std::string value)
+{
+	if (!value.empty())
+	{
+		sched_outer_depend_type = value;
+	}
+}
+std::string Schedoption::getSchedOpenCriticalFlag() { return sched_open_critical_flag; }
+void Schedoption::setSchedOpenCriticalFlag(std::string value)
+{
+	if (!value.empty())
+	{
+		sched_open_critical_flag = value;
+	}
+}
+std::string Schedoption::getSchedLagEarlyStartFlag() { return sched_lag_early_start_flag; }
+void Schedoption::setSchedLagEarlyStartFlag(std::string value)
+{
+	if (!value.empty())
+	{
+		sched_lag_early_start_flag = value;
+	}
+}
+std::string Schedoption::getSchedRetainedLogic() { return sched_retained_logic; }
+void Schedoption::setSchedRetainedLogic(std::string value)
+{
+	if (!value.empty())
+	{
+		sched_retained_logic = value;
+	}
+}
+std::string Schedoption::getSchedSetplantoforecast() { return sched_setplantoforecast; }
+void Schedoption::setSchedSetplantoforecast(std::string value)
+{
+	if (!value.empty())
+	{
+		sched_setplantoforecast = value;
+	}
+}
+std::string Schedoption::getSchedFloatType() { return sched_float_type; }
+void Schedoption::setSchedFloatType(std::string value)
+{
+	if (!value.empty())
+	{
+		sched_float_type = value;
+	}
+}
+std::string Schedoption::getSchedCalendarOnRelationshipLag() { return sched_calendar_on_relationship_lag; }
+void Schedoption::setSchedCalendarOnRelationshipLag(std::string value)
+{
+	if (!value.empty())
+	{
+		sched_calendar_on_relationship_lag = value;
+	}
+}
+std::string Schedoption::getSchedUseExpectEndFlag() { return sched_use_expect_end_flag; }
+void Schedoption::setSchedUseExpectEndFlag(std::string value)
+{
+	if (!value.empty())
+	{
+		sched_use_expect_end_flag = value;
+	}
+}
+std::string Schedoption::getSchedProgressOverride() { return sched_progress_override; }
+void Schedoption::setSchedProgressOverride(std::string value)
+{
+	if (!value.empty())
+	{
+		sched_progress_override = value;
+	}
+}
+std::string Schedoption::getLevelFloatHrsCnt() { return level_float_hrs_cnt; }
+void Schedoption::setLevelFloatHrsCnt(std::string value)
+{
+	if (!value.empty())
+	{
+		level_float_hrs_cnt = value;
+	}
+}
+std::string Schedoption::getLevelOuterAssignFlag() { return level_outer_assign_flag; }
+void Schedoption::setLevelOuterAssignFlag(std::string value)
+{
+	if (!value.empty())
+	{
+		level_outer_assign_flag = value;
+	}
+}
+std::string Schedoption::getLevelOuterAssignPriority() { return level_outer_assign_priority; }
+void Schedoption::setLevelOuterAssignPriority(std::string value)
+{
+	if (!value.empty())
+	{
+		level_outer_assign_priority = value;
+	}
+}
+std::string Schedoption::getLevelOverAllocPct() { return level_over_alloc_pct; }
+void Schedoption::setLevelOverAllocPct(std::string value)
+{
+	if (!value.empty())
+	{
+		level_over_alloc_pct = value;
+	}
+}
+std::string Schedoption::getLevelWithinFloatFlag() { return level_within_float_flag; }
+void Schedoption::setLevelWithinFloatFlag(std::string value)
+{
+	if (!value.empty())
+	{
+		level_within_float_flag = value;
+	}
+}
+std::string Schedoption::getLevelKeepSchedDateFlag() { return level_keep_sched_date_flag; }
+void Schedoption::setLevelKeepSchedDateFlag(std::string value)
+{
+	if (!value.empty())
+	{
+		level_keep_sched_date_flag = value;
+	}
+}
+std::string Schedoption::getLevelAllRsrcFlag() { return level_all_rsrc_flag; }
+void Schedoption::setLevelAllRsrcFlag(std::string value)
+{
+	if (!value.empty())
+	{
+		level_all_rsrc_flag = value;
+	}
+}
+std::string Schedoption::getSchedUseProjectEndDateForFloat() { return sched_use_project_end_date_for_float; }
+void Schedoption::setSchedUseProjectEndDateForFloat(std::string value)
+{
+	if (!value.empty())
+	{
+		sched_use_project_end_date_for_float = value;
+	}
+}
+std::string Schedoption::getEnableMultipleLongestPathCalc() { return enable_multiple_longest_path_calc; }
+void Schedoption::setEnableMultipleLongestPathCalc(std::string value)
+{
+	if (!value.empty())
+	{
+		enable_multiple_longest_path_calc = value;
+	}
+}
+std::string Schedoption::getLimitMultipleLongestPathCalc() { return limit_multiple_longest_path_calc; }
+void Schedoption::setLimitMultipleLongestPathCalc(std::string value)
+{
+	if (!value.empty())
+	{
+		limit_multiple_longest_path_calc = value;
+	}
+}
+std::string Schedoption::getMaxMultipleLongestPath() { return max_multiple_longest_path; }
+void Schedoption::setMaxMultipleLongestPath(std::string value)
+{
+	if (!value.empty())
+	{
+		max_multiple_longest_path = value;
+	}
+}
+std::string Schedoption::getUseTotalFloatMultipleLongestPaths() { return use_total_float_multiple_longest_paths; }
+void Schedoption::setUseTotalFloatMultipleLongestPaths(std::string value)
+{
+	if (!value.empty())
+	{
+		use_total_float_multiple_longest_paths = value;
+	}
+}
+std::string Schedoption::getKeyActivityForMultipleLongestPaths() { return key_activity_for_multiple_longest_paths; }
+void Schedoption::setKeyActivityForMultipleLongestPaths(std::string value)
+{
+	if (!value.empty())
+	{
+		key_activity_for_multiple_longest_paths = value;
+	}
+}
+std::string Schedoption::getLevelprioritylist() { return LevelPriorityList; }
+void Schedoption::setLevelprioritylist(std::string value)
+{
+	if (!value.empty())
+	{
+		LevelPriorityList = value;
+	}
+}

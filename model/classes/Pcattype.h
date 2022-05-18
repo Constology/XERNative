@@ -12,18 +12,30 @@ class Reader;
 
 class Pcattype {
 public:
+    int getProjCatgTypeId();
+    void setProjCatgTypeId(int value);
+    int getSeqNum();
+    void setSeqNum(int value);
+    // int getProjCatgTypeId();
+    // void setProjCatgTypeId(int value);
+    std::string getProjCatgType();
+    void setProjCatgType(std::string value);
+    std::string getExportFlag();
+    void setExportFlag(std::string);
+
+    std::string get_tsv() ;
+    Pcattype( std::vector<std::string> header,
+              std::vector<std::string> params,
+             Reader *readerObj);
+    std::vector<Pcatval> getProjectCodeValues();
+
+private:
     int proj_catg_type_id;
     int seq_num;
     int proj_catg_short_len;
     std::string proj_catg_type;
     std::string export_flag;
-    std::string get_tsv() const;
-    Pcattype(const std::vector<std::string> header,
-             const std::vector<std::string> params,
-             Reader *readerObj);
-    std::vector<Pcatval> getProjectCodeValues();
 
-private:
     Reader *reader;
     std::string tsv;
     void update_tsv();

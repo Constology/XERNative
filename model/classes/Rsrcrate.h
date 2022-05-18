@@ -11,6 +11,31 @@ class Reader;
 class Rsrcrate
 {
 public:
+	int getRsrcRate();
+	void setRsrcRate(int value);
+	int getRsrcId();
+	void setRsrcId(int value);
+	int getMaxQtyPerHr();
+	void setMaxQtyPerHr(int value);
+	int getCostPerQty();
+	void setCostPerQty(int value);
+	int getCostPerQty2();
+	void setCostPerQty2(int value);
+	int getCostPerQty3();
+	void setCostPerQty3(int value);
+	int getCostPerQty4();
+	void setCostPerQty4(int value);
+	int getCostPerQty5();
+	void setCostPerQty5(int value);
+	int getShiftPeriodId();
+	void setShiftPeriodId(int value);
+	Date getStartDate();
+	void setStartDate(Date value);
+
+	std::string get_tsv();
+	Rsrcrate(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
+
+private:
 	int rsrc_rate;
 	int rsrc_id;
 	int max_qty_per_hr;
@@ -22,10 +47,6 @@ public:
 	int shift_period_id;
 	Date start_date;
 
-	std::string get_tsv();
-	Rsrcrate(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
-
-private:
 	Reader *reader;
 	std::string rsrc_rate_str;
 	std::string rsrc_id_str;

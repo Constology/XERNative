@@ -9,17 +9,26 @@ class Reader;
 
 class NonWork {
 public:
+    int getNonworkTypeId();
+    void setNonworkTypeId(int value);
+    int getSeqNum();
+    void setSeqNum(int value);
+    std::string getNonworkCode();
+    void setNonworkCode(std::string value);
+    std::string getNonworkType();
+    void setNonworkType(std::string value);
+
+    std::string get_tsv();
+    NonWork( std::vector<std::string> header,
+             std::vector<std::string> params,
+            Reader *readerObj);
+
+private:
     int nonwork_type_id;
     int seq_num;
     std::string nonwork_code;
     std::string nonwork_type;
 
-    std::string get_tsv() const;
-    NonWork(const std::vector<std::string> header,
-            const std::vector<std::string> params,
-            Reader *readerObj);
-
-private:
     std::string tsv;
     void update_tsv();
     std::string nonwork_type_id_str;

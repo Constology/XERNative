@@ -10,7 +10,64 @@ class Reader;
 class Rsrccurvdata
 {
 public:
+		std::string tsv;
+	std::string get_tsv();
+
+	int getCurvId();
+	void setCurvId(int value);
+	std::string getCurvName();
+	void setCurvName(std::string value);
+	std::string getDefaultFlag();
+	void setDefaultFlag(std::string value);
+	std::string getPctUsage0();
+	void setPctUsage0(std::string value);
+	std::string getPctUsage1();
+	void setPctUsage1(std::string value);
+	std::string getPctUsage2();
+	void setPctUsage2(std::string value);
+	std::string getPctUsage3();
+	void setPctUsage3(std::string value);
+	std::string getPctUsage4();
+	void setPctUsage4(std::string value);
+	std::string getPctUsage5();
+	void setPctUsage5(std::string value);
+	std::string getPctUsage6();
+	void setPctUsage6(std::string value);
+	std::string getPctUsage7();
+	void setPctUsage7(std::string value);
+	std::string getPctUsage8();
+	void setPctUsage8(std::string value);
+	std::string getPctUsage9();
+	void setPctUsage9(std::string value);
+	std::string getPctUsage10();
+	void setPctUsage10(std::string value);
+	std::string getPctUsage11();
+	void setPctUsage11(std::string value);
+	std::string getPctUsage12();
+	void setPctUsage12(std::string value);
+	std::string getPctUsage13();
+	void setPctUsage13(std::string value);
+	std::string getPctUsage14();
+	void setPctUsage14(std::string value);
+	std::string getPctUsage15();
+	void setPctUsage15(std::string value);
+	std::string getPctUsage16();
+	void setPctUsage16(std::string value);
+	std::string getPctUsage17();
+	void setPctUsage17(std::string value);
+	std::string getPctUsage18();
+	void setPctUsage18(std::string value);
+	std::string getPctUsage19();
+	void setPctUsage19(std::string value);
+	std::string getPctUsage20();
+	void setPctUsage20(std::string value);
+
+	Rsrccurvdata(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
+
+private:
 	int curv_id;
+	std::string curv_id_str;
+
 	std::string curv_name;
 	std::string default_flag;
 	std::string pct_usage_0;
@@ -35,12 +92,6 @@ public:
 	std::string pct_usage_19;
 	std::string pct_usage_20;
 
-	std::string tsv;
-	std::string get_tsv();
-
-	Rsrccurvdata(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
-
-private:
 	Reader *reader;
 	void update_tsv();
 };

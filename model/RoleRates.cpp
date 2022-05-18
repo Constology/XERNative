@@ -8,7 +8,7 @@ RoleRate RoleRates::findById(int id)
 {
     for (auto rr : roleRates)
     {
-        if (rr.role_rate_id == id)
+        if (rr.getRoleRateId() == id)
         {
             return rr;
         }
@@ -21,7 +21,7 @@ RoleRate RoleRates::findByRole(int id)
 {
     for (auto rr : roleRates)
     {
-        if (rr.role_id == id)
+        if (rr.getRoleId() == id)
         {
             return rr;
         }

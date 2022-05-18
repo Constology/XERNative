@@ -10,7 +10,7 @@ NonWork NonWorks::findById(int id)
 {
     for (auto &nonWork : nonWorks)
     {
-        if (nonWork.nonwork_type_id == id)
+        if (nonWork.getNonworkTypeId() == id)
         {
             return nonWork;
         }

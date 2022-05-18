@@ -10,7 +10,7 @@ Account Accounts::findById(int id)
 {
     for (auto &account : accounts)
     {
-        if (account.acct_id == id)
+        if (account.getAcctId() == id)
         {
             return account;
         }

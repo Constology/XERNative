@@ -8,7 +8,7 @@ RCatValue RCatValues::findById(int id)
 {
     for (auto rcat : rCatValues)
     {
-        if (rcat.rsrc_catg_type_id == id)
+        if (rcat.getRsrcCatgId() == id)
         {
             return rcat;
         }

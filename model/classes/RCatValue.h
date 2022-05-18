@@ -8,8 +8,24 @@ class Reader;
 class RCatValue
 {
 public:
-    RCatValue(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
+    RCatValue(std::vector<std::string> header, std::vector<std::string> params, Reader *readerObj);
 
+    int getParentRsrcCatgId();
+    void setParentRsrcCatgId(int value);
+    int getRsrcCatgId();
+    void setRsrcCatgId(int value);
+    std::string getRsrcCatgName();
+    void setRsrcCatgName(std::string value);
+    std::string getRsrcCatgShortName();
+    void setRsrcCatgShortName(std::string value);
+    int getRsrcCatgTypeId();
+    void setRsrcCatgTypeId(int value);
+    int getSeqNum();
+    void setSeqNum(int value);
+
+    std::string get_tsv();
+
+private:
     int parent_rsrc_catg_id;
     int rsrc_catg_id;
 
@@ -18,9 +34,6 @@ public:
     int rsrc_catg_type_id;
     int seq_num;
 
-    std::string get_tsv() const;
-
-private:
     std::string tsv;
     std::string parent_rsrc_catg_id_str;
     std::string rsrc_catg_id_str;

@@ -1,6 +1,3 @@
-//
-// Created by Taraxtix on 07/05/2022.
-//
 
 #include "Calendars.h"
 
@@ -10,7 +7,7 @@ Calendar Calendars::findById(int id)
 {
     for (auto &calendar : calendars)
     {
-        if (calendar.clndr_id == id)
+        if (calendar.getClndrId() == id)
         {
             return calendar;
         }

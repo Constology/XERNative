@@ -1,6 +1,4 @@
-//
-// Created by sorat on 12/05/2022.
-//
+
 
 #include "Rsrcrcats.h"
 
@@ -10,7 +8,7 @@ Rsrcrcat Rsrcrcats::findById(int id)
 {
 	for (auto &rsrcrcat : rsrcrcats)
 	{
-		if (rsrcrcat.rsrc_id == id)
+		if (rsrcrcat.getRsrcId() == id)
 		{
 			return rsrcrcat;
 		}
@@ -31,7 +29,7 @@ std::string Rsrcrcats::get_tsv()
 	tsv.append("%F\trsrc_id\trsrc_catg_type_id\trsrc_catg_id\n");
 	for (auto &rsrcrcat : rsrcrcats)
 	{
-		tsv.append(rsrcrcat.tsv);
+		tsv.append(rsrcrcat.get_tsv());
 	}
 	return tsv;
 }

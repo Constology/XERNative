@@ -10,7 +10,7 @@ Currtype Currtypes::findById(int id)
 {
     for (auto &currtype : currtypes)
     {
-        if (currtype.curr_id == id)
+        if (currtype.getCurrId() == id)
         {
             return currtype;
         }

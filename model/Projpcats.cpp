@@ -10,7 +10,7 @@ Projpcat Projpcats::findById(int id)
 {
     for (auto &projpcat : projpcats)
     {
-        if (projpcat.proj_id == id)
+        if (projpcat.getProjId() == id)
         {
             return projpcat;
         }
@@ -38,7 +38,7 @@ std::vector<Projpcat> Projpcats::getByProjectId(int id)
     std::vector<Projpcat> toReturn;
     for (Projpcat prjcat : projpcats)
     {
-        if (prjcat.proj_id == id)
+        if (prjcat.getProjId() == id)
         {
             toReturn.emplace_back(prjcat);
         }
@@ -51,7 +51,7 @@ std::vector<Projpcat> Projpcats::getById(int id)
     std::vector<Projpcat> toReturn;
     for (Projpcat prjcat : projpcats)
     {
-        if (prjcat.proj_catg_id == id)
+        if (prjcat.getProjCatgId() == id)
         {
             toReturn.emplace_back(prjcat);
         }

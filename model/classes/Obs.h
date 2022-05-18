@@ -1,6 +1,3 @@
-//
-// Created by sorat on 10/05/2022.
-//
 
 #ifndef XERPARSER_OBS_H
 #define XERPARSER_OBS_H
@@ -10,8 +7,28 @@
 
 class Reader;
 
-class Obs {
+class Obs
+{
 public:
+    int getObsId();
+    void setObsId(int value);
+    std::string getGuid();
+    void setGuid(std::string value);
+    std::string getObsName();
+    void setObsName(std::string value);
+    std::string getObsDescr();
+    void setObsDescr(std::string value);
+    int getParentObsId();
+    void setParentObsId(int value);
+    int getSeqNum();
+    void setSeqNum(int value);
+
+    std::string get_tsv();
+    Obs(std::vector<std::string> header,
+        std::vector<std::string> params,
+        Reader *readerObj);
+
+private:
     int obs_id;
     std::string guid;
     std::string obs_name;
@@ -19,12 +36,6 @@ public:
     int parent_obs_id;
     int seq_num;
 
-    std::string get_tsv() const;
-    Obs(const std::vector<std::string> header,
-        const std::vector<std::string> params,
-        Reader *readerObj);
-
-private:
     std::string tsv;
     void update_tsv();
     std::string obs_id_str;

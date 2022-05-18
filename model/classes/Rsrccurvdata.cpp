@@ -13,6 +13,7 @@ Rsrccurvdata::Rsrccurvdata(const std::vector<std::string> header, const std::vec
 			if (!params.at(i).empty())
 			{
 				curv_id = stoi(params.at(i));
+				curv_id_str = params.at(i);
 			}
 		}
 		else if (header.at(i) == "curv_name")
@@ -121,4 +122,198 @@ std::string Rsrccurvdata::get_tsv()
 {
 	update_tsv();
 	return tsv;
+}
+
+int Rsrccurvdata::getCurvId() { return curv_id; }
+void Rsrccurvdata::setCurvId(int value)
+{
+	if (value > 0)
+	{
+		curv_id = value;
+		curv_id_str = std::to_string(value);
+	}
+}
+std::string Rsrccurvdata::getCurvName() { return curv_name; }
+void Rsrccurvdata::setCurvName(std::string value)
+{
+	if (!value.empty())
+	{
+		curv_name = value;
+	}
+}
+std::string Rsrccurvdata::getDefaultFlag() { return default_flag; }
+void Rsrccurvdata::setDefaultFlag(std::string value)
+{
+	if (!value.empty())
+	{
+		default_flag = value;
+	}
+}
+std::string Rsrccurvdata::getPctUsage0() { return pct_usage_0; }
+void Rsrccurvdata::setPctUsage0(std::string value)
+{
+	if (!value.empty())
+	{
+		pct_usage_0 = value;
+	}
+}
+std::string Rsrccurvdata::getPctUsage1() { return pct_usage_1; }
+void Rsrccurvdata::setPctUsage1(std::string value)
+{
+	if (!value.empty())
+	{
+		pct_usage_1 = value;
+	}
+}
+std::string Rsrccurvdata::getPctUsage2() { return pct_usage_2; }
+void Rsrccurvdata::setPctUsage2(std::string value)
+{
+	if (!value.empty())
+	{
+		pct_usage_2 = value;
+	}
+}
+std::string Rsrccurvdata::getPctUsage3() { return pct_usage_3; }
+void Rsrccurvdata::setPctUsage3(std::string value)
+{
+	if (!value.empty())
+	{
+		pct_usage_3 = value;
+	}
+}
+std::string Rsrccurvdata::getPctUsage4() { return pct_usage_4; }
+void Rsrccurvdata::setPctUsage4(std::string value)
+{
+	if (!value.empty())
+	{
+		pct_usage_4 = value;
+	}
+}
+std::string Rsrccurvdata::getPctUsage5() { return pct_usage_5; }
+void Rsrccurvdata::setPctUsage5(std::string value)
+{
+	if (!value.empty())
+	{
+		pct_usage_5 = value;
+	}
+}
+std::string Rsrccurvdata::getPctUsage6() { return pct_usage_6; }
+void Rsrccurvdata::setPctUsage6(std::string value)
+{
+	if (!value.empty())
+	{
+		pct_usage_6 = value;
+	}
+}
+std::string Rsrccurvdata::getPctUsage7() { return pct_usage_7; }
+void Rsrccurvdata::setPctUsage7(std::string value)
+{
+	if (!value.empty())
+	{
+		pct_usage_7 = value;
+	}
+}
+std::string Rsrccurvdata::getPctUsage8() { return pct_usage_8; }
+void Rsrccurvdata::setPctUsage8(std::string value)
+{
+	if (!value.empty())
+	{
+		pct_usage_8 = value;
+	}
+}
+std::string Rsrccurvdata::getPctUsage9() { return pct_usage_9; }
+void Rsrccurvdata::setPctUsage9(std::string value)
+{
+	if (!value.empty())
+	{
+		pct_usage_9 = value;
+	}
+}
+std::string Rsrccurvdata::getPctUsage10() { return pct_usage_10; }
+void Rsrccurvdata::setPctUsage10(std::string value)
+{
+	if (!value.empty())
+	{
+		pct_usage_10 = value;
+	}
+}
+std::string Rsrccurvdata::getPctUsage11() { return pct_usage_11; }
+void Rsrccurvdata::setPctUsage11(std::string value)
+{
+	if (!value.empty())
+	{
+		pct_usage_11 = value;
+	}
+}
+std::string Rsrccurvdata::getPctUsage12() { return pct_usage_12; }
+void Rsrccurvdata::setPctUsage12(std::string value)
+{
+	if (!value.empty())
+	{
+		pct_usage_12 = value;
+	}
+}
+std::string Rsrccurvdata::getPctUsage13() { return pct_usage_13; }
+void Rsrccurvdata::setPctUsage13(std::string value)
+{
+	if (!value.empty())
+	{
+		pct_usage_13 = value;
+	}
+}
+std::string Rsrccurvdata::getPctUsage14() { return pct_usage_14; }
+void Rsrccurvdata::setPctUsage14(std::string value)
+{
+	if (!value.empty())
+	{
+		pct_usage_14 = value;
+	}
+}
+std::string Rsrccurvdata::getPctUsage15() { return pct_usage_15; }
+void Rsrccurvdata::setPctUsage15(std::string value)
+{
+	if (!value.empty())
+	{
+		pct_usage_15 = value;
+	}
+}
+std::string Rsrccurvdata::getPctUsage16() { return pct_usage_16; }
+void Rsrccurvdata::setPctUsage16(std::string value)
+{
+	if (!value.empty())
+	{
+		pct_usage_16 = value;
+	}
+}
+std::string Rsrccurvdata::getPctUsage17() { return pct_usage_17; }
+void Rsrccurvdata::setPctUsage17(std::string value)
+{
+	if (!value.empty())
+	{
+		pct_usage_17 = value;
+	}
+}
+std::string Rsrccurvdata::getPctUsage18() { return pct_usage_18; }
+void Rsrccurvdata::setPctUsage18(std::string value)
+{
+	if (!value.empty())
+	{
+		pct_usage_18 = value;
+	}
+}
+std::string Rsrccurvdata::getPctUsage19() { return pct_usage_19; }
+void Rsrccurvdata::setPctUsage19(std::string value)
+{
+	if (!value.empty())
+	{
+		pct_usage_19 = value;
+	}
+}
+std::string Rsrccurvdata::getPctUsage20() { return pct_usage_20; }
+void Rsrccurvdata::setPctUsage20(std::string value)
+{
+	if (!value.empty())
+	{
+		pct_usage_20 = value;
+	}
 }

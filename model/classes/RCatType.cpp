@@ -59,4 +59,52 @@ void RCatType::update_tsv()
         .append("\n");
 }
 
-std::string RCatType::get_tsv() const { return tsv; }
+std::string RCatType::get_tsv()
+{
+    update_tsv();
+    return tsv;
+}
+
+int RCatType::getRsrcCatgShortLen() { return rsrc_catg_short_len; }
+void RCatType::setRsrcCatgShortLen(int value)
+{
+    if (value > 0)
+    {
+        rsrc_catg_short_len = value;
+        rsrc_catg_short_len_str = std::to_string(value);
+    }
+}
+std::string RCatType::getRsrcCatgType() { return rsrc_catg_type; }
+void RCatType::setRsrcCatgType(std::string value)
+{
+    if (!value.empty())
+    {
+        rsrc_catg_type = value;
+    }
+}
+int RCatType::getRsrcCatgTypeId() { return rsrc_catg_type_id; }
+void RCatType::setRsrcCatgTypeId(int value)
+{
+    if (value > 0)
+    {
+        rsrc_catg_type_id = value;
+        rsrc_catg_type_id_str = std::to_string(value);
+    }
+}
+int RCatType::getSeqNum() { return seq_num; }
+void RCatType::setSeqNum(int value)
+{
+    if (value > 0)
+    {
+        seq_num = value;
+        seq_num_str = std::to_string(value);
+    }
+}
+std::string RCatType::getSuperFlag() { return super_flag; }
+void RCatType::setSuperFlag(std::string value)
+{
+    if (!value.empty())
+    {
+        super_flag = value;
+    }
+}

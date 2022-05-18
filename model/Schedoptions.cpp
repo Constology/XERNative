@@ -1,6 +1,4 @@
-//
-// Created by sorat on 12/05/2022.
-//
+
 
 #include "Schedoptions.h"
 
@@ -10,7 +8,7 @@ Schedoption Schedoptions::findById(int id)
 {
 	for (auto &schedoption : schedoptions)
 	{
-		if (schedoption.schedoptions_id == id)
+		if (schedoption.getSchedoptionsId() == id)
 		{
 			return schedoption;
 		}

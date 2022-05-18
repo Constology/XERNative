@@ -235,3 +235,214 @@ std::vector<Task> Wbs::getTasks()
 {
     return reader->tasks.getByWbs(wbs_id);
 }
+
+int Wbs::getWbsId() { return wbs_id; }
+void Wbs::setWbsId(int value)
+{
+    if (value > 0)
+    {
+        wbs_id = value;
+        wbs_id_str = std::to_string(value);
+    }
+}
+int Wbs::getProjId() { return proj_id; }
+void Wbs::setProjId(int value)
+{
+    if (value > 0)
+    {
+        proj_id = value;
+        proj_id_str = std::to_string(value);
+    }
+}
+int Wbs::getObsId() { return obs_id; }
+void Wbs::setObsId(int value)
+{
+    if (value > 0)
+    {
+        obs_id = value;
+        obs_id_str = std::to_string(value);
+    }
+}
+int Wbs::getSeqNum() { return seq_num; }
+void Wbs::setSeqNum(int value)
+{
+    if (value > 0)
+    {
+        seq_num = value;
+        seq_num_str = std::to_string(value);
+    }
+}
+int Wbs::getEstWt() { return est_wt; }
+void Wbs::setEstWt(int value)
+{
+    if (value > 0)
+    {
+        est_wt = value;
+        est_wt_str = std::to_string(value);
+    }
+}
+std::string Wbs::getProjNodeFlag() { return proj_node_flag; }
+void Wbs::setProjNodeFlag(std::string value)
+{
+    if (!value.empty())
+    {
+        proj_node_flag = value;
+    }
+}
+std::string Wbs::getSumDataFlag() { return sum_data_flag; }
+void Wbs::setSumDataFlag(std::string value)
+{
+    if (!value.empty())
+    {
+        sum_data_flag = value;
+    }
+}
+std::string Wbs::getStatusCode() { return status_code; }
+void Wbs::setStatusCode(std::string value)
+{
+    if (!value.empty())
+    {
+        status_code = value;
+    }
+}
+std::string Wbs::getWbsShortName() { return wbs_short_name; }
+void Wbs::setWbsShortName(std::string value)
+{
+    if (!value.empty())
+    {
+        wbs_short_name = value;
+    }
+}
+std::string Wbs::getWbsName() { return wbs_name; }
+void Wbs::setWbsName(std::string value)
+{
+    if (!value.empty())
+    {
+        wbs_name = value;
+    }
+}
+int Wbs::getPhaseId() { return phase_id; }
+void Wbs::setPhaseId(int value)
+{
+    if (value > 0)
+    {
+        phase_id = value;
+        phase_id_str = std::to_string(value);
+    }
+}
+int Wbs::getParentWbsId() { return parent_wbs_id; }
+void Wbs::setParentWbsId(int value)
+{
+    if (value > 0)
+    {
+        parent_wbs_id = value;
+        parent_wbs_id_str = std::to_string(value);
+    }
+}
+int Wbs::getEvUserPct() { return ev_user_pct; }
+void Wbs::setEvUserPct(int value)
+{
+    if (value > 0)
+    {
+        ev_user_pct = value;
+        ev_user_pct_str = std::to_string(value);
+    }
+}
+double Wbs::getEvEtcUserValue() { return ev_etc_user_value; }
+void Wbs::setEvEtcUserValue(double value)
+{
+    if (value > 0.0f)
+    {
+        ev_etc_user_value = value;
+        ev_etc_user_value_str = std::to_string(value);
+    }
+}
+double Wbs::getOrigCost() { return orig_cost; }
+void Wbs::setOrigCost(double value)
+{
+    if (value > 0.0f)
+    {
+        orig_cost = value;
+        orig_cost_str = std::to_string(value);
+    }
+}
+double Wbs::getIndepRemainTotalCost() { return indep_remain_total_cost; }
+void Wbs::setIndepRemainTotalCost(double value)
+{
+    if (value > 0.0f)
+    {
+        indep_remain_total_cost = value;
+        indep_remain_total_cost_str = std::to_string(value);
+    }
+}
+double Wbs::getAnnDscntRatePct() { return ann_dscnt_rate_pct; }
+void Wbs::setAnnDscntRatePct(double value)
+{
+    if (value > 0.0f)
+    {
+        ann_dscnt_rate_pct = value;
+        ann_dscnt_rate_pct_str = std::to_string(value);
+    }
+}
+int Wbs::getDscntPeriodType() { return dscnt_period_type; }
+void Wbs::setDscntPeriodType(int value)
+{
+    if (value > 0)
+    {
+        dscnt_period_type = value;
+        dscnt_period_type_str = std::to_string(value);
+    }
+}
+double Wbs::getIndepRemainWorkQty() { return indep_remain_work_qty; }
+void Wbs::setIndepRemainWorkQty(double value)
+{
+    if (value > 0.0f)
+    {
+        indep_remain_work_qty = value;
+        indep_remain_work_qty_str = std::to_string(value);
+    }
+}
+std::string Wbs::getEvComputeType() { return ev_compute_type; }
+void Wbs::setEvComputeType(std::string value)
+{
+    if (!value.empty())
+    {
+        ev_compute_type = value;
+    }
+}
+std::string Wbs::getEvEtcComputeType() { return ev_etc_compute_type; }
+void Wbs::setEvEtcComputeType(std::string value)
+{
+    if (!value.empty())
+    {
+        ev_etc_compute_type = value;
+    }
+}
+std::string Wbs::getGuid() { return guid; }
+void Wbs::setGuid(std::string value)
+{
+    if (!value.empty())
+    {
+        guid = value;
+    }
+}
+std::string Wbs::getTmplGuid() { return tmpl_guid; }
+void Wbs::setTmplGuid(std::string value)
+{
+    if (!value.empty())
+    {
+        tmpl_guid = value;
+    }
+}
+std::string Wbs::getPlanOpenState() { return plan_open_state; }
+void Wbs::setPlanOpenState(std::string value)
+{
+    if (!value.empty())
+    {
+        plan_open_state = value;
+    }
+}
+Date Wbs::getAnticipStartDate() { return anticip_start_date; }
+void Wbs::setAnticipStartDate(Date value) { anticip_start_date = value; }
+Date Wbs::getAnticipEndDate() { return anticip_end_date; }
+void Wbs::setAnticipEndDate(Date value) { anticip_end_date = value; }

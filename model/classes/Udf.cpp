@@ -79,4 +79,69 @@ void Udf::update_tsv()
 		.append("\n");
 }
 
-std::string Udf::get_tsv() { return tsv; }
+std::string Udf::get_tsv() {
+	update_tsv();
+	return tsv;
+}
+
+int Udf::getUdfTypeId() { return udf_type_id; }
+void Udf::setUdfTypeId(int value)
+{
+	if (value > 0)
+	{
+		udf_type_id = value;
+		udf_type_id_str = std::to_string(value);
+	}
+}
+int Udf::getFkId() { return fk_id; }
+void Udf::setFkId(int value)
+{
+	if (value > 0)
+	{
+		fk_id = value;
+		fk_id_str = std::to_string(value);
+	}
+}
+int Udf::getProjId() { return proj_id; }
+void Udf::setProjId(int value)
+{
+	if (value > 0)
+	{
+		proj_id = value;
+		proj_id_str = std::to_string(value);
+	}
+}
+std::string Udf::getUdfDate() { return udf_date; }
+void Udf::setUdfDate(std::string value)
+{
+	if (!value.empty())
+	{
+		udf_date = value;
+	}
+}
+double Udf::getUdfNumber() { return udf_number; }
+void Udf::setUdfNumber(double value)
+{
+	if (value > 0.0f)
+	{
+		udf_number = value;
+		udf_number_str = std::to_string(value);
+	}
+}
+std::string Udf::getUdfText() { return udf_text; }
+void Udf::setUdfText(std::string value)
+{
+	if (!value.empty())
+	{
+		udf_text = value;
+	}
+}
+int Udf::getUdfCodeId() { return udf_code_id; }
+void Udf::setUdfCodeId(int value)
+{
+	if (value > 0)
+	{
+		udf_code_id = value;
+		udf_code_id_str = std::to_string(value);
+	}
+}

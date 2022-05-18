@@ -7,7 +7,7 @@ Taskactv Taskactvs::findById(int id)
 {
 	for (auto &taskactv : taskactvs)
 	{
-		if (taskactv.task_id == id)
+		if (taskactv.getTaskId() == id)
 		{
 			return taskactv;
 		}

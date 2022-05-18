@@ -94,3 +94,79 @@ std::string Taskproc::get_tsv()
 	update_tsv();
 	return tsv;
 }
+int Taskproc::getProcId() { return proc_id; }
+void Taskproc::setProcId(int value)
+{
+	if (value > 0)
+	{
+		proc_id = value;
+		proc_id_str = std::to_string(value);
+	}
+}
+int Taskproc::getTaskId() { return task_id; }
+void Taskproc::setTaskId(int value)
+{
+	if (value > 0)
+	{
+		task_id = value;
+		task_id_str = std::to_string(value);
+	}
+}
+int Taskproc::getProjId() { return proj_id; }
+void Taskproc::setProjId(int value)
+{
+	if (value > 0)
+	{
+		proj_id = value;
+		proj_id_str = std::to_string(value);
+	}
+}
+int Taskproc::getSeqNum() { return seq_num; }
+void Taskproc::setSeqNum(int value)
+{
+	if (value > 0)
+	{
+		seq_num = value;
+		seq_num_str = std::to_string(value);
+	}
+}
+std::string Taskproc::getProcName() { return proc_name; }
+void Taskproc::setProcName(std::string value)
+{
+	if (!value.empty())
+	{
+		proc_name = value;
+	}
+}
+std::string Taskproc::getCompleteFlag() { return complete_flag; }
+void Taskproc::setCompleteFlag(std::string value)
+{
+	if (!value.empty())
+	{
+		complete_flag = value;
+	}
+}
+std::string Taskproc::getProcWt() { return proc_wt; }
+void Taskproc::setProcWt(std::string value)
+{
+	if (!value.empty())
+	{
+		proc_wt = value;
+	}
+}
+std::string Taskproc::getCompletePct() { return complete_pct; }
+void Taskproc::setCompletePct(std::string value)
+{
+	if (!value.empty())
+	{
+		complete_pct = value;
+	}
+}
+std::string Taskproc::getProcDescr() { return proc_descr; }
+void Taskproc::setProcDescr(std::string value)
+{
+	if (!value.empty())
+	{
+		proc_descr = value;
+	}
+}

@@ -10,7 +10,7 @@ Obs Obss::findById(int id)
 {
     for (auto &obs : obss)
     {
-        if (obs.obs_id == id)
+        if (obs.getObsId() == id)
         {
             return obs;
         }

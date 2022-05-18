@@ -4,9 +4,12 @@
 
 void Rsrcs::add(Rsrc &rsrc) { rsrcs.emplace_back(rsrc); }
 
-Rsrc *Rsrcs::findById(int id) {
-    for (auto &rsrc : rsrcs) {
-        if (rsrc.rsrc_id == id) {
+Rsrc *Rsrcs::findById(int id)
+{
+    for (auto &rsrc : rsrcs)
+    {
+        if (rsrc.getRsrcId() == id)
+        {
             return &rsrc;
         }
     }
@@ -16,17 +19,21 @@ Rsrc *Rsrcs::findById(int id) {
 
 std::vector<Rsrc> Rsrcs::getAll() { return rsrcs; }
 
-std::vector<Rsrc> Rsrcs::getChildren(int id) {
+std::vector<Rsrc> Rsrcs::getChildren(int id)
+{
     std::vector<Rsrc> toReturn;
-    for (Rsrc rsr : rsrcs) {
-        if (rsr.parent_rsrc_id == id) {
+    for (Rsrc rsr : rsrcs)
+    {
+        if (rsr.getParentRsrcId() == id)
+        {
             toReturn.emplace_back(rsr);
         }
     }
     return toReturn;
 }
 
-std::string Rsrcs::get_tsv() {
+std::string Rsrcs::get_tsv()
+{
     std::string tsv;
     tsv.append("%T\tRSRC\n");
     tsv.append(
@@ -36,7 +43,8 @@ std::string Rsrcs::get_tsv() {
         "def_qty_per_hr\tcost_qty_type\tot_factor\tactive_flag\tauto_compute_act_flag\t"
         "def_cost_qty_link_flag\tot_flag\trsrc_type\trsrc_notes\tload_tasks_flag\t"
         "level_flag\tlast_checksum\n");
-    for (auto &rsrc : rsrcs) {
+    for (auto &rsrc : rsrcs)
+    {
         tsv.append(rsrc.get_tsv());
     }
     return tsv;

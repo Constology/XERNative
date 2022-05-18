@@ -10,7 +10,7 @@ Taskpred Taskpreds::findById(int id)
 {
 	for (auto &taskpred : taskpreds)
 	{
-		if (taskpred.task_pred_id == id)
+		if (taskpred.getTaskPredId() == id)
 		{
 			return taskpred;
 		}

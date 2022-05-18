@@ -80,3 +80,69 @@ std::vector<Udf> UDFType::getUdfValues()
     toReturn = reader->udfs.getByTypeId(udf_type_id);
     return toReturn;
 }
+
+int UDFType::getUdfTypeId() { return udf_type_id; }
+void UDFType::setUdfTypeId(int value)
+{
+    if (value > 0)
+    {
+        udf_type_id = value;
+        udf_type_id_str = std::to_string(value);
+    }
+}
+std::string UDFType::getTableName() { return table_name; }
+void UDFType::setTableName(std::string value)
+{
+    if (!value.empty())
+    {
+        table_name = value;
+    }
+}
+std::string UDFType::getUdfTypeName() { return udf_type_name; }
+void UDFType::setUdfTypeName(std::string value)
+{
+    if (!value.empty())
+    {
+        udf_type_name = value;
+    }
+}
+std::string UDFType::getUdfTypeLabel() { return udf_type_label; }
+void UDFType::setUdfTypeLabel(std::string value)
+{
+    if (!value.empty())
+    {
+        udf_type_label = value;
+    }
+}
+std::string UDFType::getLogicalDataType() { return logical_data_type; }
+void UDFType::setLogicalDataType(std::string value)
+{
+    if (!value.empty())
+    {
+        logical_data_type = value;
+    }
+}
+std::string UDFType::getSuperFlag() { return super_flag; }
+void UDFType::setSuperFlag(std::string value)
+{
+    if (!value.empty())
+    {
+        super_flag = value;
+    }
+}
+std::string UDFType::getIndicatorExpression() { return indicator_expression; }
+void UDFType::setIndicatorExpression(std::string value)
+{
+    if (!value.empty())
+    {
+        indicator_expression = value;
+    }
+}
+std::string UDFType::getSummaryIndicatorExpression() { return summary_indicator_expression; }
+void UDFType::setSummaryIndicatorExpression(std::string value)
+{
+    if (!value.empty())
+    {
+        summary_indicator_expression = value;
+    }
+}

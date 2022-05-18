@@ -6,7 +6,7 @@ Role Roles::findById(int id)
 {
     for (auto role : roles)
     {
-        if (role.role_id == id)
+        if (role.getRoleId() == id)
         {
             return role;
         }
@@ -18,13 +18,13 @@ Role Roles::findById(int id)
 Role Roles::getParent(int id)
 {
     Role currentRole = findById(id);
-    int parent_id = currentRole.parent_role_id;
+    int parent_id = currentRole.getParentRoleId();
     return findById(parent_id);
 }
 
 Role Roles::getParent(Role &role)
 {
-    Role parent = getParent(role.role_id);
+    Role parent = getParent(role.getRoleId());
     return parent;
 }
 

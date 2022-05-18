@@ -1,6 +1,3 @@
-//
-// Created by Taraxtix on 11/05/2022.
-//
 
 #include "Fintmpls.h"
 
@@ -10,7 +7,7 @@ Fintmpl Fintmpls::findById(int id)
 {
     for (auto &fintmpl : fintmpls)
     {
-        if (fintmpl.fintmpl_id == id)
+        if (fintmpl.getFinTmplId() == id)
         {
             return fintmpl;
         }

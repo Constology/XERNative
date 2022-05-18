@@ -1,6 +1,3 @@
-//
-// Created by sorat on 12/05/2022.
-//
 
 #include "Pcatvals.h"
 
@@ -10,7 +7,7 @@ Pcatval Pcatvals::findById(int id)
 {
     for (auto &pcatval : pcatvals)
     {
-        if (pcatval.proj_catg_id == id)
+        if (pcatval.getProjCatgId() == id)
         {
             return pcatval;
         }
@@ -39,7 +36,7 @@ std::vector<Pcatval> Pcatvals::getByTypeId(int id)
     std::vector<Pcatval> toReturn;
     for (Pcatval pval : pcatvals)
     {
-        if (pval.proj_catg_type_id == id)
+        if (pval.getProjCatgTypeId() == id)
         {
             toReturn.emplace_back(pval);
         }

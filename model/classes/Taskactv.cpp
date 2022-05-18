@@ -62,3 +62,40 @@ std::string Taskactv::get_tsv()
 	update_tsv();
 	return tsv;
 }
+
+int Taskactv::getTaskId() { return task_id; }
+void Taskactv::setTaskId(int value)
+{
+	if (value > 0)
+	{
+		task_id = value;
+		task_id_str = std::to_string(value);
+	}
+}
+int Taskactv::getActvCodeTypeId() { return actv_code_type_id; }
+void Taskactv::setActvCodeTypeId(int value)
+{
+	if (value > 0)
+	{
+		actv_code_type_id = value;
+		actv_code_type_id_str = std::to_string(value);
+	}
+}
+int Taskactv::getActvCodeId() { return actv_code_id; }
+void Taskactv::setActvCodeId(int value)
+{
+	if (value > 0)
+	{
+		actv_code_id = value;
+		actv_code_id_str = std::to_string(value);
+	}
+}
+int Taskactv::getProjId() { return proj_id; }
+void Taskactv::setProjId(int value)
+{
+	if (value > 0)
+	{
+		proj_id = value;
+		proj_id_str = std::to_string(value);
+	}
+}

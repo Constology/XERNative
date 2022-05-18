@@ -1,6 +1,4 @@
-//
-// Created by sorat on 12/05/2022.
-//
+
 
 #include "Rsrcrates.h"
 
@@ -10,7 +8,7 @@ Rsrcrate Rsrcrates::findById(int id)
 {
 	for (auto &rsrcrate : rsrcrates)
 	{
-		if (rsrcrate.rsrc_id == id)
+		if (rsrcrate.getRsrcId() == id)
 		{
 			return rsrcrate;
 		}
@@ -42,7 +40,7 @@ std::vector<Rsrcrate> Rsrcrates::getByRsrcId(int id)
 	std::vector<Rsrcrate> toReturn;
 	for (Rsrcrate rr : rsrcrates)
 	{
-		if (rr.rsrc_id == id)
+		if (rr.getRsrcId() == id)
 		{
 			toReturn.emplace_back(rr);
 		}

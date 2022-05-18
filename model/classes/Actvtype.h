@@ -1,6 +1,4 @@
-//
-// Created by Taraxtix on 07/05/2022.
-//
+
 
 #ifndef EXRPARSER_ACTVTYPE_H
 #define EXRPARSER_ACTVTYPE_H
@@ -9,8 +7,30 @@
 #include <vector>
 class Reader;
 
-class Actvtype {
+class Actvtype
+{
 public:
+    int getActvCodeTypeId();
+    void setActvCodeTypeId(int value);
+    int getProjId();
+    void setProjId(int value);
+    int getSeqNum();
+    void setSeqNum(int value);
+    float getActvShortLen();
+    void setActvShortLen(float value);
+    std::string getActvCodeType();
+    void setActvCodeType(std::string value);
+    std::string getActvCodeTypeScope();
+    void setActvCodeTypeScope(std::string value);
+    std::string getSuperFlag();
+    void setSuperFlag(std::string value);
+
+    Actvtype(std::vector<std::string> header,
+             std::vector<std::string> params,
+             Reader *readerObj);
+    std::string get_tsv();
+
+private:
     int actv_code_type_id;
     int proj_id;
     int seq_num;
@@ -19,12 +39,6 @@ public:
     std::string actv_code_type_scope;
     std::string super_flag;
 
-    Actvtype(const std::vector<std::string> header,
-             const std::vector<std::string> params,
-             Reader *readerObj);
-    std::string get_tsv() const;
-
-private:
     std::string actv_code_type_id_str;
     std::string proj_id_str;
     std::string seq_num_str;

@@ -5,9 +5,12 @@
 
 void Tasks::add(Task &task) { tasks.push_back(task); }
 
-Task Tasks::findById(int id) {
-    for (auto task : tasks) {
-        if (task.task_id == id) {
+Task Tasks::findById(int id)
+{
+    for (auto task : tasks)
+    {
+        if (task.getTaskId() == id)
+        {
             return task;
         }
     }
@@ -17,7 +20,8 @@ Task Tasks::findById(int id) {
 
 std::vector<Task> Tasks::getAll() { return tasks; }
 
-std::string Tasks::get_tsv() {
+std::string Tasks::get_tsv()
+{
     std::string tsv;
     tsv.append("%T\tTASK\n");
     tsv.append("%F\ttask_id\tproj_id\twbs_id\tclndr_id\trsrc_id\tlocation_id\ttotal_float_hr_cnt\t"
@@ -32,29 +36,37 @@ std::string Tasks::get_tsv() {
                "early_end_date\trestart_date\treend_date\ttarget_start_date\ttarget_end_date\t"
                "rem_late_start_date\trem_late_end_date\tsuspend_date\tresume_date\tcstr_date2\t"
                "external_early_start_date\texternal_late_end_date\tcreate_date\tupdate_date\n");
-    for (auto &task : tasks) {
+    for (auto &task : tasks)
+    {
         tsv.append(task.get_tsv());
     }
     return tsv;
 }
 
-std::vector<Task> Tasks::getByWbs(int id) {
+std::vector<Task> Tasks::getByWbs(int id)
+{
     std::vector<Task> toReturn;
     std::vector<Task>::iterator iter, end;
-    for (auto t : tasks) {
-        if (t.wbs_id == id) {
+    for (auto t : tasks)
+    {
+        if (t.getWbsId() == id)
+        {
             toReturn.emplace_back(t);
         }
     }
     return toReturn;
 }
 
-std::vector<Task> Tasks::getByRsrc(int id) {
+std::vector<Task> Tasks::getByRsrc(int id)
+{
     std::vector<Task> toReturn;
-    for (Task &tsk : tasks) {
+    for (Task &tsk : tasks)
+    {
         std::vector<TaskRsrc> rsrcs = tsk.getResources();
-        for (auto &tr : rsrcs) {
-            if (tr.rsrc_id == id) {
+        for (auto &tr : rsrcs)
+        {
+            if (tr.getRsrcId() == id)
+            {
                 toReturn.emplace_back(tsk);
             }
         }
@@ -62,4 +74,4 @@ std::vector<Task> Tasks::getByRsrc(int id) {
     return toReturn;
 }
 
-std::vector<Task> Tasks::getByRsrc(Rsrc rsrc) { return getByRsrc(rsrc.rsrc_id); }
+std::vector<Task> Tasks::getByRsrc(Rsrc rsrc) { return getByRsrc(rsrc.getRsrcId()); }

@@ -10,7 +10,7 @@ Project Projects::findById(int id)
 {
     for (auto &project : projects)
     {
-        if (project.proj_id == id)
+        if (project.getProjId() == id)
         {
             return project;
         }

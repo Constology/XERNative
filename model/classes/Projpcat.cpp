@@ -3,8 +3,8 @@
 
 #include "../../Reader.h"
 
-Projpcat::Projpcat(const std::vector<std::string> header,
-                   const std::vector<std::string> params,
+Projpcat::Projpcat( std::vector<std::string> header,
+                    std::vector<std::string> params,
                    Reader *readerObj)
 {
     tsv = "";
@@ -50,4 +50,36 @@ void Projpcat::update_tsv()
         .append("\n");
 }
 
-std::string Projpcat::get_tsv() const { return tsv; }
+std::string Projpcat::get_tsv()
+{
+    update_tsv();
+    return tsv;
+}
+
+int Projpcat::getProjId() { return proj_id; }
+void Projpcat::setProjId(int value)
+{
+    if (value > 0)
+    {
+        proj_id = value;
+        proj_id_str = std::to_string(value);
+    }
+}
+int Projpcat::getProjCatgTypeId() { return proj_catg_type_id; }
+void Projpcat::setProjCatgTypeId(int value)
+{
+    if (value > 0)
+    {
+        proj_catg_type_id = value;
+        proj_catg_type_id_str = std::to_string(value);
+    }
+}
+int Projpcat::getProjCatgId() { return proj_catg_id; }
+void Projpcat::setProjCatgId(int value)
+{
+    if (value > 0)
+    {
+        proj_catg_id = value;
+        proj_catg_id_str = std::to_string(value);
+    }
+}

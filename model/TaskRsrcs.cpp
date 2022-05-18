@@ -13,7 +13,7 @@ TaskRsrc TaskRsrcs::findById(int id)
 {
 	for (auto &taskRsrc : taskrsrcs)
 	{
-		if (taskRsrc.taskrsrc_id == id)
+		if (taskRsrc.getTaskrsrcId() == id)
 		{
 			return taskRsrc;
 		}
@@ -53,7 +53,7 @@ std::vector<TaskRsrc> TaskRsrcs::getByRsrcId(int id)
 	std::vector<TaskRsrc> toReturn;
 	for (auto &tr : taskrsrcs)
 	{
-		if (tr.rsrc_id == id)
+		if (tr.getRsrcId() == id)
 		{
 			toReturn.emplace_back(tr);
 		}
@@ -66,7 +66,7 @@ std::vector<TaskRsrc> TaskRsrcs::getByTaskId(int id)
 	std::vector<TaskRsrc> toReturn;
 	for (auto &tr : taskrsrcs)
 	{
-		if (tr.task_id == id)
+		if (tr.getTaskId() == id)
 		{
 			toReturn.emplace_back(tr);
 		}
