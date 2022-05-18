@@ -71,6 +71,7 @@ public:
 
 private:
     int wbs_id;
+    std::string wbs_id_str;
     int proj_id;
     int obs_id;
     int seq_num;
