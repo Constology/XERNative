@@ -9,7 +9,7 @@ Wbs Wbss::findById(int id)
 {
     for (auto &wb : wbss)
     {
-        if (wb.wbs_id == id)
+        if (wb.getWbsId() == id)
         {
             return wb;
         }
@@ -21,7 +21,7 @@ Wbs Wbss::findById(int id)
 Wbs Wbss::getParent(int id)
 {
     Wbs cur_wbs = findById(id);
-    int parent_id = cur_wbs.parent_wbs_id;
+    int parent_id = cur_wbs.getParentWbsId();
     return findById(parent_id);
 }
 
@@ -30,7 +30,7 @@ std::vector<Wbs> Wbss::getChildren(int id)
     std::vector<Wbs> toReturn;
     for (auto &wb : wbss)
     {
-        if (wb.parent_wbs_id == id)
+        if (wb.getParentWbsId() == id)
         {
             toReturn.push_back(wb);
         }
@@ -47,7 +47,7 @@ std::vector<Wbs> Wbss::getByProjectId(int id)
     std::vector<Wbs> toReturn;
     for (auto &wbs : wbss)
     {
-        if (wbs.proj_id == id)
+        if (wbs.getProjId() == id)
         {
             toReturn.push_back(wbs);
         }

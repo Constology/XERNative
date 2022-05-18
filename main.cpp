@@ -23,11 +23,10 @@ int main()
         cout << "prj " << prj.get_tsv() << endl;
         for (Wbs wbs : wbss)
         {
-            cout << "WBS " << wbs.wbs_name << endl;
+            cout << "WBS " << wbs.getWbsName() << endl;
             vector<Task> tasks = wbs.getTasks();
-            for (Task task : wbs.getTasks())
+            for (Task task : tasks)
             {
-
                 cout << "\t"
                      << "Task " << task.getTaskCode() << "\t" << task.getTaskName() << "\t"
                      << task.getEarlyStartDate().to_string() << "\t"

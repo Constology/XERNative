@@ -66,6 +66,8 @@ public:
     Date getAnticipEndDate();
     void setAnticipEndDate(Date value);
 
+    std::vector<Task> getTasks();
+
     Wbs(const std::vector<std::string> header, const std::vector<std::string> params, Reader *readerObj);
     std::string get_tsv();
 
@@ -97,7 +99,6 @@ private:
     std::string plan_open_state;
     Date anticip_start_date;
     Date anticip_end_date;
-    std::vector<Task> getTasks();
 
     std::string tsv;
     Reader *reader;
