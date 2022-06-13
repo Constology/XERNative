@@ -1,6 +1,3 @@
-//
-// Created by Taraxtix on 10/05/2022.
-//
 
 #ifndef XERPARSER_NONWORKS_H
 #define XERPARSER_NONWORKS_H

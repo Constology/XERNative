@@ -1,7 +1,3 @@
-//
-// Created by sorat on 12/05/2022.
-//
-
 #ifndef XERPARSER_TASKPROCS_H
 #define XERPARSER_TASKPROCS_H
 

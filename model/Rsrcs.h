@@ -1,5 +1,4 @@
 
-
 #ifndef XERPARSER_RSRCS_H
 #define XERPARSER_RSRCS_H
 

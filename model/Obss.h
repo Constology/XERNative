@@ -1,6 +1,4 @@
-//
-// Created by sorat on 10/05/2022.
-//
+
 
 #ifndef XERPARSER_OBSS_H
 #define XERPARSER_OBSS_H

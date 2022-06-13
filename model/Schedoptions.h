@@ -1,6 +1,3 @@
-//
-// Created by sorat on 12/05/2022.
-//
 
 #ifndef XERPARSER_SCHEDOPTIONS_H
 #define XERPARSER_SCHEDOPTIONS_H

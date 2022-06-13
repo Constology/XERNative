@@ -1,6 +1,3 @@
-//
-// Created by Taraxtix on 11/05/2022.
-//
 
 #ifndef XERPARSER_FINTMPLS_H
 #define XERPARSER_FINTMPLS_H

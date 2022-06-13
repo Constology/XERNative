@@ -1,6 +1,3 @@
-//
-// Created by sorat on 12/05/2022.
-//
 
 #ifndef XERPARSER_PROJPCATS_H
 #define XERPARSER_PROJPCATS_H

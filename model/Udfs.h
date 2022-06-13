@@ -10,9 +10,9 @@ class Udfs
 public:
     void add( Udf &udf);
     Udf findById(int id);
-    std::vector<Udf> getByProject(int projId);
     std::vector<Udf> getAll();
     std::string get_tsv() ;
+    std::vector<Udf> getByProject(int projId);
     std::vector<Udf> getByTypeId(int id);
     std::vector<Udf> getByProjectId(int id);
     std::vector<Udf> getByTaskId(int id);

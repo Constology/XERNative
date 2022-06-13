@@ -1,7 +1,3 @@
-//
-// Created by Taraxtix on 07/05/2022.
-//
-
 #ifndef EXRPARSER_CURRTYPES1_H
 #define EXRPARSER_CURRTYPES1_H
 
