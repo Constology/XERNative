@@ -1,1 +1,1 @@
-c++ -O3 -Wall -shared -std=c++11 -fPIC $(python3 -m pybind11 --includes) wrapper.cpp -o xernative$(python3-config --extension-suffix)
+c++ -O3 -Wall -shared -std=c++11 -fPIC $(python3 -m pybind11 --includes) xernative_wrapper.cpp -o xernative$(python3-config --extension-suffix)

@@ -1,6 +1,7 @@
 #include "../Reader.h"
 #include "../Writer.h"
 #include "../model/Accounts.h"
+#include "../model/classes/Project.h"
 
 #include "../extern/pybind11/include/pybind11/pybind11.h"
 // to convert C++ STL containers to python list
@@ -349,5 +350,24 @@ PYBIND11_MODULE(xernative, m)
 
     py::class_<Project>(m, "Project")
         .def(py::init<std::vector<std::string>, std::vector<std::string>, Reader *>())
-        .def("get_tsv", &Project::get_tsv);
+        .def("get_tsv", &Project::get_tsv)
+        .def_property("proj_id", &Project::getProjId, &Project::setProjId)
+        .def_property("acct_id", &Project::getAcctId, &Project::setAcctId)
+        .def_property("orig_proj_id", &Project::getOrigProjId, &Project::setOrigProjId)
+        .def_property("source_proj_id", &Project::getSourceProjId, &Project::setSourceProjId)
+        .def_property("base_type_id", &Project::getBaseTypeId, &Project::setBaseTypeId)
+        .def_property("clndr_id", &Project::getClndrId, &Project::setClndrId)
+        .def_property("sum_base_proj_id", &Project::getSumBaseProjId, &Project::setSumBaseProjId)
+        .def_property("last_fin_dates_id", &Project::getLastFinDatesId, &Project::setLastFinDatesId)
+        .def_property("fintmpl_id", &Project::getFintmplId, &Project::setFintmplId)
+        .def_property("location_id", &Project::getLocationId, &Project::setLocationId)
+        .def_property("new_fin_dates_id", &Project::getNewFinDatesId, &Project::setNewFinDatesId)
+        .def_property("fy_start_month_num", &Project::getFyStartMonthNum, &Project::setFyStartMonthNum)
+        .def_property("rsrc_self_add_flaf", &Project::getRsrcSelfAddFlag, &Project::setRsrcSelfAddFlag)
+        .def_property("allow_complete_flag", &Project::getAllowCompleteFlag, &Project::setAllowCompleteFlag)
+        .def_property("rsrc_multi_assign_flag", &Project::getRsrcMultiAssignFlag, &Project::setRsrcMultiAssignFlag)
+        .def_property("checkout_flag", &Project::getCheckoutFlag, &Project::getCheckoutFlag)
+        .def_property("project_flag", &Project::getProjectFlag, &Project::setProjectFlag)
+        .def("getWbs, &Project::getWbs")
+        ;
 }
