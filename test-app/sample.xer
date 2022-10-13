@@ -1,0 +1,202 @@
+ERMHDR	8.2	2013-09-18	Project	admin	admin	dbxDatabaseNoName	Project Management	EP
+%T	CURRTYPE
+%F	curr_id	decimal_digit_cnt	curr_symbol	decimal_symbol	digit_group_symbol	pos_curr_fmt_type	neg_curr_fmt_type	curr_type	curr_short_name	group_digit_cnt	base_exch_rate
+%R	1	2	�	.	,	#1.1	(#1.1)	British Pound	U.K.	3	1
+%R	10	2	$	.	,	#1.1	(#1.1)	Argentine Peso	ARS	3	6.132389
+%R	11	2	A$	.	,	#1.1	(#1.1)	Australian Dollar	AUST	3	2.407516
+%R	13	2	R$	.	,	#1.1	(#1.1)	Brazilian Real	BRL	3	4.013855
+%R	14	2	$	.	,	#1.1	(#1.1)	Dollar	USD	3	1.992977
+%R	15	2	CA$	.	,	#1.1	(#1.1)	Canadian Dollar	CAD	3	2.203694
+%R	16	2	Y	.	,	#1.1	(#1.1)	Chinese Yuan	CNY	3	15.333963
+%R	17	2	�	.	,	#1.1	(#1.1)	EURO	EUR	3	1.472985
+%R	20	2	HK$	.	,	#1.1	(#1.1)	Hong Kong Dollar	HKD	3	15.584421
+%R	21	2	Rs	.	,	#1.1	(#1.1)	Indian Rupee	INR	3	81.054364
+%R	23	2	�	.	,	#1.1	(#1.1)	Japanese Yen	JPY	3	239.490037
+%R	24	2	K	.	,	#1.1	(#1.1)	Korean Won	KRW	3	1842.991299
+%R	25	2	N$	.	,	#1.1	(#1.1)	Mexican Peso	MXN	3	21.511792
+%R	26	2	R	.	,	#1.1	(#1.1)	Russian Rouble	RUB	3	51.43574
+%R	28	2	Sk	.	,	#1.1	(#1.1)	Swedish Krona	SEK	3	13.563781
+%R	29	2	kr	.	,	#1.1	(#1.1)	Swiss Franc	CHF	3	2.428721
+%R	30	2	NIS	.	,	#1.1	(#1.1)	Israel Shekel	ILS	3	7.899841
+%T	OBS
+%F	obs_id	parent_obs_id	guid	seq_num	obs_name	obs_descr
+%R	565			0	Enterprise	<HTML><BODY></BODY></HT
+%T	UDFTYPE
+%F	udf_type_id	table_name	udf_type_name	udf_type_label	logical_data_type	super_flag	indicator_expression	summary_indicator_expression
+%R	178	TASK	user_field_178	StartDistance	FT_FLOAT_2_DECIMALS	N		
+%R	179	TASK	user_field_179	FinishDistance	FT_FLOAT_2_DECIMALS	N		
+%R	180	TASK	user_field_180	Template	FT_TEXT	N		
+%T	PROJECT
+%F	proj_id	fy_start_month_num	rsrc_self_add_flag	allow_complete_flag	rsrc_multi_assign_flag	checkout_flag	project_flag	step_complete_flag	cost_qty_recalc_flag	batch_sum_flag	name_sep_char	def_complete_pct_type	proj_short_name	acct_id	orig_proj_id	source_proj_id	base_type_id	clndr_id	sum_base_proj_id	task_code_base	task_code_step	priority_num	wbs_max_sum_level	strgy_priority_num	last_checksum	critical_drtn_hr_cnt	def_cost_per_qty	last_recalc_date	plan_start_date	plan_end_date	scd_end_date	add_date	last_tasksum_date	fcst_start_date	def_duration_type	task_code_prefix	guid	def_qty_type	add_by_name	web_local_root_path	proj_url	def_rate_type	add_act_remain_flag	act_this_per_link_flag	def_task_type	act_pct_link_flag	critical_path_type	task_code_prefix_flag	def_rollup_dates_flag	use_project_baseline_flag	rem_target_link_flag	reset_planned_flag	allow_neg_act_flag	sum_assign_level	last_fin_dates_id	last_baseline_update_date	cr_external_key	apply_actuals_date	location_id	loaded_scope_level	export_flag	new_fin_dates_id	baselines_to_export	baseline_names_to_export	next_data_date	close_period_flag	sum_refresh_date	trsrcsum_loaded	sumtask_loaded
+%R	368	1	Y	Y	Y	N	Y	N	N	Y	.	CP_Drtn	TAKT					597		1000	10	10	2	500		0	0.0000	2021-11-30 00:00	2021-11-30 00:00		2022-02-21 17:00	2021-11-30 00:00			DT_FixedDUR2	A	Q1aMbj/7LECtUYyqGGVhcA	QT_Hour	admin			COST_PER_QTY	N	Y	TT_Task	Y	CT_TotFloat	Y	Y	Y	Y	N	N	SL_Taskrsrc						7	Y								
+%T	CALENDAR
+%F	clndr_id	default_flag	clndr_name	proj_id	base_clndr_id	last_chng_date	clndr_type	day_hr_cnt	week_hr_cnt	month_hr_cnt	year_hr_cnt	rsrc_private	clndr_data
+%R	597	Y	Standard 5 Day Workweek			2021-11-30 00:00	CA_Base	8	40	172	2000	N	(0||CalendarData()(  (0||DaysOfWeek()(    (0||1()())    (0||2()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||3()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||4()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||5()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||6()(      (0||0(s|08:00|f|12:00)())      (0||1(s|13:00|f|17:00)())))    (0||7()())))  (0||VIEW(ShowTotal|Y)())  (0||Exceptions()(    (0||0(d|44557)())    (0||1(d|44558)())    (0||2(d|44559)())    (0||3(d|44560)())    (0||4(d|44561)())))))
+%R	644	N	Van Haren				CA_Rsrc	8	40	172	2000	N	
+%T	SCHEDOPTIONS
+%F	schedoptions_id	proj_id	sched_outer_depend_type	sched_open_critical_flag	sched_lag_early_start_flag	sched_retained_logic	sched_setplantoforecast	sched_float_type	sched_calendar_on_relationship_lag	sched_use_expect_end_flag	sched_progress_override	level_float_thrs_cnt	level_outer_assign_flag	level_outer_assign_priority	level_over_alloc_pct	level_within_float_flag	level_keep_sched_date_flag	level_all_rsrc_flag	sched_use_project_end_date_for_float	enable_multiple_longest_path_calc	limit_multiple_longest_path_calc	max_multiple_longest_path	use_total_float_multiple_longest_paths	key_activity_for_multiple_longest_paths	LevelPriorityList
+%R	1	368	SD_Both	N	Y	Y	N	FT_FF	rcal_Predecessor	Y	N	0	N	5	25	N	Y	Y	Y	N	Y	10	Y		priority_type,ASC_BY_FIELD/ASC
+%T	PROJWBS
+%F	wbs_id	proj_id	obs_id	seq_num	est_wt	proj_node_flag	sum_data_flag	status_code	wbs_short_name	wbs_name	phase_id	parent_wbs_id	ev_user_pct	ev_etc_user_value	orig_cost	indep_remain_total_cost	ann_dscnt_rate_pct	dscnt_period_type	indep_remain_work_qty	anticip_start_date	anticip_end_date	ev_compute_type	ev_etc_compute_type	guid	tmpl_guid	plan_open_state
+%R	3680	368	565	200	1	Y	N	WS_Open	TAKT	TAKT Building Example		3667	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	hnqHqec1U0i5GQcOk5xcUw		
+%R	4081	368	565	1	1	N	N	WS_Open	L1	Level 1		3680	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	+l690iPPmUmFjgPRtUrrgg		
+%R	4082	368	565	2	1	N	N	WS_Open	L2	Level 2		3680	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	s+inl3w7fkCC19ZERSHP6w		
+%R	4083	368	565	3	1	N	N	WS_Open	L3	Level 3		3680	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	SkWTrx1baEyzUFgrjeXDcg		
+%R	4084	368	565	103	1	N	N	WS_Open	L4	Level 4		3680	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	N2JAQu2N3kaaGqwN+gNTtQ		
+%R	4085	368	565	203	1	N	N	WS_Open	L5	Level 5		3680	6	0.88	0.0000	0.0000						EC_Cmp_pct	EE_Rem_hr	oDjSF5GV1kiltn9OgELNUg		
+%T	RSRC
+%F	rsrc_id	parent_rsrc_id	clndr_id	role_id	shift_id	user_id	pobs_id	guid	rsrc_seq_num	email_addr	employee_code	office_phone	other_phone	rsrc_name	rsrc_short_name	rsrc_title_name	def_qty_per_hr	cost_qty_type	ot_factor	active_flag	auto_compute_act_flag	def_cost_qty_link_flag	ot_flag	curr_id	unit_id	rsrc_type	location_id	rsrc_notes	load_tasks_flag	level_flag	last_checksum
+%R	1319		644					lfVhcO6cgkGEy4EyQ9JEPg	10					Van Haren	Van Haren		1	QT_Hour		Y	N	N	Y	17		RT_Labor					
+%T	RSRCRATE
+%F	rsrc_rate_id	rsrc_id	max_qty_per_hr	cost_per_qty	start_date	shift_period_id	cost_per_qty2	cost_per_qty3	cost_per_qty4	cost_per_qty5
+%R	1788	1319	1	0.0000	1984-01-01 00:00					
+%T	TASK
+%F	task_id	proj_id	wbs_id	clndr_id	phys_complete_pct	rev_fdbk_flag	est_wt	lock_plan_flag	auto_compute_act_flag	complete_pct_type	task_type	duration_type	status_code	task_code	task_name	rsrc_id	total_float_hr_cnt	free_float_hr_cnt	remain_drtn_hr_cnt	act_work_qty	remain_work_qty	target_work_qty	target_drtn_hr_cnt	target_equip_qty	act_equip_qty	remain_equip_qty	cstr_date	act_start_date	act_end_date	late_start_date	late_end_date	expect_end_date	early_start_date	early_end_date	restart_date	reend_date	target_start_date	target_end_date	rem_late_start_date	rem_late_end_date	cstr_type	priority_type	suspend_date	resume_date	float_path	float_path_order	guid	tmpl_guid	cstr_date2	cstr_type2	driving_path_flag	act_this_per_work_qty	act_this_per_equip_qty	external_early_start_date	external_late_end_date	create_date	update_date	create_user	update_user	location_id
+%R	37896	368	4081	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1010	Studs		0	0	40	0	0	0	40	0	0	0				2021-11-30 08:00	2021-12-06 17:00		2021-11-30 08:00	2021-12-06 17:00	2021-11-30 08:00	2021-12-06 17:00	2021-11-30 08:00	2021-12-06 17:00	2021-11-30 08:00	2021-12-06 17:00		PT_Normal					IxXQeNAC60m/7x5b0em4zQ				Y	0	0			2021-12-02 14:29	2021-12-02 14:31	admin	admin	
+%R	37897	368	4081	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1020	Gyp	1319	0	0	48	0	48	48	48	0	0	0				2021-12-07 08:00	2021-12-14 17:00		2021-12-07 08:00	2021-12-14 17:00	2021-12-07 08:00	2021-12-14 17:00	2021-12-07 08:00	2021-12-14 17:00	2021-12-07 08:00	2021-12-14 17:00		PT_Normal					c8EAha/smkq/6Ve9QoN+qg				Y	0	0			2021-12-02 14:30	2021-12-08 11:19	admin	Damon(bg)	
+%R	37898	368	4081	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1030	Paint		0	0	32	0	0	0	32	0	0	0				2021-12-15 08:00	2021-12-20 17:00		2021-12-15 08:00	2021-12-20 17:00	2021-12-15 08:00	2021-12-20 17:00	2021-12-15 08:00	2021-12-20 17:00	2021-12-15 08:00	2021-12-20 17:00		PT_Normal					olqpmkLfE0q4ZvV0XY9rFA				Y	0	0			2021-12-02 14:30	2021-12-02 14:34	admin	admin	
+%R	37899	368	4081	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1040	Ceil		0	0	56	0	0	0	56	0	0	0				2021-12-21 08:00	2022-01-05 17:00		2021-12-21 08:00	2022-01-05 17:00	2021-12-21 08:00	2022-01-05 17:00	2021-12-21 08:00	2022-01-05 17:00	2021-12-21 08:00	2022-01-05 17:00		PT_Normal					qFAB3o+980GbvEynRHvM7Q				Y	0	0			2021-12-02 14:30	2021-12-02 14:34	admin	admin	
+%R	37900	368	4081	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1050	Floor		64	16	40	0	0	0	40	0	0	0				2022-01-18 08:00	2022-01-24 17:00		2022-01-06 08:00	2022-01-12 17:00	2022-01-06 08:00	2022-01-12 17:00	2022-01-06 08:00	2022-01-12 17:00	2022-01-18 08:00	2022-01-24 17:00		PT_Normal					JJ9H3wR59USWguLthD8Jqw				N	0	0			2021-12-02 14:30	2021-12-02 14:34	admin	admin	
+%R	37901	368	4082	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1060	Studs		16	0	40	0	0	0	40	0	0	0				2021-12-09 08:00	2021-12-15 17:00		2021-12-07 08:00	2021-12-13 17:00	2021-12-07 08:00	2021-12-13 17:00	2021-12-07 08:00	2021-12-13 17:00	2021-12-09 08:00	2021-12-15 17:00		PT_Normal					4QWcLarFIEKw9sbzB7UfDw	IxXQeNAC60m/7x5b0em4zQ			N	0	0			2021-12-02 14:31	2021-12-02 14:34	admin	admin	
+%R	37902	368	4082	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1070	Gyp		8	0	48	0	0	0	48	0	0	0				2021-12-16 08:00	2021-12-23 17:00		2021-12-15 08:00	2021-12-22 17:00	2021-12-15 08:00	2021-12-22 17:00	2021-12-15 08:00	2021-12-22 17:00	2021-12-16 08:00	2021-12-23 17:00		PT_Normal					NGgymPjiY0us0sB3vn4Urw	c8EAha/smkq/6Ve9QoN+qg			N	0	0			2021-12-02 14:31	2021-12-02 14:34	admin	admin	
+%R	37903	368	4082	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1080	Paint		8	8	32	0	0	0	32	0	0	0				2021-12-24 08:00	2022-01-05 17:00		2021-12-23 08:00	2022-01-04 17:00	2021-12-23 08:00	2022-01-04 17:00	2021-12-23 08:00	2022-01-04 17:00	2021-12-24 08:00	2022-01-05 17:00		PT_Normal					RCaRTdbat0WvrpEico84yQ	olqpmkLfE0q4ZvV0XY9rFA			N	0	0			2021-12-02 14:31	2021-12-02 14:34	admin	admin	
+%R	37904	368	4082	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1090	Ceil		0	0	56	0	0	0	56	0	0	0				2022-01-06 08:00	2022-01-14 17:00		2022-01-06 08:00	2022-01-14 17:00	2022-01-06 08:00	2022-01-14 17:00	2022-01-06 08:00	2022-01-14 17:00	2022-01-06 08:00	2022-01-14 17:00		PT_Normal					DNsfblAeHkGKh4mYX71Adg	qFAB3o+980GbvEynRHvM7Q			Y	0	0			2021-12-02 14:31	2021-12-02 14:34	admin	admin	
+%R	37905	368	4082	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1100	Floor		48	16	40	0	0	0	40	0	0	0				2022-01-25 08:00	2022-01-31 17:00		2022-01-17 08:00	2022-01-21 17:00	2022-01-17 08:00	2022-01-21 17:00	2022-01-17 08:00	2022-01-21 17:00	2022-01-25 08:00	2022-01-31 17:00		PT_Normal					x5K47WJHi0qsE2NVBG02sA	JJ9H3wR59USWguLthD8Jqw			N	0	0			2021-12-02 14:31	2021-12-02 14:34	admin	admin	
+%R	37906	368	4083	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1110	Studs		32	0	40	0	0	0	40	0	0	0				2021-12-20 08:00	2021-12-24 17:00		2021-12-14 08:00	2021-12-20 17:00	2021-12-14 08:00	2021-12-20 17:00	2021-12-14 08:00	2021-12-20 17:00	2021-12-20 08:00	2021-12-24 17:00		PT_Normal					0XQroW7TIk6NiJOOeL6eRg	IxXQeNAC60m/7x5b0em4zQ			N	0	0			2021-12-02 14:31	2021-12-02 14:34	admin	admin	
+%R	37907	368	4083	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1120	Gyp		16	0	48	0	0	0	48	0	0	0				2022-01-03 08:00	2022-01-10 17:00		2021-12-23 08:00	2022-01-06 17:00	2021-12-23 08:00	2022-01-06 17:00	2021-12-23 08:00	2022-01-06 17:00	2022-01-03 08:00	2022-01-10 17:00		PT_Normal					B9otB/WwVEOX8S9aEj0FMA	c8EAha/smkq/6Ve9QoN+qg			N	0	0			2021-12-02 14:31	2021-12-02 14:34	admin	admin	
+%R	37908	368	4083	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1130	Paint		16	16	32	0	0	0	32	0	0	0				2022-01-11 08:00	2022-01-14 17:00		2022-01-07 08:00	2022-01-12 17:00	2022-01-07 08:00	2022-01-12 17:00	2022-01-07 08:00	2022-01-12 17:00	2022-01-11 08:00	2022-01-14 17:00		PT_Normal					6shGipCVkUuxoWCP0Xg+dw	olqpmkLfE0q4ZvV0XY9rFA			N	0	0			2021-12-02 14:31	2021-12-02 14:34	admin	admin	
+%R	37909	368	4083	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1140	Ceil		0	0	56	0	0	0	56	0	0	0				2022-01-17 08:00	2022-01-25 17:00		2022-01-17 08:00	2022-01-25 17:00	2022-01-17 08:00	2022-01-25 17:00	2022-01-17 08:00	2022-01-25 17:00	2022-01-17 08:00	2022-01-25 17:00		PT_Normal					s6pWOkQizk29hc2HjHFi3g	qFAB3o+980GbvEynRHvM7Q			Y	0	0			2021-12-02 14:31	2021-12-02 14:34	admin	admin	
+%R	37910	368	4083	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1150	Floor		32	16	40	0	0	0	40	0	0	0				2022-02-01 08:00	2022-02-07 17:00		2022-01-26 08:00	2022-02-01 17:00	2022-01-26 08:00	2022-02-01 17:00	2022-01-26 08:00	2022-02-01 17:00	2022-02-01 08:00	2022-02-07 17:00		PT_Normal					bZ3CKaAgeUmxiCROK+jGkg	JJ9H3wR59USWguLthD8Jqw			N	0	0			2021-12-02 14:31	2021-12-02 14:34	admin	admin	
+%R	37911	368	4084	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1160	Studs		48	0	40	0	0	0	40	0	0	0				2022-01-05 08:00	2022-01-11 17:00		2021-12-21 08:00	2022-01-03 17:00	2021-12-21 08:00	2022-01-03 17:00	2021-12-21 08:00	2022-01-03 17:00	2022-01-05 08:00	2022-01-11 17:00		PT_Normal					v8VDO+q2OE684PGZbTk7Kg	IxXQeNAC60m/7x5b0em4zQ			N	0	0			2021-12-02 14:31	2021-12-02 14:34	admin	admin	
+%R	37912	368	4084	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1170	Gyp		24	0	48	0	0	0	48	0	0	0				2022-01-12 08:00	2022-01-19 17:00		2022-01-07 08:00	2022-01-14 17:00	2022-01-07 08:00	2022-01-14 17:00	2022-01-07 08:00	2022-01-14 17:00	2022-01-12 08:00	2022-01-19 17:00		PT_Normal					qX4/lksgVky2ELn8WdsAYA	c8EAha/smkq/6Ve9QoN+qg			N	0	0			2021-12-02 14:31	2021-12-02 14:34	admin	admin	
+%R	37913	368	4084	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1180	Paint		24	16	32	0	0	0	32	0	0	0				2022-01-20 08:00	2022-01-25 17:00		2022-01-17 08:00	2022-01-20 17:00	2022-01-17 08:00	2022-01-20 17:00	2022-01-17 08:00	2022-01-20 17:00	2022-01-20 08:00	2022-01-25 17:00		PT_Normal					EwrEx8mYUESHL0JdGtRPcA	olqpmkLfE0q4ZvV0XY9rFA			N	0	0			2021-12-02 14:31	2021-12-02 14:34	admin	admin	
+%R	37914	368	4084	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1190	Ceil		0	0	56	0	0	0	56	0	0	0				2022-01-26 08:00	2022-02-03 17:00		2022-01-26 08:00	2022-02-03 17:00	2022-01-26 08:00	2022-02-03 17:00	2022-01-26 08:00	2022-02-03 17:00	2022-01-26 08:00	2022-02-03 17:00		PT_Normal					YIJzH12mbUC52s9Rt69x6Q	qFAB3o+980GbvEynRHvM7Q			Y	0	0			2021-12-02 14:31	2021-12-02 14:34	admin	admin	
+%R	37915	368	4084	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1200	Floor		16	16	40	0	0	0	40	0	0	0				2022-02-08 08:00	2022-02-14 17:00		2022-02-04 08:00	2022-02-10 17:00	2022-02-04 08:00	2022-02-10 17:00	2022-02-04 08:00	2022-02-10 17:00	2022-02-08 08:00	2022-02-14 17:00		PT_Normal					5r4bpSoBOUuq4Z1OOB8oSA	JJ9H3wR59USWguLthD8Jqw			N	0	0			2021-12-02 14:31	2021-12-02 14:34	admin	admin	
+%R	37916	368	4085	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1210	Studs		64	32	40	0	0	0	40	0	0	0				2022-01-14 08:00	2022-01-20 17:00		2022-01-04 08:00	2022-01-10 17:00	2022-01-04 08:00	2022-01-10 17:00	2022-01-04 08:00	2022-01-10 17:00	2022-01-14 08:00	2022-01-20 17:00		PT_Normal					tVUac6jxn0u9XXkpzg1qcQ	IxXQeNAC60m/7x5b0em4zQ			N	0	0			2021-12-02 14:31	2021-12-02 14:34	admin	admin	
+%R	37917	368	4085	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1220	Gyp		32	0	48	0	0	0	48	0	0	0				2022-01-21 08:00	2022-01-28 17:00		2022-01-17 08:00	2022-01-24 17:00	2022-01-17 08:00	2022-01-24 17:00	2022-01-17 08:00	2022-01-24 17:00	2022-01-21 08:00	2022-01-28 17:00		PT_Normal					g575eaZT6U+mJB0/TRCdRA	c8EAha/smkq/6Ve9QoN+qg			N	0	0			2021-12-02 14:31	2021-12-02 14:34	admin	admin	
+%R	37918	368	4085	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1230	Paint		32	32	32	0	0	0	32	0	0	0				2022-01-31 08:00	2022-02-03 17:00		2022-01-25 08:00	2022-01-28 17:00	2022-01-25 08:00	2022-01-28 17:00	2022-01-25 08:00	2022-01-28 17:00	2022-01-31 08:00	2022-02-03 17:00		PT_Normal					ziPcaWOG9ke4+q9X9spIeQ	olqpmkLfE0q4ZvV0XY9rFA			N	0	0			2021-12-02 14:31	2021-12-02 14:34	admin	admin	
+%R	37919	368	4085	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1240	Ceil		0	0	56	0	0	0	56	0	0	0				2022-02-04 08:00	2022-02-14 17:00		2022-02-04 08:00	2022-02-14 17:00	2022-02-04 08:00	2022-02-14 17:00	2022-02-04 08:00	2022-02-14 17:00	2022-02-04 08:00	2022-02-14 17:00		PT_Normal					vCUybVnFt0igmHSQ8w+ebg	qFAB3o+980GbvEynRHvM7Q			Y	0	0			2021-12-02 14:31	2021-12-02 14:34	admin	admin	
+%R	37920	368	4085	597	0	N	1	N	N	CP_Drtn	TT_Task	DT_FixedDUR2	TK_NotStart	A1250	Floor		0	0	40	0	0	0	40	0	0	0				2022-02-15 08:00	2022-02-21 17:00		2022-02-15 08:00	2022-02-21 17:00	2022-02-15 08:00	2022-02-21 17:00	2022-02-15 08:00	2022-02-21 17:00	2022-02-15 08:00	2022-02-21 17:00		PT_Normal					Q6am1SVmPkm9HLNuZDlqdQ	JJ9H3wR59USWguLthD8Jqw			Y	0	0			2021-12-02 14:31	2021-12-02 14:34	admin	admin	
+%T	TASKPRED
+%F	task_pred_id	task_id	pred_task_id	proj_id	pred_proj_id	pred_type	lag_hr_cnt	float_path	aref	arls
+%R	4581	37897	37896	368	368	PR_FS	0		2021-12-06 17:00	2021-12-07 08:00
+%R	4582	37898	37897	368	368	PR_FS	0		2021-12-14 17:00	2021-12-15 08:00
+%R	4583	37899	37898	368	368	PR_FS	0		2021-12-20 17:00	2021-12-21 08:00
+%R	4584	37900	37899	368	368	PR_FS	0		2022-01-05 17:00	2022-01-18 08:00
+%R	4585	37902	37901	368	368	PR_FS	0		2021-12-13 17:00	2021-12-16 08:00
+%R	4586	37903	37902	368	368	PR_FS	0		2021-12-22 17:00	2021-12-24 08:00
+%R	4587	37904	37903	368	368	PR_FS	0		2022-01-04 17:00	2022-01-06 08:00
+%R	4588	37905	37904	368	368	PR_FS	0		2022-01-14 17:00	2022-01-25 08:00
+%R	4589	37907	37906	368	368	PR_FS	0		2021-12-20 17:00	2022-01-03 08:00
+%R	4590	37908	37907	368	368	PR_FS	0		2022-01-06 17:00	2022-01-11 08:00
+%R	4591	37909	37908	368	368	PR_FS	0		2022-01-12 17:00	2022-01-17 08:00
+%R	4592	37910	37909	368	368	PR_FS	0		2022-01-25 17:00	2022-02-01 08:00
+%R	4593	37912	37911	368	368	PR_FS	0		2022-01-03 17:00	2022-01-12 08:00
+%R	4594	37913	37912	368	368	PR_FS	0		2022-01-14 17:00	2022-01-20 08:00
+%R	4595	37914	37913	368	368	PR_FS	0		2022-01-20 17:00	2022-01-26 08:00
+%R	4596	37915	37914	368	368	PR_FS	0		2022-02-03 17:00	2022-02-08 08:00
+%R	4597	37917	37916	368	368	PR_FS	0		2022-01-10 17:00	2022-01-21 08:00
+%R	4598	37918	37917	368	368	PR_FS	0		2022-01-24 17:00	2022-01-31 08:00
+%R	4599	37919	37918	368	368	PR_FS	0		2022-01-28 17:00	2022-02-04 08:00
+%R	4600	37920	37919	368	368	PR_FS	0		2022-02-14 17:00	2022-02-15 08:00
+%R	4601	37901	37896	368	368	PR_FS	0		2021-12-06 17:00	2021-12-09 08:00
+%R	4602	37902	37897	368	368	PR_FS	0		2021-12-14 17:00	2021-12-16 08:00
+%R	4603	37903	37898	368	368	PR_FS	0		2021-12-20 17:00	2021-12-24 08:00
+%R	4604	37904	37899	368	368	PR_FS	0		2022-01-05 17:00	2022-01-06 08:00
+%R	4605	37905	37900	368	368	PR_FS	0		2022-01-12 17:00	2022-01-25 08:00
+%R	4606	37906	37901	368	368	PR_FS	0		2021-12-13 17:00	2021-12-20 08:00
+%R	4607	37907	37902	368	368	PR_FS	0		2021-12-22 17:00	2022-01-03 08:00
+%R	4608	37908	37903	368	368	PR_FS	0		2022-01-04 17:00	2022-01-11 08:00
+%R	4609	37909	37904	368	368	PR_FS	0		2022-01-14 17:00	2022-01-17 08:00
+%R	4610	37910	37905	368	368	PR_FS	0		2022-01-21 17:00	2022-02-01 08:00
+%R	4611	37911	37906	368	368	PR_FS	0		2021-12-20 17:00	2022-01-05 08:00
+%R	4612	37912	37907	368	368	PR_FS	0		2022-01-06 17:00	2022-01-12 08:00
+%R	4613	37913	37908	368	368	PR_FS	0		2022-01-12 17:00	2022-01-20 08:00
+%R	4614	37914	37909	368	368	PR_FS	0		2022-01-25 17:00	2022-01-26 08:00
+%R	4615	37915	37910	368	368	PR_FS	0		2022-02-01 17:00	2022-02-08 08:00
+%R	4616	37916	37911	368	368	PR_FS	0		2022-01-03 17:00	2022-01-14 08:00
+%R	4617	37917	37912	368	368	PR_FS	0		2022-01-14 17:00	2022-01-21 08:00
+%R	4618	37918	37913	368	368	PR_FS	0		2022-01-20 17:00	2022-01-31 08:00
+%R	4619	37919	37914	368	368	PR_FS	0		2022-02-03 17:00	2022-02-04 08:00
+%R	4620	37920	37915	368	368	PR_FS	0		2022-02-10 17:00	2022-02-15 08:00
+%T	TASKRSRC
+%F	taskrsrc_id	task_id	proj_id	cost_qty_link_flag	role_id	acct_id	rsrc_id	pobs_id	skill_level	remain_qty	target_qty	remain_qty_per_hr	target_lag_drtn_hr_cnt	target_qty_per_hr	act_ot_qty	act_reg_qty	relag_drtn_hr_cnt	ot_factor	cost_per_qty	target_cost	act_reg_cost	act_ot_cost	remain_cost	act_start_date	act_end_date	restart_date	reend_date	target_start_date	target_end_date	rem_late_start_date	rem_late_end_date	rollup_dates_flag	target_crv	remain_crv	actual_crv	ts_pend_act_end_flag	guid	rate_type	act_this_per_cost	act_this_per_qty	curv_id	rsrc_type	cost_per_qty_source_type	create_user	create_date	has_rsrchours	taskrsrc_sum_id
+%R	8089	37897	368	N			1319			48	48	1	0	1	0	0	0		0.0000	0.0000	0.0000	0.0000	0.0000			2021-12-07 08:00	2021-12-14 17:00	2021-12-07 08:00	2021-12-14 17:00			Y				N	KQUEBddyM0GP0nlrcdmb/g	COST_PER_QTY	0.0000	0		RT_Labor	ST_Rsrc	Damon(bg)	2021-12-08 11:19		
+%T	UDFVALUE
+%F	udf_type_id	fk_id	proj_id	udf_date	udf_number	udf_text	udf_code_id
+%R	178	37896	368		0		
+%R	178	37897	368		0		
+%R	178	37898	368		0		
+%R	178	37899	368		0		
+%R	178	37900	368		0		
+%R	178	37901	368		3000		
+%R	178	37902	368		3000		
+%R	178	37903	368		3000		
+%R	178	37904	368		3000		
+%R	178	37905	368		3000		
+%R	178	37906	368		6000		
+%R	178	37907	368		6000		
+%R	178	37908	368		6000		
+%R	178	37909	368		6000		
+%R	178	37910	368		6000		
+%R	178	37911	368		9000		
+%R	178	37912	368		9000		
+%R	178	37913	368		9000		
+%R	178	37914	368		9000		
+%R	178	37915	368		9000		
+%R	178	37916	368		12000		
+%R	178	37917	368		12000		
+%R	178	37918	368		12000		
+%R	178	37919	368		12000		
+%R	178	37920	368		12000		
+%R	179	37896	368		3000		
+%R	179	37897	368		3000		
+%R	179	37898	368		3000		
+%R	179	37899	368		3000		
+%R	179	37900	368		3000		
+%R	179	37901	368		6000		
+%R	179	37902	368		6000		
+%R	179	37903	368		6000		
+%R	179	37904	368		6000		
+%R	179	37905	368		6000		
+%R	179	37906	368		9000		
+%R	179	37907	368		9000		
+%R	179	37908	368		9000		
+%R	179	37909	368		9000		
+%R	179	37910	368		9000		
+%R	179	37911	368		12000		
+%R	179	37912	368		12000		
+%R	179	37913	368		12000		
+%R	179	37914	368		12000		
+%R	179	37915	368		12000		
+%R	179	37916	368		15000		
+%R	179	37917	368		15000		
+%R	179	37918	368		15000		
+%R	179	37919	368		15000		
+%R	179	37920	368		15000		
+%R	180	37896	368			Studs	
+%R	180	37897	368			Gyp	
+%R	180	37898	368			Paint	
+%R	180	37899	368			Ceil	
+%R	180	37900	368			Floor	
+%R	180	37901	368			Studs	
+%R	180	37902	368			Gyp	
+%R	180	37903	368			Paint	
+%R	180	37904	368			Ceil	
+%R	180	37905	368			Floor	
+%R	180	37906	368			Studs	
+%R	180	37907	368			Gyp	
+%R	180	37908	368			Paint	
+%R	180	37909	368			Ceil	
+%R	180	37910	368			Floor	
+%R	180	37911	368			Studs	
+%R	180	37912	368			Gyp	
+%R	180	37913	368			Paint	
+%R	180	37914	368			Ceil	
+%R	180	37915	368			Floor	
+%R	180	37916	368			Studs	
+%R	180	37917	368			Gyp	
+%R	180	37918	368			Paint	
+%R	180	37919	368			Ceil	
+%R	180	37920	368			Floor	
+%E
